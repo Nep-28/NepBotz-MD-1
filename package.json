@@ -1,6 +1,6 @@
 {
-  "name": "CheemsBot-MD",
-  "version": "4.0.0",
+  "name": "NepBotz-MD",
+  "version": "1.0.0",
   "description": "Automated whatsapp md bot created using nodejs",
   "main": "xeon.js",
   "type": "commonjs",
@@ -17,7 +17,7 @@
     "bot-md",
     "multi-device"
   ],
-  "author": "Xeon",
+  "author": "Neptune",
   "license": "MIT",
   "dependencies": {
     "@adiwajshing/baileys": "^4.4.0",
@@ -76,10 +76,10 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DGXeon/CheemsBot-MD4.git"
+    "url": "git+https://github.com/Nep-28/NepBotz-MD-1.git"
   },
   "bugs": {
-    "url": "https://github.com/DGXeon/CheemsBot-MD4/issues"
+    "url": "https://github.com/Nep-28/NepBotz-MD-1/issues"
   },
-  "homepage": "https://github.com/DGXeon/CheemsBot-MD4#readme"
+  "homepage": "https://github.com/Nep-28/NepBotz-MD-1#readme"
 }
