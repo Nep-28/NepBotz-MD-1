@@ -4389,16 +4389,6 @@ linkyke = await getBuffer(anu.result.dlink)
 NepBotzInc.sendMessage(m.chat, {document: linkyke, mimetype: 'application/zip', fileName: `${anu.result.filename}`}, {quoted:m}).catch ((err) => reply(mess.error))     
 }
 break
-<<<<<<< HEAD
-case 'ss': {
-	if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)
-if (!text) return reply(mess.linkm)
-var webimage = await axios.get(`https://shot.screenshotapi.net/screenshot?&full_page=true&url=${text}&fresh=true&output=image&file_type=png&dark_mode=true&wait_for_event=load&delay=2000`, { responseType: 'arraybuffer' })
-await NepBotzInc.sendMessage(Buffer.from(webimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: '${global.footer}', quoted: message.data })
-break
-=======
->>>>>>> 13768793e5cd7a482192ab23b194578daf5361cb
 case 'savefrom': {
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
