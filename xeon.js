@@ -89,7 +89,7 @@ async function startXeonBotInc() {
     const callerId = json.content[0].attrs['call-creator']
     if (json.content[0].tag == 'offer') {
     let xeonfek = await XeonBotInc.sendContact(callerId, global.owner)
-    XeonBotInc.sendMessage(callerId, { text: `Automatic Block System!\nDon't Call Bot!\nPlease Ask Or Contact The Owner To Unblock You!`}, { quoted : xeonfek })
+    NepBotzInc.sendMessage(callerId, { text: `Automatic Block System!\nDon't Call Bot!\nPlease Ask Or Contact The Owner To Unblock You!`}, { quoted : xeonfek })
     await sleep(8000)
     await XeonBotInc.updateBlockStatus(callerId, "block")
     }
@@ -211,7 +211,7 @@ sourceUrl: `${websitex}`,
 mediaUrl: `${websitex}`
 }}
 }
-XeonBotInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
+NepBotzInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
                 } else if (anu.action == 'remove') {
                 	const xeonbuffer = await getBuffer(ppuser)
                     const xeontime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
@@ -257,7 +257,7 @@ sourceUrl: `${websitex}`,
 mediaUrl: `${websitex}`
 }}
 }
-XeonBotInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
+NepBotzInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
                 }
             }
         } catch (err) {
@@ -308,7 +308,7 @@ XeonBotInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
 	    	////////////////////////////////////////////////////////////vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${ownername}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Click To Chat\nitem2.EMAIL;type=INTERNET:${botscript}\nitem2.X-ABLabel:Script\nitem3.URL:${websitex}\nitem3.X-ABLabel:Script\nitem4.ADR:;;${location};;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
 	    })
 	}
-	XeonBotInc.sendMessage(jid, { contacts: { displayName: `${list.length} Contact`, contacts: list }, ...opts }, { quoted })
+	NepBotzInc.sendMessage(jid, { contacts: { displayName: `${list.length} Contact`, contacts: list }, ...opts }, { quoted })
     }
     
     XeonBotInc.setStatus = (status) => {
@@ -393,7 +393,7 @@ XeonBotInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
             headerType: 2,
             ...options
         }
-        XeonBotInc.sendMessage(jid, buttonMessage, { quoted, ...options })
+        NepBotzInc.sendMessage(jid, buttonMessage, { quoted, ...options })
     }
     
     /**
@@ -404,7 +404,7 @@ XeonBotInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
      * @param {*} options 
      * @returns 
      */
-    XeonBotInc.sendText = (jid, text, quoted = '', options) => XeonBotInc.sendMessage(jid, { text: text, ...options }, { quoted })
+    XeonBotInc.sendText = (jid, text, quoted = '', options) => NepBotzInc.sendMessage(jid, { text: text, ...options }, { quoted })
 
     /**
      * 
@@ -417,7 +417,7 @@ XeonBotInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
      */
     XeonBotInc.sendImage = async (jid, path, caption = '', quoted = '', options) => {
 	let buffer = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
-        return await XeonBotInc.sendMessage(jid, { image: buffer, caption: caption, ...options }, { quoted })
+        return await NepBotzInc.sendMessage(jid, { image: buffer, caption: caption, ...options }, { quoted })
     }
 
     /**
@@ -431,7 +431,7 @@ XeonBotInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
      */
     XeonBotInc.sendVideo = async (jid, path, caption = '', quoted = '', gif = false, options) => {
         let buffer = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
-        return await XeonBotInc.sendMessage(jid, { video: buffer, caption: caption, gifPlayback: gif, ...options }, { quoted })
+        return await NepBotzInc.sendMessage(jid, { video: buffer, caption: caption, gifPlayback: gif, ...options }, { quoted })
     }
 
     /**
@@ -445,7 +445,7 @@ XeonBotInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
      */
     XeonBotInc.sendAudio = async (jid, path, quoted = '', ptt = false, options) => {
         let buffer = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
-        return await XeonBotInc.sendMessage(jid, { audio: buffer, ptt: ptt, ...options }, { quoted })
+        return await NepBotzInc.sendMessage(jid, { audio: buffer, ptt: ptt, ...options }, { quoted })
     }
 
     /**
@@ -456,7 +456,7 @@ XeonBotInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
      * @param {*} options 
      * @returns 
      */
-    XeonBotInc.sendTextWithMentions = async (jid, text, quoted, options = {}) => XeonBotInc.sendMessage(jid, { text: text, contextInfo: { mentionedJid: [...text.matchAll(/@(\d{0,16})/g)].map(v => v[1] + '@s.whatsapp.net') }, ...options }, { quoted })
+    XeonBotInc.sendTextWithMentions = async (jid, text, quoted, options = {}) => NepBotzInc.sendMessage(jid, { text: text, contextInfo: { mentionedJid: [...text.matchAll(/@(\d{0,16})/g)].map(v => v[1] + '@s.whatsapp.net') }, ...options }, { quoted })
 
     /**
      * 
@@ -475,7 +475,7 @@ XeonBotInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
             buffer = await imageToWebp(buff)
         }
 
-        await XeonBotInc.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
+        await NepBotzInc.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
         return buffer
     }
 
@@ -496,7 +496,7 @@ XeonBotInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
             buffer = await videoToWebp(buff)
         }
 
-        await XeonBotInc.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
+        await NepBotzInc.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
         return buffer
     }
 	
@@ -566,7 +566,7 @@ XeonBotInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
        else if (/video/.test(mime)) type = 'video'
        else if (/audio/.test(mime)) type = 'audio'
        else type = 'document'
-       await XeonBotInc.sendMessage(jid, { [type]: { url: pathFile }, caption, mimetype, fileName, ...options }, { quoted, ...options })
+       await NepBotzInc.sendMessage(jid, { [type]: { url: pathFile }, caption, mimetype, fileName, ...options }, { quoted, ...options })
        return fs.promises.unlink(pathFile)
        }
 
@@ -682,7 +682,7 @@ XeonBotInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
         footer: footer,
         templateButtons: templateButtons
         }
-        XeonBotInc.sendMessage(jid, templateMessage)
+        NepBotzInc.sendMessage(jid, templateMessage)
         }
 
 
@@ -696,7 +696,7 @@ XeonBotInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
         buttonText: butText,
         sections
         }
-        XeonBotInc.sendMessage(jid, listMes, { quoted: quoted })
+        NepBotzInc.sendMessage(jid, listMes, { quoted: quoted })
         }
 
 
@@ -766,12 +766,12 @@ XeonBotInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
         }
         let m
         try {
-            m = await XeonBotInc.sendMessage(jid, message, { ...opt, ...options })
+            m = await NepBotzInc.sendMessage(jid, message, { ...opt, ...options })
         } catch (e) {
             console.error(e)
             m = null
         } finally {
-            if (!m) m = await XeonBotInc.sendMessage(jid, { ...message, [mtype]: file }, { ...opt, ...options })
+            if (!m) m = await NepBotzInc.sendMessage(jid, { ...message, [mtype]: file }, { ...opt, ...options })
             return m
         }
     }
@@ -800,7 +800,7 @@ XeonBotInc.send3ButtonImg = async (jid, buffer, contentText, footerText, button1
             headerType: 4
         }
 
-        return await XeonBotInc.sendMessage(jid, buttonMessage, { quoted, ephemeralExpiration: 86400, contextInfo: { mentionedJid: conn.parseMention(contentText + footerText) }, ...options })
+        return await NepBotzInc.sendMessage(jid, buttonMessage, { quoted, ephemeralExpiration: 86400, contextInfo: { mentionedJid: conn.parseMention(contentText + footerText) }, ...options })
     }
     
     //send but 3
@@ -816,7 +816,7 @@ const buttonMessage = {
     buttons: buttons,
     headerType: 1
 }
-return await XeonBotInc.sendMessage(jid, buttonMessage, {quoted})
+return await NepBotzInc.sendMessage(jid, buttonMessage, {quoted})
   }
 //sendButton by xeon please give credit
     /**
@@ -845,7 +845,7 @@ return await XeonBotInc.sendMessage(jid, buttonMessage, {quoted})
             }),
             ...(buffer ? { image: buffer } : {})
         }
-        return await XeonBotInc.sendMessage(jid, message, {
+        return await NepBotzInc.sendMessage(jid, message, {
             quoted,
             upload: XeonBotInc.waUploadToServer,
             ...options
@@ -873,7 +873,7 @@ return await XeonBotInc.sendMessage(jid, buttonMessage, {quoted})
             headerType: 4
         }
 
-        return await XeonBotInc.sendMessage(jid, buttonMessage, { quoted, ephemeralExpiration: 86400, contextInfo: { mentionedJid: conn.parseMention(contentText + footerText) }, ...options })
+        return await NepBotzInc.sendMessage(jid, buttonMessage, { quoted, ephemeralExpiration: 86400, contextInfo: { mentionedJid: conn.parseMention(contentText + footerText) }, ...options })
     }
     /**
      * 
