@@ -22,7 +22,7 @@
 //════════════════════════════//
 
 require('./settings')
-const { default: XeonBotIncConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys")
+const { default: NepBotzIncConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys")
 const { state, saveState } = useSingleFileAuthState(`./${sessionName}.json`)
 const pino = require('pino')
 const { Boom } = require('@hapi/boom')
@@ -74,63 +74,63 @@ if (global.db) setInterval(async () => {
     if (global.db.data) await global.db.write()
   }, 30 * 1000)
 
-async function startXeonBotInc() {
-    const XeonBotInc = XeonBotIncConnect({
+async function startNepBotzInc() {
+    const NepBotzInc = NepBotzIncConnect({
         logger: pino({ level: 'silent' }),
         printQRInTerminal: true,
-        browser: ['Subscribe Xeon','Safari','1.0.0'],
+        browser: ['Subscribe Neptune','Safari','1.0.0'],
         auth: state
     })
 
-    store.bind(XeonBotInc.ev)
+    store.bind(NepBotzInc.ev)
     
     // anticall auto block
-    XeonBotInc.ws.on('CB:call', async (json) => {
+    NepBotzInc.ws.on('CB:call', async (json) => {
     const callerId = json.content[0].attrs['call-creator']
     if (json.content[0].tag == 'offer') {
-    let xeonfek = await XeonBotInc.sendContact(callerId, global.owner)
+    let xeonfek = await NepBotzInc.sendContact(callerId, global.owner)
     NepBotzInc.sendMessage(callerId, { text: `Automatic Block System!\nDon't Call Bot!\nPlease Ask Or Contact The Owner To Unblock You!`}, { quoted : xeonfek })
     await sleep(8000)
-    await XeonBotInc.updateBlockStatus(callerId, "block")
+    await NepBotzInc.updateBlockStatus(callerId, "block")
     }
     })
 
-    XeonBotInc.ev.on('messages.upsert', async chatUpdate => {
+    NepBotzInc.ev.on('messages.upsert', async chatUpdate => {
         //console.log(JSON.stringify(chatUpdate, undefined, 2))
         try {
         mek = chatUpdate.messages[0]
         if (!mek.message) return
         mek.message = (Object.keys(mek.message)[0] === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message
         if (mek.key && mek.key.remoteJid === 'status@broadcast') return
-        if (!XeonBotInc.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
+        if (!NepBotzInc.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
         if (mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return
-        m = smsg(XeonBotInc, mek, store)
-        require("./XeonCheems4")(XeonBotInc, m, chatUpdate, store)
+        m = smsg(NepBotzInc, mek, store)
+        require("./XeonCheems4")(NepBotzInc, m, chatUpdate, store)
         } catch (err) {
             console.log(err)
         }
     })
     
     // Group Update
-    XeonBotInc.ev.on('groups.update', async pea => {
+    NepBotzInc.ev.on('groups.update', async pea => {
        //console.log(pea)
     // Get Profile Picture Group
        try {
-       ppgc = await XeonBotInc.profilePictureUrl(pea[0].id, 'image')
+       ppgc = await NepBotzInc.profilePictureUrl(pea[0].id, 'image')
        } catch {
-       ppgc = 'https://shortlink.XeonBotIncarridho.my.id/rg1oT'
+       ppgc = 'https://shortlink.NepBotzIncarridho.my.id/rg1oT'
        }
        let lolXeon = { url : ppgc }
        if (pea[0].announce == true) {
-       XeonBotInc.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nThe Group Has Been Closed By Admin, Now Only Admin Can Send Messages !`, `${botname}`, lolXeon, [])
+       NepBotzInc.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nThe Group Has Been Closed By Admin, Now Only Admin Can Send Messages !`, `${botname}`, lolXeon, [])
        } else if(pea[0].announce == false) {
-       XeonBotInc.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nThe Group Has Been Opened By Admin, Now Participants Can Send Messages !`, `${botname}`, lolXeon, [])
+       NepBotzInc.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nThe Group Has Been Opened By Admin, Now Participants Can Send Messages !`, `${botname}`, lolXeon, [])
        } else if (pea[0].restrict == true) {
-       XeonBotInc.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nGroup Info Has Been Restricted, Now Only Admin Can Edit Group Info !`, `${botname}`, lolXeon, [])
+       NepBotzInc.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nGroup Info Has Been Restricted, Now Only Admin Can Edit Group Info !`, `${botname}`, lolXeon, [])
        } else if (pea[0].restrict == false) {
-       XeonBotInc.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nGroup Info Has Been Opened, Now Participants Can Edit Group Info !`, `${botname}`, lolXeon, [])
+       NepBotzInc.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nGroup Info Has Been Opened, Now Participants Can Edit Group Info !`, `${botname}`, lolXeon, [])
        } else {
-       XeonBotInc.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nGroup Subject Has Been Changed To *${pea[0].subject}*`, `${botname}`, lolXeon, [])
+       NepBotzInc.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nGroup Subject Has Been Changed To *${pea[0].subject}*`, `${botname}`, lolXeon, [])
      }
     })
     
@@ -142,28 +142,28 @@ return list[Math.floor(list.length * Math.random())]
 let documents = [doc1,doc2,doc3,doc4,doc5,doc6]
 let docs = pickRandom(documents)
 
-    XeonBotInc.ev.on('group-participants.update', async (anu) => {
+    NepBotzInc.ev.on('group-participants.update', async (anu) => {
         console.log(anu)
         try {
-            let metadata = await XeonBotInc.groupMetadata(anu.id)
+            let metadata = await NepBotzInc.groupMetadata(anu.id)
             let participants = anu.participants
             for (let num of participants) {
                 // Get Profile Picture User
                 try {
-                    ppuser = await XeonBotInc.profilePictureUrl(num, 'image')
+                    ppuser = await NepBotzInc.profilePictureUrl(num, 'image')
                 } catch {
                     ppuser = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
                 }
 
                 //Get Profile Picture Group\\
                 try {
-                    ppgroup = await XeonBotInc.profilePictureUrl(anu.id, 'image')
+                    ppgroup = await NepBotzInc.profilePictureUrl(anu.id, 'image')
                 } catch {
                     ppgroup = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
                 }
 
 //welcome\\
-        let nama = await XeonBotInc.getName(num)
+        let nama = await NepBotzInc.getName(num)
 memb = metadata.participants.length
 ppusr = await getBuffer(`${encodeURIComponent(ppuser)}`)
 ppusrn = await getBuffer(`ppuser`)
@@ -266,7 +266,7 @@ NepBotzInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
     })
 	
     //Setting\\
-    XeonBotInc.decodeJid = (jid) => {
+    NepBotzInc.decodeJid = (jid) => {
         if (!jid) return jid
         if (/:\d+@/gi.test(jid)) {
             let decode = jidDecode(jid) || {}
@@ -274,45 +274,45 @@ NepBotzInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
         } else return jid
     }
     
-    XeonBotInc.ev.on('contacts.update', update => {
+    NepBotzInc.ev.on('contacts.update', update => {
         for (let contact of update) {
-            let id = XeonBotInc.decodeJid(contact.id)
+            let id = NepBotzInc.decodeJid(contact.id)
             if (store && store.contacts) store.contacts[id] = { id, name: contact.notify }
         }
     })
 
-    XeonBotInc.getName = (jid, withoutContact  = false) => {
-        id = XeonBotInc.decodeJid(jid)
-        withoutContact = XeonBotInc.withoutContact || withoutContact 
+    NepBotzInc.getName = (jid, withoutContact  = false) => {
+        id = NepBotzInc.decodeJid(jid)
+        withoutContact = NepBotzInc.withoutContact || withoutContact 
         let v
         if (id.endsWith("@g.us")) return new Promise(async (resolve) => {
             v = store.contacts[id] || {}
-            if (!(v.name || v.subject)) v = XeonBotInc.groupMetadata(id) || {}
+            if (!(v.name || v.subject)) v = NepBotzInc.groupMetadata(id) || {}
             resolve(v.name || v.subject || PhoneNumber('+' + id.replace('@s.whatsapp.net', '')).getNumber('international'))
         })
         else v = id === '0@s.whatsapp.net' ? {
             id,
             name: 'WhatsApp'
-        } : id === XeonBotInc.decodeJid(XeonBotInc.user.id) ?
-            XeonBotInc.user :
+        } : id === NepBotzInc.decodeJid(NepBotzInc.user.id) ?
+            NepBotzInc.user :
             (store.contacts[id] || {})
             return (withoutContact ? '' : v.name) || v.subject || v.verifiedName || PhoneNumber('+' + jid.replace('@s.whatsapp.net', '')).getNumber('international')
     }
     
-    XeonBotInc.sendContact = async (jid, kon, quoted = '', opts = {}) => {
+    NepBotzInc.sendContact = async (jid, kon, quoted = '', opts = {}) => {
 	let list = []
 	for (let i of kon) {
 	    list.push({
-	    	displayName: await XeonBotInc.getName(i + '@s.whatsapp.net'),
-	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await XeonBotInc.getName(i + '@s.whatsapp.net')}\nFN:${global.ownername}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Click here to chat\nitem2.EMAIL;type=INTERNET:${global.ytname}\nitem2.X-ABLabel:YouTube\nitem3.URL:${global.socialm}\nitem3.X-ABLabel:GitHub\nitem4.ADR:;;${global.location};;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
+	    	displayName: await NepBotzInc.getName(i + '@s.whatsapp.net'),
+	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await NepBotzInc.getName(i + '@s.whatsapp.net')}\nFN:${global.ownername}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Click here to chat\nitem2.EMAIL;type=INTERNET:${global.ytname}\nitem2.X-ABLabel:YouTube\nitem3.URL:${global.socialm}\nitem3.X-ABLabel:GitHub\nitem4.ADR:;;${global.location};;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
 	    	////////////////////////////////////////////////////////////vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${ownername}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Click To Chat\nitem2.EMAIL;type=INTERNET:${botscript}\nitem2.X-ABLabel:Script\nitem3.URL:${websitex}\nitem3.X-ABLabel:Script\nitem4.ADR:;;${location};;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
 	    })
 	}
 	NepBotzInc.sendMessage(jid, { contacts: { displayName: `${list.length} Contact`, contacts: list }, ...opts }, { quoted })
     }
     
-    XeonBotInc.setStatus = (status) => {
-        XeonBotInc.query({
+    NepBotzInc.setStatus = (status) => {
+        NepBotzInc.query({
             tag: 'iq',
             attrs: {
                 to: '@s.whatsapp.net',
@@ -328,27 +328,27 @@ NepBotzInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
         return status
     }
 	
-    XeonBotInc.public = true
+    NepBotzInc.public = true
 
-    XeonBotInc.serializeM = (m) => smsg(XeonBotInc, m, store)
+    NepBotzInc.serializeM = (m) => smsg(NepBotzInc, m, store)
 
-    XeonBotInc.ev.on('connection.update', async (update) => {
+    NepBotzInc.ev.on('connection.update', async (update) => {
         const { connection, lastDisconnect } = update	    
         if (connection === 'close') {
         let reason = new Boom(lastDisconnect?.error)?.output.statusCode
-            if (reason === DisconnectReason.badSession) { console.log(`Bad Session File, Please Delete Session and Scan Again`); XeonBotInc.logout(); }
-            else if (reason === DisconnectReason.connectionClosed) { console.log("Connection closed, reconnecting...."); startXeonBotInc(); }
-            else if (reason === DisconnectReason.connectionLost) { console.log("Connection Lost from Server, reconnecting..."); startXeonBotInc(); }
-            else if (reason === DisconnectReason.connectionReplaced) { console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First"); XeonBotInc.logout(); }
-            else if (reason === DisconnectReason.loggedOut) { console.log(`Device Logged Out, Please Scan Again And Run.`); XeonBotInc.logout(); }
-            else if (reason === DisconnectReason.restartRequired) { console.log("Restart Required, Restarting..."); startXeonBotInc(); }
-            else if (reason === DisconnectReason.timedOut) { console.log("Connection TimedOut, Reconnecting..."); startXeonBotInc(); }
-            else XeonBotInc.end(`Unknown DisconnectReason: ${reason}|${connection}`)
+            if (reason === DisconnectReason.badSession) { console.log(`Bad Session File, Please Delete Session and Scan Again`); NepBotzInc.logout(); }
+            else if (reason === DisconnectReason.connectionClosed) { console.log("Connection closed, reconnecting...."); startNepBotzInc(); }
+            else if (reason === DisconnectReason.connectionLost) { console.log("Connection Lost from Server, reconnecting..."); startNepBotzInc(); }
+            else if (reason === DisconnectReason.connectionReplaced) { console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First"); NepBotzInc.logout(); }
+            else if (reason === DisconnectReason.loggedOut) { console.log(`Device Logged Out, Please Scan Again And Run.`); NepBotzInc.logout(); }
+            else if (reason === DisconnectReason.restartRequired) { console.log("Restart Required, Restarting..."); startNepBotzInc(); }
+            else if (reason === DisconnectReason.timedOut) { console.log("Connection TimedOut, Reconnecting..."); startNepBotzInc(); }
+            else NepBotzInc.end(`Unknown DisconnectReason: ${reason}|${connection}`)
         }
         console.log('Connected...', update)
     })
 
-    XeonBotInc.ev.on('creds.update', saveState)
+    NepBotzInc.ev.on('creds.update', saveState)
 
     // Add Other
     /** Send Button 5 Image
@@ -361,8 +361,8 @@ NepBotzInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
      * @param {*} options
      * @returns
      */
-    XeonBotInc.send5ButImg = async (jid , text = '' , footer = '', img, but = [], options = {}) =>{
-        let message = await prepareWAMessageMedia({ image: img }, { upload: XeonBotInc.waUploadToServer })
+    NepBotzInc.send5ButImg = async (jid , text = '' , footer = '', img, but = [], options = {}) =>{
+        let message = await prepareWAMessageMedia({ image: img }, { upload: NepBotzInc.waUploadToServer })
         var template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
         templateMessage: {
         hydratedTemplate: {
@@ -373,7 +373,7 @@ NepBotzInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
             }
             }
             }), options)
-            XeonBotInc.relayMessage(jid, template.message, { messageId: template.key.id })
+            NepBotzInc.relayMessage(jid, template.message, { messageId: template.key.id })
     }
 
     /**
@@ -385,7 +385,7 @@ NepBotzInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
      * @param {*} quoted 
      * @param {*} options 
      */
-    XeonBotInc.sendButtonText = (jid, buttons = [], text, footer, quoted = '', options = {}) => {
+    NepBotzInc.sendButtonText = (jid, buttons = [], text, footer, quoted = '', options = {}) => {
         let buttonMessage = {
             text,
             footer,
@@ -404,7 +404,7 @@ NepBotzInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
      * @param {*} options 
      * @returns 
      */
-    XeonBotInc.sendText = (jid, text, quoted = '', options) => NepBotzInc.sendMessage(jid, { text: text, ...options }, { quoted })
+    NepBotzInc.sendText = (jid, text, quoted = '', options) => NepBotzInc.sendMessage(jid, { text: text, ...options }, { quoted })
 
     /**
      * 
@@ -415,7 +415,7 @@ NepBotzInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
      * @param {*} options 
      * @returns 
      */
-    XeonBotInc.sendImage = async (jid, path, caption = '', quoted = '', options) => {
+    NepBotzInc.sendImage = async (jid, path, caption = '', quoted = '', options) => {
 	let buffer = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
         return await NepBotzInc.sendMessage(jid, { image: buffer, caption: caption, ...options }, { quoted })
     }
@@ -429,7 +429,7 @@ NepBotzInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
      * @param {*} options 
      * @returns 
      */
-    XeonBotInc.sendVideo = async (jid, path, caption = '', quoted = '', gif = false, options) => {
+    NepBotzInc.sendVideo = async (jid, path, caption = '', quoted = '', gif = false, options) => {
         let buffer = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
         return await NepBotzInc.sendMessage(jid, { video: buffer, caption: caption, gifPlayback: gif, ...options }, { quoted })
     }
@@ -443,7 +443,7 @@ NepBotzInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
      * @param {*} options 
      * @returns 
      */
-    XeonBotInc.sendAudio = async (jid, path, quoted = '', ptt = false, options) => {
+    NepBotzInc.sendAudio = async (jid, path, quoted = '', ptt = false, options) => {
         let buffer = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
         return await NepBotzInc.sendMessage(jid, { audio: buffer, ptt: ptt, ...options }, { quoted })
     }
@@ -456,7 +456,7 @@ NepBotzInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
      * @param {*} options 
      * @returns 
      */
-    XeonBotInc.sendTextWithMentions = async (jid, text, quoted, options = {}) => NepBotzInc.sendMessage(jid, { text: text, contextInfo: { mentionedJid: [...text.matchAll(/@(\d{0,16})/g)].map(v => v[1] + '@s.whatsapp.net') }, ...options }, { quoted })
+    NepBotzInc.sendTextWithMentions = async (jid, text, quoted, options = {}) => NepBotzInc.sendMessage(jid, { text: text, contextInfo: { mentionedJid: [...text.matchAll(/@(\d{0,16})/g)].map(v => v[1] + '@s.whatsapp.net') }, ...options }, { quoted })
 
     /**
      * 
@@ -466,7 +466,7 @@ NepBotzInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
      * @param {*} options 
      * @returns 
      */
-    XeonBotInc.sendImageAsSticker = async (jid, path, quoted, options = {}) => {
+    NepBotzInc.sendImageAsSticker = async (jid, path, quoted, options = {}) => {
         let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
         let buffer
         if (options && (options.packname || options.author)) {
@@ -487,7 +487,7 @@ NepBotzInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
      * @param {*} options 
      * @returns 
      */
-    XeonBotInc.sendVideoAsSticker = async (jid, path, quoted, options = {}) => {
+    NepBotzInc.sendVideoAsSticker = async (jid, path, quoted, options = {}) => {
         let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
         let buffer
         if (options && (options.packname || options.author)) {
@@ -507,7 +507,7 @@ NepBotzInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
      * @param {*} attachExtension 
      * @returns 
      */
-    XeonBotInc.downloadAndSaveMediaMessage = async (message, filename, attachExtension = true) => {
+    NepBotzInc.downloadAndSaveMediaMessage = async (message, filename, attachExtension = true) => {
         let quoted = message.msg ? message.msg : message
         let mime = (message.msg || message).mimetype || ''
         let messageType = message.mtype ? message.mtype.replace(/Message/gi, '') : mime.split('/')[0]
@@ -523,7 +523,7 @@ NepBotzInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
         return trueFileName
     }
 
-    XeonBotInc.downloadMediaMessage = async (message) => {
+    NepBotzInc.downloadMediaMessage = async (message) => {
         let mime = (message.msg || message).mimetype || ''
         let messageType = message.mtype ? message.mtype.replace(/Message/gi, '') : mime.split('/')[0]
         const stream = await downloadContentFromMessage(message, messageType)
@@ -545,8 +545,8 @@ NepBotzInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
      * @param {*} options 
      * @returns 
      */
-    XeonBotInc.sendMedia = async (jid, path, fileName = '', caption = '', quoted = '', options = {}) => {
-        let types = await XeonBotInc.getFile(path, true)
+    NepBotzInc.sendMedia = async (jid, path, fileName = '', caption = '', quoted = '', options = {}) => {
+        let types = await NepBotzInc.getFile(path, true)
            let { mime, ext, res, data, filename } = types
            if (res && res.status !== 200 || file.length <= 65536) {
                try { throw { json: JSON.parse(file.toString()) } }
@@ -578,7 +578,7 @@ NepBotzInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
      * @param {*} options 
      * @returns 
      */
-    XeonBotInc.copyNForward = async (jid, message, forceForward = false, options = {}) => {
+    NepBotzInc.copyNForward = async (jid, message, forceForward = false, options = {}) => {
         let vtype
 		if (options.readViewOnce) {
 			message.message = message.message && message.message.ephemeralMessage && message.message.ephemeralMessage.message ? message.message.ephemeralMessage.message : (message.message || undefined)
@@ -609,11 +609,11 @@ NepBotzInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
                 }
             } : {})
         } : {})
-        await XeonBotInc.relayMessage(jid, waMessage.message, { messageId:  waMessage.key.id })
+        await NepBotzInc.relayMessage(jid, waMessage.message, { messageId:  waMessage.key.id })
         return waMessage
     }
 
-    XeonBotInc.cMod = (jid, copy, text = '', sender = XeonBotInc.user.id, options = {}) => {
+    NepBotzInc.cMod = (jid, copy, text = '', sender = NepBotzInc.user.id, options = {}) => {
         //let copy = message.toJSON()
 		let mtype = Object.keys(copy.message)[0]
 		let isEphemeral = mtype === 'ephemeralMessage'
@@ -634,15 +634,15 @@ NepBotzInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
 		if (copy.key.remoteJid.includes('@s.whatsapp.net')) sender = sender || copy.key.remoteJid
 		else if (copy.key.remoteJid.includes('@broadcast')) sender = sender || copy.key.remoteJid
 		copy.key.remoteJid = jid
-		copy.key.fromMe = sender === XeonBotInc.user.id
+		copy.key.fromMe = sender === NepBotzInc.user.id
 
         return proto.WebMessageInfo.fromObject(copy)
     }
 
 
 //send 5 button image by xeon
-    XeonBotInc.send5ButImg = async (jid , text = '' , footer = '', img, but = [], thumb, options = {}) =>{
-        let message = await prepareWAMessageMedia({ image: img, jpegThumbnail:thumb }, { upload: XeonBotInc.waUploadToServer })
+    NepBotzInc.send5ButImg = async (jid , text = '' , footer = '', img, but = [], thumb, options = {}) =>{
+        let message = await prepareWAMessageMedia({ image: img, jpegThumbnail:thumb }, { upload: NepBotzInc.waUploadToServer })
         var template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
         templateMessage: {
         hydratedTemplate: {
@@ -653,13 +653,13 @@ NepBotzInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
             }
             }
             }), options)
-            XeonBotInc.relayMessage(jid, template.message, { messageId: template.key.id })
+            NepBotzInc.relayMessage(jid, template.message, { messageId: template.key.id })
     }
 
 
     //send5butvid by xeon
-        XeonBotInc.send5ButVid = async (jid , text = '' , footer = '', vid, but = [], options = {}) =>{
-        let message = await prepareWAMessageMedia({ video: vid }, { upload: XeonBotInc.waUploadToServer })
+        NepBotzInc.send5ButVid = async (jid , text = '' , footer = '', vid, but = [], options = {}) =>{
+        let message = await prepareWAMessageMedia({ video: vid }, { upload: NepBotzInc.waUploadToServer })
         var template = generateWAMessageFromContent(jid, proto.Message.fromObject({
         templateMessage: {
         hydratedTemplate: {
@@ -670,12 +670,12 @@ NepBotzInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
             }
             }
             }), options)
-            XeonBotInc.relayMessage(jid, template.message, { messageId: template.key.id })
+            NepBotzInc.relayMessage(jid, template.message, { messageId: template.key.id })
     }
     
     
     //send5butmsg by xeon
-            XeonBotInc.send5ButMsg = (jid, text = '' , footer = '', but = []) =>{
+            NepBotzInc.send5ButMsg = (jid, text = '' , footer = '', but = []) =>{
         let templateButtons = but
         var templateMessage = {
         text: text,
@@ -687,7 +687,7 @@ NepBotzInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
 
 
 //sendlistmsg by xeon
-        XeonBotInc.sendListMsg = (jid, text = '', footer = '', title = '' , butText = '', sects = [], quoted) => {
+        NepBotzInc.sendListMsg = (jid, text = '', footer = '', title = '' , butText = '', sects = [], quoted) => {
         let sections = sects
         var listMes = {
         text: text,
@@ -701,8 +701,8 @@ NepBotzInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
 
 
     //send5butgif by xeon
-        XeonBotInc.send5ButGif = async (jid , text = '' , footer = '', gif, but = [], options = {}) =>{
-        let message = await prepareWAMessageMedia({ video: gif, gifPlayback: true }, { upload: XeonBotInc.waUploadToServer })
+        NepBotzInc.send5ButGif = async (jid , text = '' , footer = '', gif, but = [], options = {}) =>{
+        let message = await prepareWAMessageMedia({ video: gif, gifPlayback: true }, { upload: NepBotzInc.waUploadToServer })
         var template = generateWAMessageFromContent(jid, proto.Message.fromObject({
         templateMessage: {
         hydratedTemplate: {
@@ -713,7 +713,7 @@ NepBotzInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
             }
             }
             }), options)
-            XeonBotInc.relayMessage(jid, template.message, { messageId: template.key.id })
+            NepBotzInc.relayMessage(jid, template.message, { messageId: template.key.id })
     }
 
 //____sendFile by xeon please give credit____//
@@ -727,8 +727,8 @@ NepBotzInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
     * @param {Boolean} ptt
     * @param {Object} options
     */
-    XeonBotInc.sendFile = async (jid, path, filename = '', caption = '', quoted, ptt = false, options = {}) => {
-        let type = await XeonBotInc.getFile(path, true)
+    NepBotzInc.sendFile = async (jid, path, filename = '', caption = '', quoted, ptt = false, options = {}) => {
+        let type = await NepBotzInc.getFile(path, true)
         let { res, data: file, filename: pathFile } = type
         if (res && res.status !== 200 || file.length <= 65536) {
             try { throw { json: JSON.parse(file.toString()) } }
@@ -776,8 +776,8 @@ NepBotzInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
         }
     }
     //send but 3 image
-XeonBotInc.send3ButtonImg = async (jid, buffer, contentText, footerText, button1, id1, button2, id2, button3, id3, quoted, options) => {
-        let type = await XeonBotInc.getFile(buffer)
+NepBotzInc.send3ButtonImg = async (jid, buffer, contentText, footerText, button1, id1, button2, id2, button3, id3, quoted, options) => {
+        let type = await NepBotzInc.getFile(buffer)
         let { res, data: file } = type
         if (res && res.status !== 200 || file.length <= 65536) {
         try { throw { json: JSON.parse(file.toString()) } }
@@ -794,7 +794,7 @@ XeonBotInc.send3ButtonImg = async (jid, buffer, contentText, footerText, button1
             fileLength: 887890909999999,
             caption: contentText,
             footer: footerText,
-            mentions: await XeonBotInc.parseMention(contentText + footerText),
+            mentions: await NepBotzInc.parseMention(contentText + footerText),
             ...options,
             buttons: buttons,
             headerType: 4
@@ -804,7 +804,7 @@ XeonBotInc.send3ButtonImg = async (jid, buffer, contentText, footerText, button1
     }
     
     //send but 3
-    XeonBotInc .send3But = async(jid, content, footer,button1, row1, button2, row2, button3, row3, quoted) => {
+    NepBotzInc .send3But = async(jid, content, footer,button1, row1, button2, row2, button3, row3, quoted) => {
 	  const buttons = [
 	  { buttonId: row1, buttonText: { displayText: button1 }, type: 1 },
           { buttonId: row2, buttonText: { displayText: button2 }, type: 1 },
@@ -829,8 +829,8 @@ return await NepBotzInc.sendMessage(jid, buttonMessage, {quoted})
      * @param {Object} quoted 
      * @param {Object} options 
      */
-    XeonBotInc.sendButton = async (jid, contentText, footer, buffer, buttons, quoted, options) => {
-        if (buffer) try { buffer = (await XeonBotInc.getFile(buffer)).data } catch { buffer = null }
+    NepBotzInc.sendButton = async (jid, contentText, footer, buffer, buttons, quoted, options) => {
+        if (buffer) try { buffer = (await NepBotzInc.getFile(buffer)).data } catch { buffer = null }
         let message = {
             ...options,
             ...(buffer ? { caption: contentText || '' } : { text: contentText || '' }),
@@ -847,12 +847,12 @@ return await NepBotzInc.sendMessage(jid, buttonMessage, {quoted})
         }
         return await NepBotzInc.sendMessage(jid, message, {
             quoted,
-            upload: XeonBotInc.waUploadToServer,
+            upload: NepBotzInc.waUploadToServer,
             ...options
         })
     }
-        XeonBotInc.sendButtonImg = async (jid, buffer, contentText, footerText, button1, id1, quoted, options) => {
-        let type = await XeonBotInc.getFile(buffer)
+        NepBotzInc.sendButtonImg = async (jid, buffer, contentText, footerText, button1, id1, quoted, options) => {
+        let type = await NepBotzInc.getFile(buffer)
         let { res, data: file } = type
         if (res && res.status !== 200 || file.length <= 65536) {
         try { throw { json: JSON.parse(file.toString()) } }
@@ -867,7 +867,7 @@ return await NepBotzInc.sendMessage(jid, buttonMessage, {quoted})
             fileLength: 887890909999999,
             caption: contentText,
             footer: footerText,
-            mentions: await XeonBotInc.parseMention(contentText + footerText),
+            mentions: await NepBotzInc.parseMention(contentText + footerText),
             ...options,
             buttons: buttons,
             headerType: 4
@@ -880,7 +880,7 @@ return await NepBotzInc.sendMessage(jid, buttonMessage, {quoted})
      * @param {*} path 
      * @returns 
      */
-    XeonBotInc.getFile = async (PATH, save) => {
+    NepBotzInc.getFile = async (PATH, save) => {
         let res
         let data = Buffer.isBuffer(PATH) ? PATH : /^data:.*?\/.*?;base64,/i.test(PATH) ? Buffer.from(PATH.split`,`[1], 'base64') : /^https?:\/\//.test(PATH) ? await (res = await getBuffer(PATH)) : fs.existsSync(PATH) ? (filename = PATH, fs.readFileSync(PATH)) : typeof PATH === 'string' ? PATH : Buffer.alloc(0)
         //if (!Buffer.isBuffer(data)) throw new TypeError('Result is not a buffer')
@@ -900,10 +900,10 @@ return await NepBotzInc.sendMessage(jid, buttonMessage, {quoted})
 
     }
 
-    return XeonBotInc
+    return NepBotzInc
 }
 
-startXeonBotInc()
+startNepBotzInc()
 
 
 let file = require.resolve(__filename)
