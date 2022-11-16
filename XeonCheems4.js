@@ -4389,13 +4389,6 @@ linkyke = await getBuffer(anu.result.dlink)
 XeonBotInc.sendMessage(m.chat, {document: linkyke, mimetype: 'application/zip', fileName: `${anu.result.filename}`}, {quoted:m}).catch ((err) => reply(mess.error))     
 }
 break
-case 'ss': {
-	if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)
-if (!text) return reply(mess.linkm)
-var webimage = await axios.get(`https://shot.screenshotapi.net/screenshot?&full_page=true&url=${text}&fresh=true&output=image&file_type=png&dark_mode=true&wait_for_event=load&delay=2000`, { responseType: 'arraybuffer' })
-await XeonBotInc.sendMessage(Buffer.from(webimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: '${global.footer}', quoted: message.data })
-break
 case 'savefrom': {
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
