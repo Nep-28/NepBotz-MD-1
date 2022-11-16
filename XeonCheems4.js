@@ -459,14 +459,14 @@ message: {
 	
 	//group target \\
 const reply = (teks) => {
-           NepBotzInc.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": `${ownername}`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./XeonMedia/theme/cheemspic.jpg`),"sourceUrl": `${linkz}`}}}, { quoted: m})
+           NepBotzInc.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": `${ownername}`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./XeonMedia/theme/log0.jpg`),"sourceUrl": `${linkz}`}}}, { quoted: m})
         }
         
         const replay = (teks) => {
-            NepBotzInc.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": `${ownername}`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./XeonMedia/theme/cheemspic.jpg`),"sourceUrl": `${linkz}`}}}, { quoted: m})
+            NepBotzInc.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": `${ownername}`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./XeonMedia/theme/log0.jpg`),"sourceUrl": `${linkz}`}}}, { quoted: m})
         }
 	
-        //Public & Self\\
+        //Public & Private\\
         if (!NepBotzInc.public) {
             if (!m.key.fromMe) return
         }
@@ -491,9 +491,9 @@ const reply = (teks) => {
         //hitter
         global.hit = {}
 if (isCmd) {
-data = await fetchJson('https://api.countapi.xyz/hit/CheemsBot/visits')
+data = await fetchJson('https://api.countapi.xyz/hit/neptune')
 jumlahcmd = `${data.value}`
-dataa = await fetchJson(`https://api.countapi.xyz/hit/CheemsBot${moment.tz('Asia/Kolkata').format('DDMMYYYY')}/visits`)
+dataa = await fetchJson(`https://api.countapi.xyz/hit/neptune${moment.tz('Asia/Kolkata').format('DDMMYYYY')}/visits`)
 jumlahharian = `${dataa.value}`
 }
         
@@ -1204,11 +1204,11 @@ let off = banchat.indexOf(from)
 banchat.splice(off, 1)
 replay('Success in unbanning the gc')
 } else {
-  let buttonsntnsfw = [
+  let buttonbann = [
   { buttonId: `${command} on`, buttonText: { displayText: 'Ban' }, type: 1 },
   { buttonId: `${command} off`, buttonText: { displayText: 'Unban' }, type: 1 }
   ]
-  await NepBotzInc.sendButtonText(m.chat, buttonsntnsfw, `Please click the button below\n\nBan to Ban\nUnban to unban`, `${global.botname}`, m)
+  await NepBotzInc.sendButtonText(m.chat, buttonbann, `Please click the button below\n\nBan to Ban\nUnban to unban`, `${global.botname}`, m)
   }
   }
   break
@@ -1698,7 +1698,7 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
             	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                 if (!isCreator) return replay(`${mess.owner}`)
-                if (!q) return replay(`Option : 1. mute\n2. unmute\n3. archive\n4. unarchive\n5. read\n6. unread\n7. delete`)
+                if (!q) return replay(`Option : \n1. mute\n2. unmute\n3. archive\n4. unarchive\n5. read\n6. unread\n7. delete`)
                 if (args[0] === 'mute') {
                     NepBotzInc.chatModify({ mute: 'Infinity' }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
                 } else if (args[0] === 'unmute') {
@@ -2307,7 +2307,7 @@ if (isBanChat) return reply(mess.banChat)
                if (!text) return replay(`Example : ${prefix + command} packname|author`)
           global.packname = text.split("|")[0]
           global.author = text.split("|")[1]
-          reply(`Exif Has Been Successfully Changed to\n\n${themeemoji} Packname : ${global.packname}\n${themeemoji} Author : ${global.author}`)
+          reply(`Exif Has Been Successfully Changed to\n\nPackname : ${global.packname}\nAuthor : ${global.author}`)
             }
             break
 	case 'kick': {
@@ -3096,7 +3096,7 @@ replay('Success in turning off antiwame in this group')
   }
   }
   break
-             case 'mute': {
+             case 'mutebot': {
              	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                 if (!m.isGroup) return replay(`${mess.group}`)
@@ -3270,16 +3270,6 @@ replay(`Send Broadcast To ${anu.length} Chat\nTime's up ${anu.length * 1.5} seco
 for (let yoi of anu) {
 await sleep(1500)
 let btn = [{
-urlButton: {
-displayText: 'YouTube',
-url: `${global.websitex}`
-}
-}, {
-urlButton: {
-displayText: 'Script',
-url: `${global.botscript}`
-}
-}, {
 quickReplyButton: {
 displayText: 'Support Group',
 id: 'wagc'
@@ -3296,7 +3286,7 @@ id: 'owner'
 }
 }]
 let txt = `*「 ${global.ownername}'s Broadcast」*\n\n${text}`
-NepBotzInc.send5ButImg(yoi, txt, `${global.botname}`, log0, btn, thum)
+NepBotzInc.sendMessage(yoi, txt, `${global.botname}`, log0, btn, thum)
 }
 replay('Broadcast Success')
 }
@@ -3307,21 +3297,11 @@ if (isBanChat) return reply(mess.banChat)
 if (!isCreator) return replay(mess.owner)
                 if (!/video/.test(mime) && !/image/.test(mime) && !/audio/.test(mime)) return reply(`*Send/Reply Video/Audio/Image You Want to Broadcast With Caption* ${prefix + command}`)
                 let anu = await store.chats.all().map(v => v.id)
-                let ftroli ={key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "916909137213-1604595598@g.us"}, "message": {orderMessage: {itemCount: 999999999,status: 200, thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'), surface: 200, message: `${ownername}'s Broadcast`, orderTitle: `${botname}`, sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
+                let ftroli ={key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "916909137213-1604595598@g.us"}, "message": {orderMessage: {itemCount: 999999999,status: 200, thumbnail: fs.readFileSync('./XeonMedia/theme/log0.jpg'), surface: 200, message: `${ownername}'s Broadcast`, orderTitle: `${botname}`, sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
                 reply(`*Send Broadcast To* ${anu.length} *Group Chat, Time ${anu.length * 1.5} secs*`)
                 for (let i of anu) {
                     await sleep(1500)
                     let butoon = [{
-                                urlButton: {
-                                displayText: 'YouTube',
-url: `${global.websitex}`
-                                }
-                            }, {
-urlButton: {
-displayText: 'Script',
-url: `${global.botscript}`
-}
-}, {
 quickReplyButton: {
 displayText: 'Support Group',
 id: 'ping'
@@ -3343,7 +3323,7 @@ id: 'owner'
                     NepBotzInc.sendMessage(i, { sticker: { url: media } }, { quoted: ftroli })
                     } else if (/image/.test(mime)) {
                     let DGXeon = `*「 ${global.ownername}'s Broadcast」*${text ? '\n\n' + text : ''}`
-                    NepBotzInc.send5ButImg(i, DGXeon, `${global.botname}`, buffer, butoon)
+                    NepBotzInc.sendMessage(i, DGXeon, `${global.botname}`, buffer, butoon)
                     } else if (/video/.test(mime)) {
                     let DGXeon = `*「 ${global.ownername}'s Broadcast」*${text ? '\n\n' + text : ''}`
                     NepBotzInc.sendMessage(i, {video: buffer, caption: `${DGXeon}`}, { quoted: ftroli })
@@ -3436,33 +3416,22 @@ let liston = 1
 NepBotzInc.sendText(m.chat, '     「 Online List 」\n\n' + online.map(v => `${liston++} . @` + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
 }
 break
-case 'patrick':
-case 'patricksticker': {
-	                	            	            	if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/patrik')
-var wifegerak = ano.split('\n')
-var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
-encmedia = await NepBotzInc.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
-await fs.unlinkSync(encmedia)
-}
-break
        case 'attp2': {
 		   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
            if (!text) return reply(`Example : ${prefix + command} text`)
-           await NepBotzInc.sendMedia(m.chat, `https://xteam.xyz/${command}?file&text=${text}`, 'hisoka', 'morou', m, {asSticker: true})
+           await NepBotzInc.sendMedia(m.chat, `https://xteam.xyz/attp?file&text=${text}`, 'hisoka', 'morou', m, {asSticker: true})
 
          }
          break
-case 'attp': {
+case 'ttp': {
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
            if (!text) reply(`Use ${prefix}attp hello\n*Example : ${prefix + command} ${ownername}*` )
            await NepBotzInc.sendMedia(m.chat, `https://cililitan.herokuapp.com/api/attp?teks=${text}`, 'Xeon', 'Op', m, {asSticker: true}).catch((err) => reply(mess.error))
          }
          break
-case 'ttp': {
+case 'attp': {
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
            if (!text) return reply(`*Example : ${prefix + command} hello*`)
@@ -3470,37 +3439,6 @@ if (isBanChat) return reply(mess.banChat)
          
                      }
                      break
-            case 'soundcloud': case 'scdl': {               
-                if (!text) return reply(mess.linkm)
-                if (!isUrl(args[0]) && !args[0].includes('soundcloud.com')) return reply(`*Not a soundcloud link*`)
-                xeonkey.SoundCloud(`${text}`).then(async (data) => {
-                    let txt = `*SOUNDCLOUD DOWNLOADER*\n\n`
-                    txt += `*${themeemoji}Title :* ${data.title}\n`
-                    txt += `*${themeemoji}Quality :* ${data.medias[0].quality}\n`
-                    txt += `*${themeemoji}Type :* ${data.medias[0].extension}\n`
-                    txt += `*${themeemoji}Size :* ${data.medias[0].formattedSize}\n`
-                    txt += `*${themeemoji}Url Source :* ${data.url}\n\n`
-                    txt += `*${botname}*`
-                buf = await getBuffer(data.thumbnail)   
-                NepBotzInc.sendMessage(m.chat, { image: { url: data.thumbnail }, jpegThumbnail:buf, caption: `${txt}` }, { quoted: m }).catch((err) => reply(mess.error))    
-                NepBotzInc.sendMessage(m.chat, { audio: { url: data.medias[0].url }, mimetype: 'audio/mpeg', fileName: data.title+'.m4a' }, { quoted: m })
-                }).catch((err) => {
-                    reply(mess.error)
-                })
-            }
-            break
-case 'dogesticker':
-case 'dogestick':
-	case 'doge':{
-	                	            	            	if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/anjing')
-var wifegerak = ano.split('\n')
-var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
-encmedia = await NepBotzInc.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
-await fs.unlinkSync(encmedia)
-}
-break
             case 'sticker': case 's': case 'stickergif': case 'sgif': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
@@ -3577,782 +3515,6 @@ if (isBanChat) return reply(mess.banChat)
             reply(db)
         }
         break
-case 'gasmx':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-	if (!AntiNsfw) return reply(mess.nsfw)
-reply(mess.wait)						
- waifudd = await axios.get(`https://nekos.life/api/v2/img/${command}`)
-                           var wbuttsss = [
-        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
-        ]
-      let buttonsssMessages = {
-       image: {url:waifudd.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-      buttons: wbuttsss,
-      headerType: 4
-      }     
-            await NepBotzInc.sendMessage(m.chat, buttonsssMessages,{ quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break   
-case 'smugx2':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
- waifudd = await axios.get(`https://nekos.life/api/v2/img/smug`)
-                           var wbuttsss = [
-        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
-        ]
-      let button1ssMessages = {
-       image: {url:waifudd.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-      buttons: wbuttsss,
-      headerType: 4
-      }     
-            await NepBotzInc.sendMessage(m.chat, button1ssMessages,{ quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break
-case 'foxgirl':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
- waifudd = await axios.get(`https://nekos.life/api/v2/img/fox_girl`)
-                           var wbuttsss = [
-        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
-        ]
-      let button12ssMessages = {
-       image: {url:waifudd.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-      buttons: wbuttsss,
-      headerType: 4
-      }     
-            await NepBotzInc.sendMessage(m.chat, button12ssMessages,{ quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break   
-case 'animenom' :
-   if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return replay(mess.group)
-    waifudd = await axios.get(`https://waifu.pics/api/sfw/nom`)
- let xxhnekobot = [
-    {buttonId: `.nom`, buttonText: {displayText: `Next ⚡`}, type: 1},
-    ]
-  let xx1button3Messages = {
-   image: {url:waifudd.data.url},
-   caption:  `Here you go!`,
-  buttons: xxhnekobot,
-  headerType: 1
-  }      
-            await NepBotzInc.sendMessage(m.chat, xx1button3Messages, { quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break
-case 'waifu3':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
- waifudd = await axios.get(`https://nekos.life/api/v2/img/waifu`)
-                           var wbuttsss = [
-        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
-        ]
-      let button112ssMessages = {
-       image: {url:waifudd.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-      buttons: wbuttsss,
-      headerType: 4
-      }     
-            await NepBotzInc.sendMessage(m.chat, button112ssMessages,{ quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break
-case 'neko2':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
-   waifud = await axios.get('https://waifu.pics/api/sfw/neko')
-                var wbutsss = [
-        {buttonId: `.neko`, buttonText: {displayText: `Next ✨`}, type: 1},
-        ]
-      let buttonssMessage = {
-       image: {url:waifud.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-      buttons: wbutsss,
-      headerType: 4
-      }
-            await NepBotzInc.sendMessage(m.chat,buttonssMessage, { quoted:m }).catch(err => {
-                    return('Error!')
-                })               
-                break
-case 'animecuddle':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
- waifudd = await axios.get(`https://nekos.life/api/v2/img/cuddle`)
-                           var wbuttsss = [
-        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
-        ]
-      let buttonsosMessages = {
-       image: {url:waifudd.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-      buttons: wbuttsss,
-      headerType: 4
-      }     
-            await NepBotzInc.sendMessage(m.chat, buttonsosMessages,{ quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break   
-case 'animeslap':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
- waifudd = await axios.get(`https://nekos.life/api/v2/img/slap`)
-                           var wbuttsss = [
-        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
-        ]
-      let btutttonssMessages = {
-       image: {url:waifudd.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-      buttons: wbuttsss,
-      headerType: 4
-      }     
-            await NepBotzInc.sendMessage(m.chat, btutttonssMessages,{ quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break
-case 'animepat':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
- waifudd = await axios.get(`https://nekos.life/api/v2/img/pat`)
-                           var wbuttsss = [
-        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
-        ]
-      let xxbuttonssMessages = {
-       image: {url:waifudd.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-      buttons: wbuttsss,
-      headerType: 4
-      }     
-            await NepBotzInc.sendMessage(m.chat, xxbuttonssMessages,{ quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break
-case 'animeneko':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
- waifudd = await axios.get(`https://nekos.life/api/v2/img/neko`)
-                           var wbuttsss = [
-        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
-        ]
-      let buttonsTsMessages = {
-       image: {url:waifudd.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-      buttons: wbuttsss,
-      headerType: 4
-      }     
-            await NepBotzInc.sendMessage(m.chat, buttonsTsMessages,{ quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break
-case 'animehug':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
- waifudd = await axios.get(`https://nekos.life/api/v2/img/hug`)
-                           var wbuttsss = [
-        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
-        ]
-      let buttonussMessages = {
-       image: {url:waifudd.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-      buttons: wbuttsss,
-      headerType: 4
-      }     
-            await NepBotzInc.sendMessage(m.chat, buttonussMessages,{ quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break
-case 'animekiss':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
- waifudd = await axios.get(`https://nekos.life/api/v2/img/kiss`)
-                           var wbuttsss = [
-        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
-        ]
-      let bxxuttonssMessages = {
-       image: {url:waifudd.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-      buttons: wbuttsss,
-      headerType: 4
-      }     
-            await NepBotzInc.sendMessage(m.chat, bxxuttonssMessages,{ quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break
-case 'animewlp':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
- waifudd = await axios.get(`https://nekos.life/api/v2/img/wallpaper`)
-                           var wbuttsss = [
-        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
-        ]
-      let buttoxnssMessages = {
-       image: {url:waifudd.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-      buttons: wbuttsss,
-      headerType: 4
-      }     
-            await NepBotzInc.sendMessage(m.chat, buttoxnssMessages,{ quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break
-case 'animespank':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
- waifudd = await axios.get(`https://nekos.life/api/v2/img/spank`)
-                           var wbuttsss = [
-        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
-        ]
-      let buttonssxMessages = {
-       image: {url:waifudd.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-      buttons: wbuttsss,
-      headerType: 4
-      }     
-            await NepBotzInc.sendMessage(m.chat, buttonssxMessages,{ quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break
-case 'animecry':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
- waifudd = await axios.get(`https://api.waifu.pics/sfw/cry`)
-                           var wbutt1sss = [
-        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
-        ]
-      let button1ssxMessages = {
-       image: {url:waifudd.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-      buttons: wbutt1sss,
-      headerType: 4
-      }     
-            await NepBotzInc.sendMessage(m.chat, button1ssxMessages,{ quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break
-case 'animekill':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
- waifudd = await axios.get(`https://api.waifu.pics/sfw/kill`)
-                           var wbuttszzss = [
-        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
-        ]
-      let buttonszzsxMessages = {
-       image: {url:waifudd.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-      buttons: wbuttszzss,
-      headerType: 4
-      }     
-            await NepBotzInc.sendMessage(m.chat, buttonszzsxMessages,{ quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break
-case 'animelick':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
- waifudd = await axios.get(`https://api.waifu.pics/sfw/lick`)
-                           var wbuttszz12ss = [
-        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
-        ]
-      let buttonszzsx12Messages = {
-       image: {url:waifudd.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-      buttons: wbuttszz12ss,
-      headerType: 4
-      }     
-            await NepBotzInc.sendMessage(m.chat, buttonszzsx12Messages,{ quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break
-case 'animebite':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
- waifudd = await axios.get(`https://api.waifu.pics/sfw/bite`)
-                           var wbuttszz123ss = [
-        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
-        ]
-      let buttonszzsx123Messages = {
-       image: {url:waifudd.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-      buttons: wbuttszz123ss,
-      headerType: 4
-      }     
-            await NepBotzInc.sendMessage(m.chat, buttonszzsx123Messages,{ quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break
-case 'animeyeet':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
- waifudd = await axios.get(`https://api.waifu.pics/sfw/yeet`)
-                           var wbuttszz124ss = [
-        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
-        ]
-      let buttonszzsx124Messages = {
-       image: {url:waifudd.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-      buttons: wbuttszz124ss,
-      headerType: 4
-      }     
-            await NepBotzInc.sendMessage(m.chat, buttonszzsx124Messages,{ quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break
-case 'animebully':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
- waifudd = await axios.get(`https://api.waifu.pics/sfw/lick`)
-                           var wbuttszz125ss = [
-        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
-        ]
-      let buttonszzsx125Messages = {
-       image: {url:waifudd.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-      buttons: wbuttszz125ss,
-      headerType: 4
-      }     
-            await NepBotzInc.sendMessage(m.chat, buttonszzsx125Messages,{ quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break
-case 'animebonk':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
- waifudd = await axios.get(`https://api.waifu.pics/sfw/bonk`)
-                           var wbuttszz126ss = [
-        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
-        ]
-      let buttonszzsx126Messages = {
-       image: {url:waifudd.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-      buttons: wbuttszz126ss,
-      headerType: 4
-      }     
-            await NepBotzInc.sendMessage(m.chat, buttonszzsx126Messages,{ quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break
-case 'animewink':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
- waifudd = await axios.get(`https://api.waifu.pics/sfw/wink`)
-                           var wbuttszz127ss = [
-        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
-        ]
-      let buttonszzsx127Messages = {
-       image: {url:waifudd.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-      buttons: wbuttszz127ss,
-      headerType: 4
-      }     
-            await NepBotzInc.sendMessage(m.chat, buttonszzsx127Messages,{ quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break
-case 'animepoke':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
- waifudd = await axios.get(`https://api.waifu.pics/sfw/poke`)
-                           var wbuttszz128ss = [
-        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
-        ]
-      let buttonszzsx128Messages = {
-       image: {url:waifudd.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-      buttons: wbuttszz128ss,
-      headerType: 4
-      }     
-            await NepBotzInc.sendMessage(m.chat, buttonszzsx128Messages,{ quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break
-case 'animesmile':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
- waifudd = await axios.get(`https://api.waifu.pics/sfw/smile`)
-                           var wbuttszz129ss = [
-        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
-        ]
-      let buttonszzsx129Messages = {
-       image: {url:waifudd.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-      buttons: wbuttszz129ss,
-      headerType: 4
-      }     
-            await NepBotzInc.sendMessage(m.chat, buttonszzsx129Messages,{ quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break
-case 'animewave':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
- waifudd = await axios.get(`https://api.waifu.pics/sfw/wave`)
-                           var wbuttszz1210ss = [
-        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
-        ]
-      let buttonszzsx1210Messages = {
-       image: {url:waifudd.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-      buttons: wbuttszz1210ss,
-      headerType: 4
-      }     
-            await NepBotzInc.sendMessage(m.chat, buttonszzsx1210Messages,{ quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break
-case 'animeawoo':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
- waifudd = await axios.get(`https://api.waifu.pics/sfw/awoo`)
-                           var wbuttszz1211ss = [
-        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
-        ]
-      let buttonszzsx1211Messages = {
-       image: {url:waifudd.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-      buttons: wbuttszz1211ss,
-      headerType: 4
-      }     
-            await NepBotzInc.sendMessage(m.chat, buttonszzsx1211Messages,{ quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break
-case 'animeblush':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
- waifudd = await axios.get(`https://api.waifu.pics/sfw/blush`)
-                           var wbuttszz1212ss = [
-        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
-        ]
-      let buttonszzsx1212Messages = {
-       image: {url:waifudd.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-      buttons: wbuttszz1212ss,
-      headerType: 4
-      }     
-            await NepBotzInc.sendMessage(m.chat, buttonszzsx1212Messages,{ quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break
-case 'animesmug':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
- waifudd = await axios.get(`https://api.waifu.pics/sfw/smug`)
-                           var wbuttszz1213ss = [
-        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
-        ]
-      let buttonszzsx1213Messages = {
-       image: {url:waifudd.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-      buttons: wbuttszz1213ss,
-      headerType: 4
-      }     
-            await NepBotzInc.sendMessage(m.chat, buttonszzsx1213Messages,{ quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break
-case 'animeglomp':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
- waifudd = await axios.get(`https://api.waifu.pics/sfw/glomp`)
-                           var wbuttszz1214ss = [
-        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
-        ]
-      let buttonszzsx1214Messages = {
-       image: {url:waifudd.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-      buttons: wbuttszz1214ss,
-      headerType: 4
-      }     
-            await NepBotzInc.sendMessage(m.chat, buttonszzsx1214Messages,{ quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break
-case 'animehappy':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
- waifudd = await axios.get(`https://api.waifu.pics/sfw/happy`)
-                           var wbuttszz1215ss = [
-        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
-        ]
-      let buttonszzsx1215Messages = {
-       image: {url:waifudd.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-      buttons: wbuttszz1215ss,
-      headerType: 4
-      }     
-            await NepBotzInc.sendMessage(m.chat, buttonszzsx1215Messages,{ quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break
-case 'animedance':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
- waifudd = await axios.get(`https://api.waifu.pics/sfw/dance`)
-                           var wbuttszz1216ss = [
-        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
-        ]
-      let buttonszzsx1216Messages = {
-       image: {url:waifudd.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-      buttons: wbuttszz1216ss,
-      headerType: 4
-      }     
-            await NepBotzInc.sendMessage(m.chat, buttonszzsx1216Messages,{ quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break
-case 'animecringe':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
- waifudd = await axios.get(`https://api.waifu.pics/sfw/cringe`)
-                           var wbuttszz1217ss = [
-        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
-        ]
-      let buttonszzsx1217Messages = {
-       image: {url:waifudd.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-      buttons: wbuttszz1217ss,
-      headerType: 4
-      }     
-            await NepBotzInc.sendMessage(m.chat, buttonszzsx1217Messages,{ quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break
-case 'animehighfive':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
- waifudd = await axios.get(`https://api.waifu.pics/sfw/highfive`)
-                           var wbuttszz1218ss = [
-        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
-        ]
-      let buttonszzsx1218Messages = {
-       image: {url:waifudd.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-      buttons: wbuttszz1218ss,
-      headerType: 4
-      }     
-            await NepBotzInc.sendMessage(m.chat, buttonszzsx1218Messages,{ quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break
-case 'animehandhold':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
- waifudd = await axios.get(`https://api.waifu.pics/sfw/handhold`)
-                           var wbuttszz1219ss = [
-        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
-        ]
-      let buttonszzsx1219Messages = {
-       image: {url:waifudd.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-      buttons: wbuttszz1219ss,
-      headerType: 4
-      }     
-            await NepBotzInc.sendMessage(m.chat, buttonszzsx1219Messages,{ quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break
-case 'animemegumin':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
- waifudd = await axios.get(`https://api.waifu.pics/sfw/megumin`)
-                           var wbuttszz1220ss = [
-        {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
-        ]
-      let buttonszzsx1220Messages = {
-       image: {url:waifudd.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-      buttons: wbuttszz1220ss,
-      headerType: 4
-      }     
-            await NepBotzInc.sendMessage(m.chat, buttonszzsx1220Messages,{ quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break
-case 'shinobu2':  
- if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
-                    ud = await axios.get('https://waifu.pics/api/sfw/shinobu')
-var wbutsss = [
-    {buttonId: `.shinobu`, buttonText: {displayText: `Next ✨`}, type: 1},
-         ]
-      let buttonsesMessage = {
-      image: {url:ud.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-          buttons: wbutsss,
-     headerType: 4
-                      }
-await NepBotzInc.sendMessage(m.chat,buttonsesMessage, { quoted:m }).catch(err => {
-     return('Error!')
-    })               
-break
-case 'megumin2':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
-                    ud = await axios.get('https://waifu.pics/api/sfw/megumin')
-var wbutsss = [
-    {buttonId: `.megumin`, buttonText: {displayText: `Next ✨`}, type: 1},
-         ]
-      let buttonzMessage = {
-      image: {url:ud.data.url},
-       caption:  `Here you go!`,
-      footer: `${global.botname}`,
-          buttons: wbutsss,
-     headerType: 4
-                      }
-await NepBotzInc.sendMessage(m.chat,buttonzMessage, { quoted:m }).catch(err => {
-     return('Error!')
-    })               
-break     
-case 'awoo2':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
- waifudd = await axios.get(`https://waifu.pics/api/sfw/awoo`)
- var wbuttsss = [
-    {buttonId: `.${command}`, buttonText: {displayText: `Next ✨`}, type: 1},
-    ]
-  let button1Messages = {
-   image: {url:waifudd.data.url},
-   caption:  `Here you go!`,
-   footer: `${global.botname}`,
-  buttons: wbuttsss,
-  headerType: 2
-  }       
-            await NepBotzInc.sendMessage(m.chat, button1Messages, { quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break
-case 'animewall2': case 'animewallpaper2':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-reply(mess.wait)						
-const { AnimeWallpaper } =require("anime-wallpaper")
-if(!q) return reply('What wallpaper do you want?')
-const wall = new AnimeWallpaper();
-    const pages = [1,2,3,4];
-        const random=pages[Math.floor(Math.random() * pages.length)]
-        const wallpaper = await wall
-            .getAnimeWall4({ title: q, type: "sfw", page: pages })
-            .catch(() => null);
-const i = Math.floor(Math.random() * wallpaper.length);
-var walb = [
-        {buttonId: `.${command} ${q}`, buttonText: {displayText: `Next ✨`}, type: 1},        
-        ]
-      let wal = {
-       image: {url:wallpaper[i].image},
-       caption: `*Query :* ${q}`,
-      footer: `${global.botname}`,
-      buttons: walb,
-      headerType: 4
-      }     
-            await NepBotzInc.sendMessage(m.chat, wal,{ quoted:m }).catch(err => {
-                    return('Error!')
-                })
-//NepBotzInc.sendMessage(m.chat,{image:{url:wallpaper[i].image},caption:`*Query :* ${q}`})            
-break
-case 'cry':case 'kill':case 'hug':case 'pat':case 'lick':case 'kiss':case 'bite':case 'yeet':case 'neko':case 'bully':case 'bonk':case 'wink':case 'poke':case 'nom':case 'slap':case 'smile':case 'wave':case 'awoo':case 'blush':case 'smug':case 'glomp':case 'happy':case 'dance':case 'cringe':case 'cuddle':case 'highfive':case 'shinobu':case 'megumin':case 'handhold':
-   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-					axios.get(`https://api.waifu.pics/sfw/${command}`)
-					.then(({data}) => {
-						NepBotzInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
-					})
-					break
-case 'waifu': case 'loli':
-					   if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-					reply(mess.wait)
-					axios.get(`https://api.waifu.pics/sfw/waifu`)
-					.then(({data}) => {
-					NepBotzInc.sendImage(m.chat, data.url, mess.success, m)
-					})
-					break
-case 'naruto':
-			if (isBan) return reply(mess.ban)
-	if (isBanChat) return reply(mess.banChat)
-				reply(mess.wait)
-			    var query = ["naruto hd","naruto boruto","naruto sasuke", "naruto aesthetic", "naruto aesthetic"]
-                var data = await pinterest(pickRandom(query))
-				var but = [{buttonId: `naruto`, buttonText: { displayText: "Next➡️" }, type: 1 }]
-				NepBotzInc.sendMessage(from, { caption: `Here you go!`, image: { url: pickRandom(data.result) }, buttons: but, footer: `${botname}` }, { quoted: m })
- 			    break
 case 'yaoi':
 			if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
@@ -5800,7 +4962,7 @@ reply(mess.wait)
 emote(q, "10")
 break
 
-case 'emojimix': {
+case 'emojimix': case 'emomix': {
 	   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!q) reply(`*Example :* ${prefix + command} 🦄+🤣`)
@@ -5942,7 +5104,7 @@ let search = await yts(args.join(" "))
 let teks = '*| YOUTUBE SEARCH |*\n\n Result From '+text+'\n\n'
 let no = 1
 for (let i of search.all) {
-teks += `${global.themeemoji} No : ${no++}\n${global.themeemoji} Type : ${i.type}\n${global.themeemoji} Video ID : ${i.videoId}\n${global.themeemoji} Title : ${i.title}\n${global.themeemoji} Views : ${i.views}\n${global.themeemoji} Duration : ${i.timestamp}\n${global.themeemoji} Uploaded : ${i.ago}\n${global.themeemoji} Author : ${i.author.name}\n${global.themeemoji} Url : ${i.url}\n\n─────────────────\n\n`
+teks += `┏━✪ 🧚‍♀️Queen Alita Youtube Search🧚‍♀️ ✪━\n┃➣│🧚‍♀️ No : ${no++}\n┃➣│🧚‍♀️ Type : ${i.type}\n┃➣│🧚‍♀️ Video ID : ${i.videoId}\n┃➣│🧚‍♀️ Title : ${i.title}\n┃➣│🧚‍♀️ Views : ${i.views}\n┃➣│🧚‍♀️ Duration : ${i.timestamp}\n┃➣│🧚‍♀️ Uploaded On : ${i.ago}\n┃➣│🧚‍♀️ Author : ${i.author.name}\n┃➣│🧚‍♀️ Url : ${i.url}\n\n─────────────────\n\n`
 }
 NepBotzInc.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
 }
@@ -5953,11 +5115,11 @@ if (isBanChat) return reply(mess.banChat)
 if (!args[0]) return reply(`Example: ${prefix + command} <query>\nUses : ${prefix + command} apa arti cinta`)
 let google = require('google-it')
 google({'query': args.join(" ")}).then(res => {
-let teks = `Google Search From : ${text}\n\n`
+let teks = `┏━✪ 🧚‍♀️Google Search From : ${text}🧚‍♀️ ✪━\n\n`
 for (let g of res) {
-teks += `${global.themeemoji} *Title* : ${g.title}\n`
-teks += `${global.themeemoji} *Description* : ${g.snippet}\n`
-teks += `${global.themeemoji} *Link* : ${g.link}\n\n────────────────────────\n\n`
+teks += `┃➣│🧚‍♀️ *Title* : ${g.title}\n`
+teks += `┃➣│🧚‍♀️ *Description* : ${g.snippet}\n`
+teks += `┃➣│🧚‍♀️ *Link* : ${g.link}\n\n────────────────────────\n\n`
 } 
 reply(teks)
 })
@@ -5972,14 +5134,14 @@ gis(args.join(" "), async (error, result) => {
 n = result
 images = n[Math.floor(Math.random() * n.length)].url
 let buttons = [
-{buttonId: `gimage ${args.join(" ")}`, buttonText: {displayText: 'Next Image 👀'}, type: 1}
+{buttonId: `img ${args.join(" ")}`, buttonText: {displayText: 'Next Image'}, type: 1}
 ]
 let buttonMessage = {
 image: { url: images },
-caption: `*| GOOGLE IMAGE |*
+caption: `┏━✪ 🧚‍♀️ GOOGLE IMAGE 🧚‍♀️ ✪━*
 
-Query : ${text}
-Media Url : ${images}`,
+┃➣│🧚‍♀️ Query : ${text}
+┃➣│🧚‍♀️ Media Url : ${images}`,
 footer: `${global.footer}`,
 buttons: buttons,
 headerType: 4,
