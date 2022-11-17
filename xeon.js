@@ -122,15 +122,15 @@ async function startNepBotzInc() {
        }
        let lolXeon = { url : ppgc }
        if (pea[0].announce == true) {
-       NepBotzInc.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nThe Group Has Been Closed By Admin, Now Only Admin Can Send Messages !`, `${botname}`, lolXeon, [])
+       NepBotzInc.sendMessage(pea[0].id, `「 Group Settings Changed 」\n\nThe Group Has Been Closed By Admin, Now Only Admin Can Send Messages !`, `${botname}`, lolXeon, [])
        } else if(pea[0].announce == false) {
-       NepBotzInc.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nThe Group Has Been Opened By Admin, Now Participants Can Send Messages !`, `${botname}`, lolXeon, [])
+       NepBotzInc.sendMessage(pea[0].id, `「 Group Settings Changed 」\n\nThe Group Has Been Opened By Admin, Now Participants Can Send Messages !`, `${botname}`, lolXeon, [])
        } else if (pea[0].restrict == true) {
-       NepBotzInc.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nGroup Info Has Been Restricted, Now Only Admin Can Edit Group Info !`, `${botname}`, lolXeon, [])
+       NepBotzInc.sendMesaage(pea[0].id, `「 Group Settings Changed 」\n\nGroup Info Has Been Restricted, Now Only Admin Can Edit Group Info !`, `${botname}`, lolXeon, [])
        } else if (pea[0].restrict == false) {
-       NepBotzInc.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nGroup Info Has Been Opened, Now Participants Can Edit Group Info !`, `${botname}`, lolXeon, [])
+       NepBotzInc.sendMessage(pea[0].id, `「 Group Settings Changed 」\n\nGroup Info Has Been Opened, Now Participants Can Edit Group Info !`, `${botname}`, lolXeon, [])
        } else {
-       NepBotzInc.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nGroup Subject Has Been Changed To *${pea[0].subject}*`, `${botname}`, lolXeon, [])
+       NepBotzInc.sendMessage(pea[0].id, `「 Group Settings Changed 」\n\nGroup Subject Has Been Changed To *${pea[0].subject}*`, `${botname}`, lolXeon, [])
      }
     })
     
@@ -206,7 +206,7 @@ buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
 mediaType:2,
-thumbnail: XeonWlcm,
+thumbnail: ppusrn,
 sourceUrl: `${websitex}`,
 mediaUrl: `${websitex}`
 }}
@@ -243,16 +243,16 @@ let buttons = [
 ]
 let buttonMessage = {
 image: fs.readFileSync('./XeonMedia/theme/gb.jpg'),
-jpegThumbnail:ppusr,
+jpegThumbnail:ppusrn,
 mentions: [num],
 fileLength: 99999999999999,
 caption: xeonbody,
-footer: `${botname}`,
+footer: `${global.footer}`,
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
 mediaType:2,
-thumbnail: XeonLft,
+thumbnail: ppusrn,
 sourceUrl: `${websitex}`,
 mediaUrl: `${websitex}`
 }}
