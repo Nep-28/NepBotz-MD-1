@@ -150,7 +150,7 @@ ppusrn = await getBuffer(`ppuser`)
                 const xtime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
 	            const xdate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
 	            const xmembers = metadata.participants.length
-                let unicorndoc = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "916909137213-1604595598@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: ppusr, surface: 200, message: `${metadata.subject}`, orderTitle: 'xeon', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
+                let unicorndoc = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "916909137213-1604595598@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, surface: 200, message: `${metadata.subject}`, orderTitle: 'xeon', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
                 xeonbody = `╭┅═┅❖
 ┃「 Hi 」
 ╰┅═┅❖
@@ -175,17 +175,13 @@ let buttons = [
 ]
 let buttonMessage = {
 image: fs.readFileSync('./XeonMedia/theme/wc.jpg'),
-jpegThumbnail:ppusr,
 mentions: [num],
 caption: xeonbody,
 footer: `${global.footer}`,
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
-mediaType:2,
-thumbnail: ppusrn,
-sourceUrl: `${websitex}`,
-mediaUrl: `${websitex}`
+mediaType:2
 }}
 }
 NepBotzInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
@@ -195,7 +191,7 @@ NepBotzInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
 	                const xeondate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
                 	let xeonName = num
                     const xeonmembers = metadata.participants.length
-                    let unicorndoc = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "916909137213-1604595598@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: ppusrn, surface: 200, message: `${metadata.subject}`, orderTitle: 'xeon', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
+                    let unicorndoc = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "916909137213-1604595598@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, surface: 200, message: `${metadata.subject}`, orderTitle: 'xeon', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
                     xeonbody = `╭┅═┅❖
 ┃「 Goodbye」
 ╰┅═┅❖
@@ -220,18 +216,13 @@ let buttons = [
 ]
 let buttonMessage = {
 image: fs.readFileSync('./XeonMedia/theme/gb.jpg'),
-jpegThumbnail:ppusrn,
 mentions: [num],
-fileLength: 99999999999999,
 caption: xeonbody,
 footer: `${global.footer}`,
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
-mediaType:2,
-thumbnail: ppusrn,
-sourceUrl: `${websitex}`,
-mediaUrl: `${websitex}`
+mediaType:2
 }}
 }
 NepBotzInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
