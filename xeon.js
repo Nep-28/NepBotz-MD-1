@@ -65,8 +65,8 @@ async function startNepBotzInc() {
     NepBotzInc.ws.on('CB:call', async (json) => {
     const callerId = json.content[0].attrs['call-creator']
     if (json.content[0].tag == 'offer') {
-    let xeonfek = await NepBotzInc.sendContact(callerId, global.owner)
-    NepBotzInc.sendMessage(callerId, { text: `Automatic Block System!\nDon't Call Bot!\nPlease Ask Or Contact The Owner To Unblock You!`}, { quoted : xeonfek })
+    let ownnum = await NepBotzInc.sendContact(callerId, global.owner)
+    NepBotzInc.sendMessage(callerId, { text: `Automatic Block System!\nDon't Call Bot!\nPlease Ask Or Contact The Owner To Unblock You!`}, { quoted : ownnum })
     await sleep(8000)
     await NepBotzInc.updateBlockStatus(callerId, "block")
     }
