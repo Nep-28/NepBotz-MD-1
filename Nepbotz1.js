@@ -2318,7 +2318,6 @@ if (isBanChat) return reply(mess.banChat)
                 if (!isAdmins) return replay(`${mess.admin}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 		await NepBotzInc.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(`User has been kicked successfully`)).catch((err) => reply(jsonformat(err)))
-	await replay(`User has been kicked successfull`)
     }
 	break
 	case 'add': {
