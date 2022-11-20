@@ -1589,6 +1589,7 @@ break
 	    case 'afk': {
 		if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+if (!isCreator) return
                 let user = global.db.data.users[m.sender]
                 user.afkTime = + new Date
                 user.afkReason = text
@@ -1961,10 +1962,7 @@ if (isBanChat) return reply(mess.banChat)
 				     break
                     case 'awesomecheck':
   case 'greatcheck':
-    case 'gaycheck':
       case 'cutecheck':
-        case 'lesbicheck':
-          case 'lesbiancheck':
              case 'hornycheck':
                  case 'prettycheck':
                     case 'lovelycheck':
@@ -1982,13 +1980,10 @@ NepBotzInc.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${s
 	case 'idiot':
       case 'bastard':
       case 'stubble':
-      case 'dog':
-      case 'fuck':
       case 'ape':
       case 'noob':
       case 'great':
       case 'horny':
-      case 'wibu':
       case 'asshole':
       case 'handsome':
       case 'beautiful':
@@ -2002,9 +1997,6 @@ NepBotzInc.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${s
       case 'madarchod':
       case 'kala':
       case 'gora':
-      case 'chutiya':
-      case 'nibba':
-      case 'nibbi':
       case 'bhosdiwala':
       case 'chutmarika':
       case 'bokachoda':
@@ -2023,10 +2015,6 @@ NepBotzInc.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${s
       case 'mc':
       case 'bsdk':
       case 'bhosdk':
-      case 'nigger':
-      case 'loda':
-      case 'laund':
-      case 'nigga':
       case 'noobra':
       case 'tharki':
       case 'nibba':
@@ -2044,8 +2032,6 @@ NepBotzInc.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${s
       case 'lit':
       case 'dumbass':
       case 'sexy':
-      case 'crackhead':
-      case 'mf':
       case 'motherfucker':
       case 'dogla':
       case 'bewda':
@@ -9168,6 +9154,11 @@ if (isBanChat) return reply(mess.banChat)
 										"description": "𝐃𝐢𝐬𝐩𝐥𝐚𝐲𝐬 𝐓𝐡𝐞 𝐋𝐢𝐬𝐭 𝐎𝐟 𝐎𝐰𝐧𝐞𝐫 𝐅𝐞𝐚𝐭𝐮𝐫𝐞𝐬",
 										"rowId": `${prefix}ownermenu`
 										},
+                                        {
+                                            "title": "╚══❖ 𝙒𝙖𝙧 𝙈𝙚𝙣𝙪",
+                                            "description": "𝐃𝐢𝐬𝐩𝐥𝐚𝐲𝐬 𝐓𝐡𝐞 𝐋𝐢𝐬𝐭 𝐎𝐟 𝐖𝐚𝐫 𝐅𝐞𝐚𝐭𝐮𝐫𝐞𝐬",
+                                            "rowId": `${prefix}warmenu`
+                                            },
 									{
 										"title": "╚══❖ 𝙂𝙧𝙤𝙪𝙥 𝙈𝙚𝙣𝙪",
 										"description": "𝐃𝐢𝐬𝐩𝐥𝐚𝐲𝐬 𝐓𝐡𝐞 𝐋𝐢𝐬𝐭 𝐎𝐟 𝐌𝐚𝐢𝐧 𝐅𝐞𝐚𝐭𝐮𝐫𝐞𝐬",
@@ -9299,24 +9290,63 @@ const buttons = [
 const buttonMessage = {
     image: unicorn,
     caption: `╔═══════✪「 OWNER 」	
-╠ ${prefix}private
-╠ ${prefix}public
-╠ ${prefix}antitag
-╠ ${prefix}ban [add/del]
-╠ ${prefix}banchat [on/off]
-╠ ${prefix}join [link]
-╠ ${prefix}leavegc
-╠ ${prefix}setbio
-╠ ${prefix}block [user]
-╠ ${prefix}unblock [user]
-╠ ${prefix}bcgroup [text]
-╠ ${prefix}bcall [text]
-╠ ${prefix}bcimage [image]
-╠ ${prefix}bcvideo [video]
-╠ ${prefix}bcaudio [audio]
-╠ ${prefix}bcloc [text]
-╠ ${prefix}setppbot [image]
-╠ ${prefix}setexif
+┃➣│ ${prefix}private
+┃➣│ ${prefix}public
+┃➣│ ${prefix}antitag
+┃➣│ ${prefix}ban [add/del]
+┃➣│ ${prefix}banchat [on/off]
+┃➣│ ${prefix}join [link]
+┃➣│ ${prefix}leavegc
+┃➣│ ${prefix}setbio
+┃➣│ ${prefix}block [user]
+┃➣│ ${prefix}unblock [user]
+┃➣│ ${prefix}bcgroup [text]
+┃➣│ ${prefix}bcall [text]
+┃➣│ ${prefix}bcimage [image]
+┃➣│ ${prefix}bcvideo [video]
+┃➣│ ${prefix}bcaudio [audio]
+┃➣│ ${prefix}bcloc [text]
+┃➣│ ${prefix}setppbot [image]
+┃➣│ ${prefix}setexif
+╚═════════════✪`,
+    footer: `${global.footer}`,
+    buttons: buttons,
+    headerType: 4
+}
+const sendMsg = await NepBotzInc.sendMessage(m.chat, buttonMessage)
+}
+break
+case 'ownermenu':{
+	if (isBan) return reply(mess.ban)
+	if (isBanChat) return reply(mess.banChat)
+    if (!isCreator) return replay(`${mess.owner}`)
+	   var unicorn = await getBuffer(picak+'War Menu')
+NepBotzInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
+const buttons = [
+  {buttonId: 'script', buttonText: {displayText: 'Script '}, type: 1},
+  {buttonId: 'donate', buttonText: {displayText: 'Donate '}, type: 1},
+  {buttonId: 'owner', buttonText: {displayText: 'Owner '}, type: 1}
+]
+const buttonMessage = {
+    image: unicorn,
+    caption: `╔═══════✪「 WAR 」	
+┃➣│ ${prefix}pcbut [Number]
+┃➣│ ${prefix}pcstick [Number]
+┃➣│ ${prefix}pcvn [Number]
+┃➣│ ${prefix}catalogbug
+┃➣│ ${prefix}vnbug [vnbug 2]
+┃➣│ ${prefix}docbug [docbug 2]
+┃➣│ ${prefix}pcmass [Number]
+┃➣│ ${prefix}pcgcmass [Number]
+┃➣│ ${prefix}gcmass [Group]
+┃➣│ ${prefix}gcinfinite [Group]
+┃➣│ ${prefix}pcinfinite [Number]
+┃➣│ ${prefix}pcgcinfinite [Number]
+┃➣│ ${prefix}gcbunny [Group]
+┃➣│ ${prefix}pcbunny [Number]
+┃➣│ ${prefix}pcgcbunny [Number]
+┃➣│ ${prefix}xcrasher [xcrasher 2]
+┃➣│ ${prefix}gccontact [Group]
 ╚═════════════✪`,
     footer: `${global.footer}`,
     buttons: buttons,
@@ -9338,45 +9368,45 @@ const buttons = [
 const buttonMessage = {
     image: unicorn,
     caption: `╔═══════✪「 GROUP 」	
-╠${prefix}settings
-╠${prefix}invite
-╠${prefix}ephemeral [option]
-╠${prefix}setgcpp [image]
-╠${prefix}setname [text]
-╠${prefix}setdesc [text]
-╠${prefix}group
-╠${prefix}botgroups
-╠${prefix}resetgrouplink
-╠${prefix}editinfo [option]
-╠${prefix}add [user]
-╠${prefix}kick [reply/tag]
-╠${prefix}hidetag [text]
-╠${prefix}tagall [text]
-╠${prefix}autosticker [on/off]
-╠${prefix}autostickerpc [on/off]
-╠${prefix}leveling [on/off]
-╠${prefix}antilinkgc [on/off]
-╠${prefix}antilinktg [on/off]
-╠${prefix}antilinktt [on/off]
-╠${prefix}antilinkytch [on/off]
-╠${prefix}antilinkytvid [on/off]
-╠${prefix}antilinkig [on/off]
-╠${prefix}antilinkfb [on/off]
-╠${prefix}antilinktwit [on/off]
-╠${prefix}antilinkall [on/off]
-╠${prefix}antivirus [on/off]
-╠${prefix}antitoxic [on/off]
-╠${prefix}antiwame [on/off]
-╠${prefix}nsfw [on/off]
-╠${prefix}promote [reply/tag]
-╠${prefix}demote [reply/tag]
-╠${prefix}react [reply emoji]
-╠${prefix}getpp [reply user]
-╠${prefix}vote
-╠${prefix}devote
-╠${prefix}upvote
-╠${prefix}checkvote
-╠${prefix}delvote
+┃➣│ ${prefix}settings
+┃➣│ ${prefix}invite
+┃➣│ ${prefix}ephemeral [option]
+┃➣│ ${prefix}setgcpp [image]
+┃➣│ ${prefix}setname [text]
+┃➣│ ${prefix}setdesc [text]
+┃➣│ ${prefix}group
+┃➣│ ${prefix}botgroups
+┃➣│ ${prefix}resetgrouplink
+┃➣│ ${prefix}editinfo [option]
+┃➣│ ${prefix}add [user]
+┃➣│ ${prefix}kick [reply/tag]
+┃➣│ ${prefix}hidetag [text]
+┃➣│ ${prefix}tagall [text]
+┃➣│ ${prefix}autosticker [on/off]
+┃➣│ ${prefix}autostickerpc [on/off]
+┃➣│ ${prefix}leveling [on/off]
+┃➣│ ${prefix}antilinkgc [on/off]
+┃➣│ ${prefix}antilinktg [on/off]
+┃➣│ ${prefix}antilinktt [on/off]
+┃➣│ ${prefix}antilinkytch [on/off]
+┃➣│ ${prefix}antilinkytvid [on/off]
+┃➣│ ${prefix}antilinkig [on/off]
+┃➣│ ${prefix}antilinkfb [on/off]
+┃➣│ ${prefix}antilinktwit [on/off]
+┃➣│ ${prefix}antilinkall [on/off]
+┃➣│ ${prefix}antivirus [on/off]
+┃➣│ ${prefix}antitoxic [on/off]
+┃➣│ ${prefix}antiwame [on/off]
+┃➣│ ${prefix}nsfw [on/off]
+┃➣│ ${prefix}promote [reply/tag]
+┃➣│ ${prefix}demote [reply/tag]
+┃➣│ ${prefix}react [reply emoji]
+┃➣│ ${prefix}getpp [reply user]
+┃➣│ ${prefix}vote
+┃➣│ ${prefix}devote
+┃➣│ ${prefix}upvote
+┃➣│ ${prefix}checkvote
+┃➣│ ${prefix}delvote
 ╚═════════════✪`,
     footer: `${global.footer}`,
     buttons: buttons,
@@ -9399,17 +9429,17 @@ const buttons = [
 const buttonMessage = {
     image: unicorn,
     caption: `╔═══════✪「 RPG 」	
-╠${prefix}hunt
-╠${prefix}mine
-╠${prefix}fish
-╠${prefix}heal
-╠${prefix}blood
-╠${prefix}stab
-╠${prefix}buy
-╠${prefix}sell
-╠${prefix}profile
-╠${prefix}inventory
-╠${prefix}leaderboard
+┃➣│ ${prefix}hunt
+┃➣│ ${prefix}mine
+┃➣│ ${prefix}fish
+┃➣│ ${prefix}heal
+┃➣│ ${prefix}blood
+┃➣│ ${prefix}stab
+┃➣│ ${prefix}buy
+┃➣│ ${prefix}sell
+┃➣│ ${prefix}profile
+┃➣│ ${prefix}inventory
+┃➣│ ${prefix}leaderboard
 ╚═════════════✪`,
     footer: `${global.footer}`,
     buttons: buttons,
@@ -9431,113 +9461,113 @@ const buttons = [
 const buttonMessage = {
     image: unicorn,
     caption: `╔═══════✪「 MAKER 」	
-╠${prefix}candy
-╠${prefix}8bit
-╠${prefix}horror
-╠${prefix}hoorror
-╠${prefix}retro
-╠${prefix}blackpinkneon
-╠${prefix}deepsea
-╠${prefix}scifi
-╠${prefix}fiction
-╠${prefix}berry
-╠${prefix}fruitjuice
-╠${prefix}biscuit
-╠${prefix}wood
-╠${prefix}chocolate
-╠${prefix}matrix
-╠${prefix}blood
-╠${prefix}halloween
-╠${prefix}wicker
-╠${prefix}darkgold
-╠${prefix}firework
-╠${prefix}skeleton
-╠${prefix}sand
-╠${prefix}glue
-╠${prefix}leaves
-╠${prefix}magma
-╠${prefix}lava
-╠${prefix}rock
-╠${prefix}bloodglas
-╠${prefix}underwater
-╠${prefix}textmaker
-╠${prefix}honey
-╠${prefix}ice
-╠${prefix}watercolor
-╠${prefix}multicolor
-╠${prefix}snow
-╠${prefix}harrypot
-╠${prefix}harrypotter
-╠${prefix}brokenglass
-╠${prefix}waterpipe
-╠${prefix}spooky
-╠${prefix}circuit
-╠${prefix}metallic
-╠${prefix}demon
-╠${prefix}sparklechristmas
-╠${prefix}christmas
-╠${prefix}3dchristmas
-╠${prefix}3dbox
-╠${prefix}waterdrop
-╠${prefix}lion2
-╠${prefix}papercut
-╠${prefix}transformer
-╠${prefix}neondevil
-╠${prefix}3davengers
-╠${prefix}3dstone
-╠${prefix}3dstone2
-╠${prefix}summertime
-╠${prefix}thunder
-╠${prefix}window
-╠${prefix}graffiti
-╠${prefix}graffitibike
-╠${prefix}pornhub
-╠${prefix}glitch
-╠${prefix}blackpink
-╠${prefix}glitch2
-╠${prefix}glitch3
-╠${prefix}3dspace
-╠${prefix}lion
-╠${prefix}3dneon
-╠${prefix}greenneon
-╠${prefix}bokeh
-╠${prefix}holographic
-╠${prefix}bear
-╠${prefix}wolf
-╠${prefix}joker
-╠${prefix}dropwater
-╠${prefix}dropwater2
-╠${prefix}thewall
-╠${prefix}neonlight
-╠${prefix}natural
-╠${prefix}carbon
-╠${prefix}pencil
-╠${prefix}blackpink2
-╠${prefix}neon
-╠${prefix}neonlight2
-╠${prefix}toxic
-╠${prefix}strawberry
-╠${prefix}discovery
-╠${prefix}1917
-╠ ${prefix}sci_fi
-╠ ${prefix}ancient
-╠ ${prefix}fabric
-╠ ${prefix}hoorror
-╠ ${prefix}whitebear
-╠ ${prefix}juice
-╠ ${prefix}batman
-╠ ${prefix}multicolor
-╠ ${prefix}collwall
-╠ ${prefix}wonderful
-╠ ${prefix}cool
-╠ ${prefix}sketch
-╠ ${prefix}marvel
-╠ ${prefix}foggy
-╠ ${prefix}writing
-╠ ${prefix}halloweenfire
-╠ ${prefix}halloween
-╠ ${prefix}watercolor
-╠ ${prefix}classic
+┃➣│ ${prefix}candy
+┃➣│ ${prefix}8bit
+┃➣│ ${prefix}horror
+┃➣│ ${prefix}hoorror
+┃➣│ ${prefix}retro
+┃➣│ ${prefix}blackpinkneon
+┃➣│ ${prefix}deepsea
+┃➣│ ${prefix}scifi
+┃➣│ ${prefix}fiction
+┃➣│ ${prefix}berry
+┃➣│ ${prefix}fruitjuice
+┃➣│ ${prefix}biscuit
+┃➣│ ${prefix}wood
+┃➣│ ${prefix}chocolate
+┃➣│ ${prefix}matrix
+┃➣│ ${prefix}blood
+┃➣│ ${prefix}halloween
+┃➣│ ${prefix}wicker
+┃➣│ ${prefix}darkgold
+┃➣│ ${prefix}firework
+┃➣│ ${prefix}skeleton
+┃➣│ ${prefix}sand
+┃➣│ ${prefix}glue
+┃➣│ ${prefix}leaves
+┃➣│ ${prefix}magma
+┃➣│ ${prefix}lava
+┃➣│ ${prefix}rock
+┃➣│ ${prefix}bloodglas
+┃➣│ ${prefix}underwater
+┃➣│ ${prefix}textmaker
+┃➣│ ${prefix}honey
+┃➣│ ${prefix}ice
+┃➣│ ${prefix}watercolor
+┃➣│ ${prefix}multicolor
+┃➣│ ${prefix}snow
+┃➣│ ${prefix}harrypot
+┃➣│ ${prefix}harrypotter
+┃➣│ ${prefix}brokenglass
+┃➣│ ${prefix}waterpipe
+┃➣│ ${prefix}spooky
+┃➣│ ${prefix}circuit
+┃➣│ ${prefix}metallic
+┃➣│ ${prefix}demon
+┃➣│ ${prefix}sparklechristmas
+┃➣│ ${prefix}christmas
+┃➣│ ${prefix}3dchristmas
+┃➣│ ${prefix}3dbox
+┃➣│ ${prefix}waterdrop
+┃➣│ ${prefix}lion2
+┃➣│ ${prefix}papercut
+┃➣│ ${prefix}transformer
+┃➣│ ${prefix}neondevil
+┃➣│ ${prefix}3davengers
+┃➣│ ${prefix}3dstone
+┃➣│ ${prefix}3dstone2
+┃➣│ ${prefix}summertime
+┃➣│ ${prefix}thunder
+┃➣│ ${prefix}window
+┃➣│ ${prefix}graffiti
+┃➣│ ${prefix}graffitibike
+┃➣│ ${prefix}pornhub
+┃➣│ ${prefix}glitch
+┃➣│ ${prefix}blackpink
+┃➣│ ${prefix}glitch2
+┃➣│ ${prefix}glitch3
+┃➣│ ${prefix}3dspace
+┃➣│ ${prefix}lion
+┃➣│ ${prefix}3dneon
+┃➣│ ${prefix}greenneon
+┃➣│ ${prefix}bokeh
+┃➣│ ${prefix}holographic
+┃➣│ ${prefix}bear
+┃➣│ ${prefix}wolf
+┃➣│ ${prefix}joker
+┃➣│ ${prefix}dropwater
+┃➣│ ${prefix}dropwater2
+┃➣│ ${prefix}thewall
+┃➣│ ${prefix}neonlight
+┃➣│ ${prefix}natural
+┃➣│ ${prefix}carbon
+┃➣│ ${prefix}pencil
+┃➣│ ${prefix}blackpink2
+┃➣│ ${prefix}neon
+┃➣│ ${prefix}neonlight2
+┃➣│ ${prefix}toxic
+┃➣│ ${prefix}strawberry
+┃➣│ ${prefix}discovery
+┃➣│ ${prefix}1917
+┃➣│ ${prefix}sci_fi
+┃➣│ ${prefix}ancient
+┃➣│ ${prefix}fabric
+┃➣│ ${prefix}hoorror
+┃➣│ ${prefix}whitebear
+┃➣│ ${prefix}juice
+┃➣│ ${prefix}batman
+┃➣│ ${prefix}multicolor
+┃➣│ ${prefix}collwall
+┃➣│ ${prefix}wonderful
+┃➣│ ${prefix}cool
+┃➣│ ${prefix}sketch
+┃➣│ ${prefix}marvel
+┃➣│ ${prefix}foggy
+┃➣│ ${prefix}writing
+┃➣│ ${prefix}halloweenfire
+┃➣│ ${prefix}halloween
+┃➣│ ${prefix}watercolor
+┃➣│ ${prefix}classic
 ╚═════════════✪`,
     footer: `${global.footer}`,
     buttons: buttons,
@@ -9559,26 +9589,26 @@ const buttons = [
 const buttonMessage = {
     image: unicorn,
     caption: `╔═══════✪「 DOWNLOAD 」	
-╠${prefix}instagram [url]
-╠${prefix}igtv [url]
-╠${prefix}igstory [username]
-╠${prefix}facebook [url]
-╠${prefix}fbmp3 [url]
-╠${prefix}twitter [url]
-╠${prefix}twittermp3 [url]
-╠${prefix}tiktok [url]
-╠${prefix}tiktokaudio [url]
-╠${prefix}tiktoknowm [url]
-╠${prefix}instagram [url]
-╠${prefix}igstory [url]
-╠${prefix}mediafire [url]
-╠${prefix}ytmp3 [url|quality]
-╠${prefix}ytmp4 [url|quality]
-╠${prefix}getmusic [yt link]
-╠${prefix}getvideo [yt link]
-╠${prefix}gitclone [repo link]
-╠${prefix}soundcloud [url]
-╠${prefix}zippyshare [url]
+┃➣│ ${prefix}instagram [url]
+┃➣│ ${prefix}igtv [url]
+┃➣│ ${prefix}igstory [username]
+┃➣│ ${prefix}facebook [url]
+┃➣│ ${prefix}fbmp3 [url]
+┃➣│ ${prefix}twitter [url]
+┃➣│ ${prefix}twittermp3 [url]
+┃➣│ ${prefix}tiktok [url]
+┃➣│ ${prefix}tiktokaudio [url]
+┃➣│ ${prefix}tiktoknowm [url]
+┃➣│ ${prefix}instagram [url]
+┃➣│ ${prefix}igstory [url]
+┃➣│ ${prefix}mediafire [url]
+┃➣│ ${prefix}ytmp3 [url|quality]
+┃➣│ ${prefix}ytmp4 [url|quality]
+┃➣│ ${prefix}getmusic [yt link]
+┃➣│ ${prefix}getvideo [yt link]
+┃➣│ ${prefix}gitclone [repo link]
+┃➣│ ${prefix}soundcloud [url]
+┃➣│ ${prefix}zippyshare [url]
 ╚═════════════✪`,
     footer: `${global.footer}`,
     buttons: buttons,
@@ -9600,31 +9630,31 @@ const buttons = [
 const buttonMessage = {
     image: unicorn,
     caption: `╔═══════✪「 SEARCH 」	
-╠${prefix}play [query]
-╠${prefix}song [query]
-╠${prefix}yts [query]
-╠${prefix}lyrics [query]
-╠${prefix}google [query]
-╠${prefix}gimage [query]
-╠${prefix}pinterest [query]
-╠${prefix}image [query]
-╠${prefix}film [query]
-╠${prefix}playstore [query]
-╠${prefix}wallpaper [query]
-╠${prefix}searchgc [query]
-╠${prefix}happymod [query]
-╠${prefix}servermc
-╠${prefix}mcpedl [query]
-╠${prefix}tvsearch [query]
-╠${prefix}wikimedia [query]
-╠${prefix}ytsearch [query]
-╠${prefix}ringtone [query]
-╠${prefix}webtoon [query]
-╠${prefix}anime [query]
-╠${prefix}manga [query]
-╠${prefix}wattpad [query]
-╠ ${prefix}mcserver [ip|port]
-╠${prefix}drakor [query]
+┃➣│ ${prefix}play [query]
+┃➣│ ${prefix}song [query]
+┃➣│ ${prefix}yts [query]
+┃➣│ ${prefix}lyrics [query]
+┃➣│ ${prefix}google [query]
+┃➣│ ${prefix}gimage [query]
+┃➣│ ${prefix}pinterest [query]
+┃➣│ ${prefix}image [query]
+┃➣│ ${prefix}film [query]
+┃➣│ ${prefix}playstore [query]
+┃➣│ ${prefix}wallpaper [query]
+┃➣│ ${prefix}searchgc [query]
+┃➣│ ${prefix}happymod [query]
+┃➣│ ${prefix}servermc
+┃➣│ ${prefix}mcpedl [query]
+┃➣│ ${prefix}tvsearch [query]
+┃➣│ ${prefix}wikimedia [query]
+┃➣│ ${prefix}ytsearch [query]
+┃➣│ ${prefix}ringtone [query]
+┃➣│ ${prefix}webtoon [query]
+┃➣│ ${prefix}anime [query]
+┃➣│ ${prefix}manga [query]
+┃➣│ ${prefix}wattpad [query]
+┃➣│ ${prefix}mcserver [ip|port]
+┃➣│ ${prefix}drakor [query]
 ╚═════════════✪`,
     footer: `${global.footer}`,
     buttons: buttons,
@@ -9646,34 +9676,34 @@ const buttons = [
 const buttonMessage = {
     image: unicorn,
     caption: `╔═══════✪「 CONVERT 」	
-╠ ${prefix}toimage [reply stick]
-╠ ${prefix}sticker [reply img|gif]
-╠ ${prefix}take [reply img|gif|stik]
-╠ ${prefix}smeme [reply img]
-╠ ${prefix}emoji [emoji]
-╠ ${prefix}tovideo [reply img]
-╠ ${prefix}togif [reply stick]
-╠ ${prefix}tourl [reply img]
-╠ ${prefix}tovn [reply aud]
-╠ ${prefix}tomp3 [reply vn]
-╠ ${prefix}toaudio [reply vid]
-╠ ${prefix}ebinary [reply txt]
-╠ ${prefix}dbinary [reply txt]
-╠ ${prefix}tinyurl [link]
-╠ ${prefix}styletext [text]
-╠${prefix}volume [reply aud]
-╠${prefix}tempo [reply aud]
-╠${prefix}bass [reply aud]
-╠${prefix}blown [reply aud]
-╠${prefix}deep [reply aud]
-╠${prefix}earrape [reply aud]
-╠${prefix}fast [reply aud]
-╠${prefix}fat [reply aud]
-╠${prefix}nightcore [reply aud]
-╠${prefix}reverse [reply aud]
-╠${prefix}robot [reply aud]
-╠${prefix}slow [reply aud]
-╠${prefix}squirrel [reply aud]
+┃➣│ ${prefix}toimage [reply stick]
+┃➣│ ${prefix}sticker [reply img|gif]
+┃➣│ ${prefix}take [reply img|gif|stik]
+┃➣│ ${prefix}smeme [reply img]
+┃➣│ ${prefix}emoji [emoji]
+┃➣│ ${prefix}tovideo [reply img]
+┃➣│ ${prefix}togif [reply stick]
+┃➣│ ${prefix}tourl [reply img]
+┃➣│ ${prefix}tovn [reply aud]
+┃➣│ ${prefix}tomp3 [reply vn]
+┃➣│ ${prefix}toaudio [reply vid]
+┃➣│ ${prefix}ebinary [reply txt]
+┃➣│ ${prefix}dbinary [reply txt]
+┃➣│ ${prefix}tinyurl [link]
+┃➣│ ${prefix}styletext [text]
+┃➣│ ${prefix}volume [reply aud]
+┃➣│ ${prefix}tempo [reply aud]
+┃➣│ ${prefix}bass [reply aud]
+┃➣│ ${prefix}blown [reply aud]
+┃➣│ ${prefix}deep [reply aud]
+┃➣│ ${prefix}earrape [reply aud]
+┃➣│ ${prefix}fast [reply aud]
+┃➣│ ${prefix}fat [reply aud]
+┃➣│ ${prefix}nightcore [reply aud]
+┃➣│ ${prefix}reverse [reply aud]
+┃➣│ ${prefix}robot [reply aud]
+┃➣│ ${prefix}slow [reply aud]
+┃➣│ ${prefix}squirrel [reply aud]
 ╚═════════════✪`,
     footer: `${global.footer}`,
     buttons: buttons,
@@ -9695,18 +9725,18 @@ const buttons = [
 const buttonMessage = {
     image: unicorn,
     caption: `╔═══════✪「 EMOTE 」	
-╠${prefix}instagramemoji
-╠${prefix}facebookemoji
-╠${prefix}iphoneemoji
-╠${prefix}samsungemoji
-╠${prefix}joyemoji
-╠${prefix}skypeemoji
-╠${prefix}twitteremoji
-╠${prefix}whatsappemoji
-╠${prefix}microsoftemoji
-╠${prefix}googleemoji
-╠${prefix}pediaemoji
-╠${prefix}microsoftemoji
+┃➣│ ${prefix}instagramemoji
+┃➣│ ${prefix}facebookemoji
+┃➣│ ${prefix}iphoneemoji
+┃➣│ ${prefix}samsungemoji
+┃➣│ ${prefix}joyemoji
+┃➣│ ${prefix}skypeemoji
+┃➣│ ${prefix}twitteremoji
+┃➣│ ${prefix}whatsappemoji
+┃➣│ ${prefix}microsoftemoji
+┃➣│ ${prefix}googleemoji
+┃➣│ ${prefix}pediaemoji
+┃➣│ ${prefix}microsoftemoji
 ╚═════════════✪`,
     footer: `${global.footer}`,
     buttons: buttons,
@@ -9728,20 +9758,20 @@ const buttons = [
 const buttonMessage = {
     image: unicorn,
     caption: `╔═════✪「 IMG EFFECT 」	
-╠${prefix}wanted
-╠${prefix}blur
-╠${prefix}framed
-╠${prefix}gayeffect
-╠${prefix}imagesketch
-╠${prefix}invert
-╠${prefix}burn
-╠${prefix}triggeredwebp
-╠${prefix}shit
-╠${prefix}rip
-╠${prefix}jail
-╠${prefix}beautifuleffect
-╠${prefix}deleteeffect
-╠${prefix}pixelate
+┃➣│ ${prefix}wanted
+┃➣│ ${prefix}blur
+┃➣│ ${prefix}framed
+┃➣│ ${prefix}gayeffect
+┃➣│ ${prefix}imagesketch
+┃➣│ ${prefix}invert
+┃➣│ ${prefix}burn
+┃➣│ ${prefix}triggeredwebp
+┃➣│ ${prefix}shit
+┃➣│ ${prefix}rip
+┃➣│ ${prefix}jail
+┃➣│ ${prefix}beautifuleffect
+┃➣│ ${prefix}deleteeffect
+┃➣│ ${prefix}pixelate
 ╚═════════════✪`,
     footer: `${global.footer}`,
     buttons: buttons,
@@ -9763,11 +9793,11 @@ const buttons = [
 const buttonMessage = {
     image: unicorn,
     caption: `╔═══════✪「 STICKER 」	
-╠ ${prefix}patrick
-╠ ${prefix}emoji
-╠ ${prefix}emojimix
-╠ ${prefix}attp
-╠ ${prefix}ttp
+┃➣│ ${prefix}patrick
+┃➣│ ${prefix}emoji
+┃➣│ ${prefix}emojimix
+┃➣│ ${prefix}attp
+┃➣│ ${prefix}ttp
 ╚═════════════✪`,
     footer: `${global.footer}`,
     buttons: buttons,
@@ -9789,63 +9819,63 @@ const buttons = [
 const buttonMessage = {
     image: unicorn,
     caption: `╔═══════✪「 Fun 」	
-╠ ${prefix}how [text
-╠ ${prefix}when [text]
-╠ ${prefix}where [text]
-╠ ${prefix}is [text]
-╠ ${prefix}what [text]
-╠ ${prefix}can [text]
-╠ ${prefix}rate [text]
-╠ ${prefix}wangy [text]
-╠ ${prefix}beautifulcheck [tag]
-╠ ${prefix}awesomecheck [tag]
-╠ ${prefix}prettycheck [tag]
-╠ ${prefix}lesbiancheck [tag]
-╠ ${prefix}gaycheck [tag]
-╠ ${prefix}cutecheck [tag]
-╠ ${prefix}uglycheck [tag]
-╠ ${prefix}hornycheck [tag]
-╠ ${prefix}charactercheck [tag]
-╠ ${prefix}lovelycheck [tag]
-╠ ${prefix}couple
-╠ ${prefix}mysoulmate
-╠ ${prefix}hot
-╠ ${prefix}sexy
-╠ ${prefix}kind
-╠ ${prefix}idiot
-╠ ${prefix}handsome
-╠ ${prefix}beautiful
-╠ ${prefix}cute
-╠ ${prefix}pretty
-╠ ${prefix}lesbian
-╠ ${prefix}noob
-╠ ${prefix}bastard
-╠ ${prefix}foolish
-╠ ${prefix}nerd
-╠ ${prefix}asshole
-╠ ${prefix}gay
-╠ ${prefix}smart
-╠ ${prefix}stubble
-╠ ${prefix}dog
-╠ ${prefix}horny
-╠ ${prefix}cunt
-╠ ${prefix}wibu
-╠ ${prefix}noobra
-╠ ${prefix}nibba
-╠ ${prefix}nibbi
-╠ ${prefix}comrade
-╠ ${prefix}mumu
-╠ ${prefix}rascal
-╠ ${prefix}scumbag
-╠ ${prefix}nuts
-╠ ${prefix}fagot
-╠ ${prefix}scoundrel
-╠ ${prefix}ditch
-╠ ${prefix}dope
-╠ ${prefix}gucci
-╠ ${prefix}lit
-╠ ${prefix}dumbass
-╠ ${prefix}crackhead
+┃➣│ ${prefix}how [text
+┃➣│ ${prefix}when [text]
+┃➣│ ${prefix}where [text]
+┃➣│ ${prefix}is [text]
+┃➣│ ${prefix}what [text]
+┃➣│ ${prefix}can [text]
+┃➣│ ${prefix}rate [text]
+┃➣│ ${prefix}wangy [text]
+┃➣│ ${prefix}beautifulcheck [tag]
+┃➣│ ${prefix}awesomecheck [tag]
+┃➣│ ${prefix}prettycheck [tag]
+┃➣│ ${prefix}lesbiancheck [tag]
+┃➣│ ${prefix}gaycheck [tag]
+┃➣│ ${prefix}cutecheck [tag]
+┃➣│ ${prefix}uglycheck [tag]
+┃➣│ ${prefix}hornycheck [tag]
+┃➣│ ${prefix}charactercheck [tag]
+┃➣│ ${prefix}lovelycheck [tag]
+┃➣│ ${prefix}couple
+┃➣│ ${prefix}mysoulmate
+┃➣│ ${prefix}hot
+┃➣│ ${prefix}sexy
+┃➣│ ${prefix}kind
+┃➣│ ${prefix}idiot
+┃➣│ ${prefix}handsome
+┃➣│ ${prefix}beautiful
+┃➣│ ${prefix}cute
+┃➣│ ${prefix}pretty
+┃➣│ ${prefix}lesbian
+┃➣│ ${prefix}noob
+┃➣│ ${prefix}bastard
+┃➣│ ${prefix}foolish
+┃➣│ ${prefix}nerd
+┃➣│ ${prefix}asshole
+┃➣│ ${prefix}gay
+┃➣│ ${prefix}smart
+┃➣│ ${prefix}stubble
+┃➣│ ${prefix}dog
+┃➣│ ${prefix}horny
+┃➣│ ${prefix}cunt
+┃➣│ ${prefix}wibu
+┃➣│ ${prefix}noobra
+┃➣│ ${prefix}nibba
+┃➣│ ${prefix}nibbi
+┃➣│ ${prefix}comrade
+┃➣│ ${prefix}mumu
+┃➣│ ${prefix}rascal
+┃➣│ ${prefix}scumbag
+┃➣│ ${prefix}nuts
+┃➣│ ${prefix}fagot
+┃➣│ ${prefix}scoundrel
+┃➣│ ${prefix}ditch
+┃➣│ ${prefix}dope
+┃➣│ ${prefix}gucci
+┃➣│ ${prefix}lit
+┃➣│ ${prefix}dumbass
+┃➣│ ${prefix}crackhead
 ╚═════════════✪`,
     footer: `${global.footer}`,
     buttons: buttons,
@@ -9867,167 +9897,167 @@ const buttons = [
 const buttonMessage = {
     image: unicorn,
     caption: `╔═══════✪「 Sound 」	
-╠ ${prefix}sound1
-╠ ${prefix}sound2
-╠ ${prefix}sound3
-╠ ${prefix}sound4
-╠ ${prefix}sound5
-╠ ${prefix}sound6
-╠ ${prefix}sound7
-╠ ${prefix}sound8
-╠ ${prefix}sound9
-╠ ${prefix}sound10
-╠ ${prefix}sound11
-╠ ${prefix}sound12
-╠ ${prefix}sound13
-╠ ${prefix}sound14
-╠ ${prefix}sound15
-╠ ${prefix}sound16
-╠ ${prefix}sound17
-╠ ${prefix}sound18
-╠ ${prefix}sound19
-╠ ${prefix}sound20
-╠ ${prefix}sound21
-╠ ${prefix}sound22
-╠ ${prefix}sound23
-╠ ${prefix}sound24
-╠ ${prefix}sound25
-╠ ${prefix}sound26
-╠ ${prefix}sound27
-╠ ${prefix}sound28
-╠ ${prefix}sound29
-╠ ${prefix}sound30
-╠ ${prefix}sound31
-╠ ${prefix}sound32
-╠ ${prefix}sound33
-╠ ${prefix}sound34
-╠ ${prefix}sound35
-╠ ${prefix}sound36
-╠ ${prefix}sound37
-╠ ${prefix}sound38
-╠ ${prefix}sound39
-╠ ${prefix}sound40
-╠ ${prefix}sound41
-╠ ${prefix}sound42
-╠ ${prefix}sound43
-╠ ${prefix}sound44
-╠ ${prefix}sound45
-╠ ${prefix}sound46
-╠ ${prefix}sound47
-╠ ${prefix}sound48
-╠ ${prefix}sound49
-╠ ${prefix}sound50
-╠ ${prefix}sound51
-╠ ${prefix}sound52
-╠ ${prefix}sound53
-╠ ${prefix}sound54
-╠ ${prefix}sound55
-╠ ${prefix}sound56
-╠ ${prefix}sound57
-╠ ${prefix}sound58
-╠ ${prefix}sound59
-╠ ${prefix}sound60
-╠ ${prefix}sound61
-╠ ${prefix}sound62
-╠ ${prefix}sound63
-╠ ${prefix}sound64
-╠ ${prefix}sound65
-╠ ${prefix}sound66
-╠ ${prefix}sound67
-╠ ${prefix}sound68
-╠ ${prefix}sound69
-╠ ${prefix}sound70
-╠ ${prefix}sound71
-╠ ${prefix}sound72
-╠ ${prefix}sound73
-╠ ${prefix}sound74
-╠ ${prefix}sound75
-╠ ${prefix}sound76
-╠ ${prefix}sound77
-╠ ${prefix}sound78
-╠ ${prefix}sound79
-╠ ${prefix}sound80
-╠ ${prefix}sound81
-╠ ${prefix}sound82
-╠ ${prefix}sound83
-╠ ${prefix}sound84
-╠ ${prefix}sound85
-╠ ${prefix}sound86
-╠ ${prefix}sound87
-╠ ${prefix}sound88
-╠ ${prefix}sound89
-╠ ${prefix}sound90
-╠ ${prefix}sound91
-╠ ${prefix}sound92
-╠ ${prefix}sound93
-╠ ${prefix}sound94
-╠ ${prefix}sound95
-╠ ${prefix}sound96
-╠ ${prefix}sound97
-╠ ${prefix}sound98
-╠ ${prefix}sound99
-╠ ${prefix}sound100
-╠ ${prefix}sound101
-╠ ${prefix}sound102
-╠ ${prefix}sound103
-╠ ${prefix}sound104
-╠ ${prefix}sound105
-╠ ${prefix}sound106
-╠ ${prefix}sound107
-╠ ${prefix}sound108
-╠ ${prefix}sound109
-╠ ${prefix}sound110
-╠ ${prefix}sound111
-╠ ${prefix}sound112
-╠ ${prefix}sound113
-╠ ${prefix}sound114
-╠ ${prefix}sound115
-╠ ${prefix}sound116
-╠ ${prefix}sound117
-╠ ${prefix}sound118
-╠ ${prefix}sound119
-╠ ${prefix}sound120
-╠ ${prefix}sound121
-╠ ${prefix}sound122
-╠ ${prefix}sound123
-╠ ${prefix}sound124
-╠ ${prefix}sound125
-╠ ${prefix}sound126
-╠ ${prefix}sound127
-╠ ${prefix}sound128
-╠ ${prefix}sound129
-╠ ${prefix}sound130
-╠ ${prefix}sound131
-╠ ${prefix}sound132
-╠ ${prefix}sound133
-╠ ${prefix}sound134
-╠ ${prefix}sound135
-╠ ${prefix}sound136
-╠ ${prefix}sound137
-╠ ${prefix}sound138
-╠ ${prefix}sound139
-╠ ${prefix}sound140
-╠ ${prefix}sound141
-╠ ${prefix}sound142
-╠ ${prefix}sound143
-╠ ${prefix}sound144
-╠ ${prefix}sound145
-╠ ${prefix}sound146
-╠ ${prefix}sound147
-╠ ${prefix}sound148
-╠ ${prefix}sound149
-╠ ${prefix}sound150
-╠ ${prefix}sound151
-╠ ${prefix}sound152
-╠ ${prefix}sound153
-╠ ${prefix}sound154
-╠ ${prefix}sound155
-╠ ${prefix}sound156
-╠ ${prefix}sound157
-╠ ${prefix}sound158
-╠ ${prefix}sound159
-╠ ${prefix}sound160
-╠ ${prefix}sound161
+┃➣│ ${prefix}sound1
+┃➣│ ${prefix}sound2
+┃➣│ ${prefix}sound3
+┃➣│ ${prefix}sound4
+┃➣│ ${prefix}sound5
+┃➣│ ${prefix}sound6
+┃➣│ ${prefix}sound7
+┃➣│ ${prefix}sound8
+┃➣│ ${prefix}sound9
+┃➣│ ${prefix}sound10
+┃➣│ ${prefix}sound11
+┃➣│ ${prefix}sound12
+┃➣│ ${prefix}sound13
+┃➣│ ${prefix}sound14
+┃➣│ ${prefix}sound15
+┃➣│ ${prefix}sound16
+┃➣│ ${prefix}sound17
+┃➣│ ${prefix}sound18
+┃➣│ ${prefix}sound19
+┃➣│ ${prefix}sound20
+┃➣│ ${prefix}sound21
+┃➣│ ${prefix}sound22
+┃➣│ ${prefix}sound23
+┃➣│ ${prefix}sound24
+┃➣│ ${prefix}sound25
+┃➣│ ${prefix}sound26
+┃➣│ ${prefix}sound27
+┃➣│ ${prefix}sound28
+┃➣│ ${prefix}sound29
+┃➣│ ${prefix}sound30
+┃➣│ ${prefix}sound31
+┃➣│ ${prefix}sound32
+┃➣│ ${prefix}sound33
+┃➣│ ${prefix}sound34
+┃➣│ ${prefix}sound35
+┃➣│ ${prefix}sound36
+┃➣│ ${prefix}sound37
+┃➣│ ${prefix}sound38
+┃➣│ ${prefix}sound39
+┃➣│ ${prefix}sound40
+┃➣│ ${prefix}sound41
+┃➣│ ${prefix}sound42
+┃➣│ ${prefix}sound43
+┃➣│ ${prefix}sound44
+┃➣│ ${prefix}sound45
+┃➣│ ${prefix}sound46
+┃➣│ ${prefix}sound47
+┃➣│ ${prefix}sound48
+┃➣│ ${prefix}sound49
+┃➣│ ${prefix}sound50
+┃➣│ ${prefix}sound51
+┃➣│ ${prefix}sound52
+┃➣│ ${prefix}sound53
+┃➣│ ${prefix}sound54
+┃➣│ ${prefix}sound55
+┃➣│ ${prefix}sound56
+┃➣│ ${prefix}sound57
+┃➣│ ${prefix}sound58
+┃➣│ ${prefix}sound59
+┃➣│ ${prefix}sound60
+┃➣│ ${prefix}sound61
+┃➣│ ${prefix}sound62
+┃➣│ ${prefix}sound63
+┃➣│ ${prefix}sound64
+┃➣│ ${prefix}sound65
+┃➣│ ${prefix}sound66
+┃➣│ ${prefix}sound67
+┃➣│ ${prefix}sound68
+┃➣│ ${prefix}sound69
+┃➣│ ${prefix}sound70
+┃➣│ ${prefix}sound71
+┃➣│ ${prefix}sound72
+┃➣│ ${prefix}sound73
+┃➣│ ${prefix}sound74
+┃➣│ ${prefix}sound75
+┃➣│ ${prefix}sound76
+┃➣│ ${prefix}sound77
+┃➣│ ${prefix}sound78
+┃➣│ ${prefix}sound79
+┃➣│ ${prefix}sound80
+┃➣│ ${prefix}sound81
+┃➣│ ${prefix}sound82
+┃➣│ ${prefix}sound83
+┃➣│ ${prefix}sound84
+┃➣│ ${prefix}sound85
+┃➣│ ${prefix}sound86
+┃➣│ ${prefix}sound87
+┃➣│ ${prefix}sound88
+┃➣│ ${prefix}sound89
+┃➣│ ${prefix}sound90
+┃➣│ ${prefix}sound91
+┃➣│ ${prefix}sound92
+┃➣│ ${prefix}sound93
+┃➣│ ${prefix}sound94
+┃➣│ ${prefix}sound95
+┃➣│ ${prefix}sound96
+┃➣│ ${prefix}sound97
+┃➣│ ${prefix}sound98
+┃➣│ ${prefix}sound99
+┃➣│ ${prefix}sound100
+┃➣│ ${prefix}sound101
+┃➣│ ${prefix}sound102
+┃➣│ ${prefix}sound103
+┃➣│ ${prefix}sound104
+┃➣│ ${prefix}sound105
+┃➣│ ${prefix}sound106
+┃➣│ ${prefix}sound107
+┃➣│ ${prefix}sound108
+┃➣│ ${prefix}sound109
+┃➣│ ${prefix}sound110
+┃➣│ ${prefix}sound111
+┃➣│ ${prefix}sound112
+┃➣│ ${prefix}sound113
+┃➣│ ${prefix}sound114
+┃➣│ ${prefix}sound115
+┃➣│ ${prefix}sound116
+┃➣│ ${prefix}sound117
+┃➣│ ${prefix}sound118
+┃➣│ ${prefix}sound119
+┃➣│ ${prefix}sound120
+┃➣│ ${prefix}sound121
+┃➣│ ${prefix}sound122
+┃➣│ ${prefix}sound123
+┃➣│ ${prefix}sound124
+┃➣│ ${prefix}sound125
+┃➣│ ${prefix}sound126
+┃➣│ ${prefix}sound127
+┃➣│ ${prefix}sound128
+┃➣│ ${prefix}sound129
+┃➣│ ${prefix}sound130
+┃➣│ ${prefix}sound131
+┃➣│ ${prefix}sound132
+┃➣│ ${prefix}sound133
+┃➣│ ${prefix}sound134
+┃➣│ ${prefix}sound135
+┃➣│ ${prefix}sound136
+┃➣│ ${prefix}sound137
+┃➣│ ${prefix}sound138
+┃➣│ ${prefix}sound139
+┃➣│ ${prefix}sound140
+┃➣│ ${prefix}sound141
+┃➣│ ${prefix}sound142
+┃➣│ ${prefix}sound143
+┃➣│ ${prefix}sound144
+┃➣│ ${prefix}sound145
+┃➣│ ${prefix}sound146
+┃➣│ ${prefix}sound147
+┃➣│ ${prefix}sound148
+┃➣│ ${prefix}sound149
+┃➣│ ${prefix}sound150
+┃➣│ ${prefix}sound151
+┃➣│ ${prefix}sound152
+┃➣│ ${prefix}sound153
+┃➣│ ${prefix}sound154
+┃➣│ ${prefix}sound155
+┃➣│ ${prefix}sound156
+┃➣│ ${prefix}sound157
+┃➣│ ${prefix}sound158
+┃➣│ ${prefix}sound159
+┃➣│ ${prefix}sound160
+┃➣│ ${prefix}sound161
 ╚═════════════✪`,
     footer: `${global.footer}`,
     buttons: buttons,
@@ -10049,13 +10079,13 @@ const buttons = [
 const buttonMessage = {
     image: unicorn,
     caption: `╔═══════✪「 GAME 」	
-╠ ${prefix}truth
-╠ ${prefix}dare
-╠ ${prefix}tictactoe
-╠ ${prefix}delttt
-╠ ${prefix}guess [option]
-╠ ${prefix}math [mode]
-╠ ${prefix}suitpvp [tag]
+┃➣│ ${prefix}truth
+┃➣│ ${prefix}dare
+┃➣│ ${prefix}tictactoe
+┃➣│ ${prefix}delttt
+┃➣│ ${prefix}guess [option]
+┃➣│ ${prefix}math [mode]
+┃➣│ ${prefix}suitpvp [tag]
 ╚═════════════✪`,
     footer: `${global.footer}`,
     buttons: buttons,
@@ -10077,10 +10107,10 @@ const buttons = [
 const buttonMessage = {
     image: unicorn,
     caption: `╔═══✪「 ANONYMOUS 」	
-╠${prefix}anonymous
-╠${prefix}start
-╠${prefix}next
-╠${prefix}leave
+┃➣│ ${prefix}anonymous
+┃➣│ ${prefix}start
+┃➣│ ${prefix}next
+┃➣│ ${prefix}leave
 ╚═════════════✪`,
     footer: `${global.footer}`,
     buttons: buttons,
@@ -10101,9 +10131,9 @@ const buttons = [
 const buttonMessage = {
     image: unicorn,
     caption: `╔═══════✪「 TOOL 」	
-╠ ${prefix}translate [text]
-╠ ${prefix}fliptext [text]
-╠ ${prefix}toletter [number]
+┃➣│ ${prefix}translate [text]
+┃➣│ ${prefix}fliptext [text]
+┃➣│ ${prefix}toletter [number]
 ╚═════════════✪`,
     footer: `${global.footer}`,
     buttons: buttons,
@@ -10125,14 +10155,14 @@ const buttons = [
 const buttonMessage = {
     image: unicorn,
     caption: `╔═══✪「 DATABASE 」	
-╠ ${prefix}setcmd
-╠ ${prefix}listcmd
-╠ ${prefix}delcmd
-╠ ${prefix}lockcmd
-╠ ${prefix}addmsg
-╠ ${prefix}listmsg
-╠ ${prefix}getmsg
-╠ ${prefix}delmsg
+┃➣│ ${prefix}setcmd
+┃➣│ ${prefix}listcmd
+┃➣│ ${prefix}delcmd
+┃➣│ ${prefix}lockcmd
+┃➣│ ${prefix}addmsg
+┃➣│ ${prefix}listmsg
+┃➣│ ${prefix}getmsg
+┃➣│ ${prefix}delmsg
 ╚═════════════✪`,
     footer: `${global.footer}`,
     buttons: buttons,
@@ -10154,24 +10184,24 @@ const buttons = [
 const buttonMessage = {
     image: unicorn,
     caption: `╔═══════✪「 OTHER 」	
-╠ ${prefix}afk
-╠ ${prefix}readmore [text]
-╠ ${prefix}toviewonce
-╠ ${prefix}chatinfo
-╠ ${prefix}alive
-╠ ${prefix}script
-╠ ${prefix}speedtest
-╠ ${prefix}ping
-╠ ${prefix}owner
-╠ ${prefix}menu
-╠ ${prefix}delete
-╠ ${prefix}chatinfo
-╠ ${prefix}quoted
-╠ ${prefix}listpc
-╠ ${prefix}listgc
-╠ ${prefix}donate
-╠ ${prefix}request
-╠ ${prefix}report [bug]
+┃➣│ ${prefix}afk
+┃➣│ ${prefix}readmore [text]
+┃➣│ ${prefix}toviewonce
+┃➣│ ${prefix}chatinfo
+┃➣│ ${prefix}alive
+┃➣│ ${prefix}script
+┃➣│ ${prefix}speedtest
+┃➣│ ${prefix}ping
+┃➣│ ${prefix}owner
+┃➣│ ${prefix}menu
+┃➣│ ${prefix}delete
+┃➣│ ${prefix}chatinfo
+┃➣│ ${prefix}quoted
+┃➣│ ${prefix}listpc
+┃➣│ ${prefix}listgc
+┃➣│ ${prefix}donate
+┃➣│ ${prefix}request
+┃➣│ ${prefix}report [bug]
 ╚═════════════✪`,
     footer: `${global.footer}`,
     buttons: buttons,
@@ -10186,7 +10216,7 @@ case 'tqtt':
 reply(`Thanks to
 LORD BUDDHA
 Xeon 
-And all friends who helped assemble this sexy script !!!`)
+And all friends who helped assemble this script !!!`)
 break
             default:
                 if (budy.startsWith('=>')) {
