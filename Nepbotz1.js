@@ -1,5 +1,5 @@
 require('./settings')
-require('./Language/EN')
+require('./Language/E')
 const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = require('@adiwajshing/baileys')
 const fs = require('fs')
 const util = require('util')
@@ -3416,10 +3416,11 @@ let liston = 1
 NepBotzInc.sendText(m.chat, '     「 Online List 」\n\n' + online.map(v => `${liston++} . @` + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
 }
 break
-       case 'attp2': {
+       case 'attp': {
 		   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
            if (!text) return reply(`Example : ${prefix + command} text`)
+           m.reply(`${reply.sticker}`)
            await NepBotzInc.sendMedia(m.chat, `https://xteam.xyz/attp?file&text=${text}`, 'hisoka', 'morou', m, {asSticker: true})
 
          }
@@ -3431,7 +3432,7 @@ if (isBanChat) return reply(mess.banChat)
            await NepBotzInc.sendMedia(m.chat, `https://cililitan.herokuapp.com/api/attp?teks=${text}`, 'Xeon', 'Op', m, {asSticker: true}).catch((err) => reply(mess.error))
          }
          break
-case 'attp': {
+case 'attp2': {
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
            if (!text) return reply(`*Example : ${prefix + command} hello*`)
