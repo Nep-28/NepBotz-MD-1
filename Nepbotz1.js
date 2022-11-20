@@ -9269,7 +9269,7 @@ break
 case 'wagc':{
 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
-var unicorn = await getBuffer(picak+'All Menu')
+var unicorn = await getBuffer(picak+'support group')
 NepBotzInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
 const buttons = [
   {buttonId: 'script', buttonText: {displayText: 'Script'}, type: 1},
