@@ -115,7 +115,7 @@ global.mess = {
     group: 'Feature Used Only For Groups!',
     private: 'Features Used Only For Private Chat!',
     bot: 'This Feature Is Only For Bot',
-    wait: 'In process...',
+    wait: 'In process',
     linkm: 'Where is the link?',
     error: 'Error!!',
     endLimit: 'Your Daily Limit Has Expired, The Limit Will Be Reset Every 12 Hours',
@@ -128,7 +128,12 @@ global.mess = {
     demote: '⚙️ User successfully demoted ✔️',
     block: 'Blocked ✔️',
     unblock: 'Unblocked ✔️',
-    sticker: 'Creating the sticker 🧰'
+    msticker: 'Downloading media and creating the sticker 🧰',
+    tsticker: 'Creating the sticker 🧰',
+    rsticker: 'Change the sticker author and package name 🧰',
+    picedit: 'Downloading media and editing your photo 🧰'
+
+
 }
     global.limitawal = {
     premium: "Infinity",

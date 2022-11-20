@@ -3418,23 +3418,25 @@ break
        case 'attp': {
 		   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-           if (!text) return reply(`Example : ${prefix + command} text`)
-           m.reply(mess.sticker)
+           if (!text) return reply(`Use ${prefix}attp hello\n*Example : ${prefix + command} Neptune*`)
+           m.reply(mess.tsticker)
            await NepBotzInc.sendMedia(m.chat, `https://xteam.xyz/attp?file&text=${text}`, 'hisoka', 'morou', m, {asSticker: true})
 
-         }
-         break
-case 'ttp': {
-if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)
-           if (!text) reply(`Use ${prefix}attp hello\n*Example : ${prefix + command} ${ownername}*` )
-           await NepBotzInc.sendMedia(m.chat, `https://cililitan.herokuapp.com/api/attp?teks=${text}`, 'Xeon', 'Op', m, {asSticker: true}).catch((err) => reply(mess.error))
          }
          break
 case 'attp2': {
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-           if (!text) return reply(`*Example : ${prefix + command} hello*`)
+           if (!text) return reply(`Use ${prefix}attp2 hello\n*Example : ${prefix + command} Neptune*` )
+           m.reply(mess.tsticker)
+           await NepBotzInc.sendMedia(m.chat, `https://cililitan.herokuapp.com/api/attp?teks=${text}`, 'Xeon', 'Op', m, {asSticker: true}).catch((err) => reply(mess.error))
+         }
+         break
+case 'ttp': {
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+           if (!text) return reply(`Use ${prefix}ttp hello\n*Example : ${prefix + command} Neptune*`)
+           m.reply(mess.tsticker)
            await NepBotzInc.sendMedia(m.chat, `https://cililitan.herokuapp.com/api/texttopng2?teks=${text}`, 'A L Y A', 'B O T M D', m, {asSticker: true})
          
                      }
@@ -3442,6 +3444,7 @@ if (isBanChat) return reply(mess.banChat)
             case 'sticker': case 's': case 'stickergif': case 'sgif': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+m.reply(mess.msticker)
 if (/image/.test(mime)) {
 let media = await quoted.download()
 let encmedia = await NepBotzInc.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
@@ -3460,9 +3463,10 @@ case 'swm': case 'estic': case 'stickerwm': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!args.join(" ")) return reply(`Example :\nswm ${global.author}|${global.packname}`)
+m.reply(mess.rsticker)
 const swn = args.join(" ")
-const pcknm = swn.split("|")[0];
-const atnm = swn.split("|")[1];
+const pcknm = swn.split("/")[0];
+const atnm = swn.split("/")[1];
 if (m.quoted.isAnimated === true) {
 NepBotzInc.downloadAndSaveMediaMessage(quoted, "gifee")
 NepBotzInc.sendMessage(from, {sticker:fs.readFileSync("gifee.webp")},{quoted:m})
@@ -3483,6 +3487,7 @@ break
 case 'smeme': case 'stickermeme': case 'stickmeme': {
 	   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+m.reply(mess.tsticker)
 let { TelegraPh } = require('./lib/uploader')
 if (!text) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*`)
 if (text.includes('|')) return reply(`Send/Reply Photo With Caption ${prefix + command} *text*`)
@@ -3588,6 +3593,7 @@ if (isBanChat) return reply(mess.banChat)
 case 'jail': case 'pixelate': case 'blur': case 'imagesketch': case 'triggeredwebp': case 'shit': case 'burn': case 'invert': case 'wanted': case 'rip': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+                 m.reply(mess.picedit)
 	            if (!/image/.test(mime)) return reply(`*Send/Reply Image With Caption* ${prefix + command}`)
 	        	let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader2')
                 let media = await NepBotzInc.downloadAndSaveMediaMessage(quoted)                
@@ -3599,6 +3605,7 @@ if (isBanChat) return reply(mess.banChat)
 case 'gayeffect': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+                m.reply(mess.picedit)
 	            if (!/image/.test(mime)) return reply(`*Send/Reply Image With Caption* ${prefix + command}`)
 	        	let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader2')
                 let media = await NepBotzInc.downloadAndSaveMediaMessage(quoted)                
@@ -3610,6 +3617,7 @@ if (isBanChat) return reply(mess.banChat)
 case 'deleteeffect': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+                m.reply(mess.picedit)
 	            if (!/image/.test(mime)) return reply(`*Send/Reply Image With Caption* ${prefix + command}`)
 	        	let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader2')
                 let media = await NepBotzInc.downloadAndSaveMediaMessage(quoted)                
@@ -3621,6 +3629,7 @@ if (isBanChat) return reply(mess.banChat)
 case 'framed': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+                m.reply(mess.picedit)
 	            if (!/image/.test(mime)) return reply(`*Send/Reply Image With Caption* ${prefix + command}`)
 	        	let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader2')
                 let media = await NepBotzInc.downloadAndSaveMediaMessage(quoted)                
@@ -3632,6 +3641,7 @@ if (isBanChat) return reply(mess.banChat)
 case 'beautifuleffect': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+                m.reply(mess.picedit)
 	            if (!/image/.test(mime)) return reply(`*Send/Reply Image With Caption* ${prefix + command}`)
 	        	let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader2')
                 let media = await NepBotzInc.downloadAndSaveMediaMessage(quoted)                
@@ -3643,6 +3653,7 @@ if (isBanChat) return reply(mess.banChat)
             case 'readmore': {
             if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
+                m.reply(mess.wait)
                 if (!text) return reply(`Example : ${prefix + command} halo gaes`)
                 anu = await fetchJson(`https://cililitan.herokuapp.com/api/readmore?teks=${text}`)
                reply(`${anu.result}`)
@@ -4865,7 +4876,7 @@ console.log(anu)
 NepBotzInc.sendMessage(from,{image:{url:anu}, caption:"Here you go!"},{quoted:m})
 }
 break
-case 'emoji': {
+case 'emoji1': {
 	   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!args.join(" ")) return reply('Where is the emoji?')
@@ -4961,7 +4972,88 @@ if (!q) return reply("Enter emoji, max 1 emoji, eg?" + ` ${prefix + command} �
 reply(mess.wait)
 emote(q, "10")
 break
-
+case 'emoji':{
+if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!q) return reply("Enter emoji, max 1 emoji, eg?" + ` ${prefix + command} 😀`)
+const emojimg = `*Emoji to image*\n\nChoose the style you want\n\n^^^^^^^^^^^^^^^^^^^^`
+const sections = [{
+    "title": "Select the required type",
+    "rows": [
+        {
+            "title": "Whatsapp",
+            "description": "Whatsapp style photo",
+            "rowId": `${prefix}emoji1 ${text}`
+},
+{
+    "title": "Instagram",
+    "description": "Instagram style photo",
+    "rowId": `${prefix}igemoji ${text}`
+    },
+    {
+        "title": "Facebook",
+        "description": "Facebook style photo",
+        "rowId": `${prefix}fbemoji ${text}`
+        },
+        {
+            "title": "Twitter",
+            "description": "Twitter style photo",
+            "rowId": `${prefix}twitteremoji ${text}`
+            },
+            {
+                "title": "Skype",
+                "description": "Skype style photo",
+                "rowId": `${prefix}skypeemoji ${text}`
+                },
+                {
+                    "title": "I phone",
+                    "description": "I phone style photo",
+                    "rowId": `${prefix}iphoneemoji ${text}`
+                    },
+                    {
+                        "title": "Google",
+                        "description": "Google style photo",
+                        "rowId": `${prefix}googleemoji ${text}`
+                        },
+                        {
+                            "title": "Samsung",
+                            "description": "Samsung style photo",
+                            "rowId": `${prefix}samsungemoji ${text}`
+                            },
+                            {
+                                "title": "Microsoft",
+                                "description": "Microsoft style photo",
+                                "rowId": `${prefix}microsoftemoji ${text}`
+                                },
+                                {
+                                    "title": "Joy emoji",
+                                    "description": "joy emoji style photo",
+                                    "rowId": `${prefix}joyemoji ${text}`
+                                    },
+                                    {
+										"title": "Moji",
+										"description": "Moji style photo",
+										"rowId": `${prefix}mojiemoji ${text}`
+										},
+                                        {
+                                            "title": "Pedia",
+                                            "description": "Pedia style photo",
+                                            "rowId": `${prefix}pediaemoji ${text}`
+                                            }
+                                        ]
+                                    }
+                                ] 
+                                         
+const listMessage = {
+text: emojimg,
+footer: `${global.footer}`,
+title: `^^^^^^^^^^^^^^^^^^^^`,
+buttonText: "𝙲𝙻𝙸𝙲𝙺 𝙷𝙴𝚁𝙴",
+sections
+}
+const sendMsg = await NepBotzInc.sendMessage(m.chat, listMessage)
+}
+break                                                        
 case 'emojimix': case 'emomix': {
 	   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
