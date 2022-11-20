@@ -9316,10 +9316,11 @@ const buttonMessage = {
 const sendMsg = await NepBotzInc.sendMessage(m.chat, buttonMessage)
 }
 break
-case 'ownermenu':{
+case 'warmenu':{
 	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
     if (!isCreator) return replay(`${mess.owner}`)
+	m.reply(`[☣️ Warning ☣️]\nUsing these features may crash or ban your WhatsApp account.`)
 	   var unicorn = await getBuffer(picak+'War Menu')
 NepBotzInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
 const buttons = [
