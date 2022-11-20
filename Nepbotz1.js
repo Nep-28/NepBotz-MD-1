@@ -772,7 +772,7 @@ const emoji = new EmojiAPI();
 emoji.get(satu)
 .then(emoji => {
 const buttons = [{buttonId: "y", buttonText: {displayText:satu}, type: 1}]
-const buttonMessage = {image: {url: emoji.images[dua].url},caption: "Here you go!",footerText: `${botname}`,buttons: buttons,headerType: 4}
+const buttonMessage = {image: {url: emoji.images[dua].url},caption: "${global.footer}",footerText: `${botname}`,buttons: buttons,headerType: 4}
 NepBotzInc.sendMessage(from, buttonMessage, {quoted:m})
 })
 } catch (e) {
@@ -3527,7 +3527,7 @@ case 'yaoi':
 			    var query = ["yaoi","yaoi aesthetic","yaoi hd","yaoi ganteng"]
                 var data = await pinterest(pickRandom(query))
 				var but = [{buttonId: `${command}`, buttonText: { displayText: "Next➡️" }, type: 1 }]
-				NepBotzInc.sendMessage(from, { caption: "Here you go!", image: { url: pickRandom(data.result) }, buttons: but, footer: `${botname}` }, { quoted: m })
+				NepBotzInc.sendMessage(from, { caption: "${global.footer}", image: { url: pickRandom(data.result) }, buttons: but, footer: `${botname}` }, { quoted: m })
  			    break
 case 'coffee': case 'kopi': {
 	if (isBan) return reply(mess.ban)	 			
@@ -3537,7 +3537,7 @@ if (isBanChat) return reply(mess.banChat)
                 ]
                 let buttonMessage = {
                     image: { url: 'https://coffee.alexflipnote.dev/random' },
-                    caption: `Here you go!`,
+                    caption: `${global.footer}`,
                     footer: `${botname}`,
                     buttons: buttons,
                     headerType: 4
@@ -3678,7 +3678,7 @@ if (isBanChat) return reply(mess.banChat)
             reply(mess.wait)
             try {
               anu = await axios.get(`https://tinyurl.com/api-create.php?url=${q}`)
-              reply(`${anu.data} here you go!`)
+              reply(`${anu.data} ${global.footer}`)
               } catch (e) {
               emror = String(e)
               reply(`${e}`)
@@ -3891,7 +3891,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/create-glitch-text-effect-style-tik-tok-983.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -3902,7 +3902,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/3d-box-text-effect-online-880.html", [
     `${q}`,])
-.then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+.then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
 .catch((err) => console.log(err));
 break
 
@@ -3914,7 +3914,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
  maker.textpro("https://textpro.me/dropwater-text-effect-872.html", [
      `${q}`,])
-    .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+    .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
     .catch((err) => console.log(err));
      break
 
@@ -3926,7 +3926,7 @@ if (isBanChat) return reply(mess.banChat)
   reply(mess.wait)
   maker.textpro("https://textpro.me/create-lion-logo-mascot-online-938.html", [
       `${q}`,])
-     .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+     .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
      .catch((err) => console.log(err));
      break
 
@@ -3938,7 +3938,7 @@ if (isBanChat) return reply(mess.banChat)
       reply(mess.wait)
       maker.textpro("https://textpro.me/create-art-paper-cut-text-effect-online-1022.html", [
 `${q}`,])
-         .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+         .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
          .catch((err) => console.log(err));
          break
 
@@ -3950,7 +3950,7 @@ if (isBanChat) return reply(mess.banChat)
       reply(mess.wait)
       maker.textpro("https://textpro.me/create-a-transformer-text-effect-online-1035.html", [
 `${q}`,])
-.then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+.then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
 .catch((err) => console.log(err));
 break
    
@@ -3964,7 +3964,7 @@ if (isBanChat) return reply(mess.banChat)
        teks2 = q.split("|")[1]
        maker.textpro("https://textpro.me/create-harry-potter-text-effect-online-1025.html", [
  `${teks1}`,`${teks2}`])
- .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+ .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
  .catch((err) => console.log(err));
  break
 
@@ -3976,7 +3976,7 @@ if (isBanChat) return reply(mess.banChat)
       reply(mess.wait)
       maker.textpro("https://textpro.me/create-neon-devil-wings-text-effect-online-free-1014.html", [
 `${q}`,])
-         .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+         .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
          .catch((err) => console.log(err));
          break
 
@@ -3988,7 +3988,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/3d-stone-cracked-cool-text-effect-1029.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4000,7 +4000,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-3d-avengers-logo-online-974.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4012,7 +4012,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/online-thunder-text-effect-generator-1031.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
    
@@ -4024,7 +4024,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/write-text-on-foggy-window-online-free-1015.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
    case 'blackpinkneon':
@@ -4034,7 +4034,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-neon-light-blackpink-logo-text-effect-online-1081.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4048,7 +4048,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/create-a-cool-graffiti-text-on-the-wall-1010.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4063,7 +4063,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/pornhub-style-logo-online-generator-free-977.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4076,7 +4076,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-blackpink-logo-style-online-1001.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4087,7 +4087,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-impressive-glitch-text-effects-online-1027.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4102,7 +4102,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/create-a-glitch-text-effect-online-free-1026.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4117,7 +4117,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/create-glitch-text-effect-style-tik-tok-983.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4132,7 +4132,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/create-space-3d-text-effect-online-985.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4147,7 +4147,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/create-lion-logo-mascot-online-938.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4160,7 +4160,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-3d-neon-light-text-effect-online-1028.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4173,7 +4173,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/neon-text-effect-online-879.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4186,7 +4186,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/green-neon-text-effect-874.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
    
@@ -4199,7 +4199,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/bokeh-text-effect-876.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
    
@@ -4212,7 +4212,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/holographic-3d-text-effect-975.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4227,7 +4227,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/online-black-and-white-bear-mascot-logo-creation-1012.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4242,7 +4242,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
 maker.textpro("https://textpro.me/create-wolf-logo-galaxy-online-936.html", [
     `${teks1}`,`${teks2}`])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4256,7 +4256,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-logo-joker-online-934.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4268,7 +4268,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/dropwater-text-effect-872.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
    
@@ -4279,7 +4279,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-a-summer-neon-light-text-effect-online-1076.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4290,7 +4290,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/neon-light-text-effect-with-galaxy-style-981.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4301,7 +4301,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/break-wall-text-effect-871.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
    
@@ -4312,7 +4312,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/natural-leaves-text-effect-931.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break 
 
@@ -4323,7 +4323,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/carbon-text-effect-833.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 
@@ -4334,7 +4334,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-a-sketch-text-effect-online-1044.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
  
@@ -4411,7 +4411,7 @@ if (isBanChat) return reply(mess.banChat)
              if (/1917/.test(command)) link = 'https://textpro.me/1917-style-text-effect-online-980.html'
                 if (/leaves/.test(command)) link = 'https://textpro.me/natural-leaves-text-effect-931.html'           
              let anu = await maker.textpro(link, q)
-                NepBotzInc.sendMessage(m.chat, { image: { url: anu }, caption: `Made by ${global.botname}` }, { quoted: m })
+                NepBotzInc.sendMessage(m.chat, { image: { url: anu }, caption: `${global.footer}` }, { quoted: m })
              }
              break
 
@@ -4440,7 +4440,7 @@ if (isBanChat) return reply(mess.banChat)
      let anui = await textpro(link, q)
      reply(`Wait a moment while making the logo about 1 minute`) 
      console.log(anui)
-    NepBotzInc.sendMessage(from, {image:{url:anui}, caption:"Here you go!"}, {quoted:m})
+    NepBotzInc.sendMessage(from, {image:{url:anui}, caption:"${global.footer}"}, {quoted:m})
 }
    break
 case 'whitebear':
@@ -4450,7 +4450,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/online-black-and-white-bear-mascot-logo-creation-1012.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'thunder2':
@@ -4460,7 +4460,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-thunder-text-effect-online-881.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
    break
@@ -4471,7 +4471,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-blackpink-logo-style-online-1001.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'neon':
@@ -4481,7 +4481,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/neon-light-text-effect-online-882.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'matrix2':
@@ -4491,7 +4491,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/matrix-style-text-effect-online-884.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'sky':
@@ -4501,7 +4501,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-a-cloud-text-effect-on-the-sky-online-1004.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'magma':
@@ -4511,7 +4511,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-a-magma-hot-text-effect-online-1030.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'sand':
@@ -4521,7 +4521,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/sand-writing-text-effect-online-990.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'pencil':
@@ -4531,7 +4531,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-a-sketch-text-effect-online-1044.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'graffiti':
@@ -4541,7 +4541,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-wonderful-graffiti-art-text-effect-1011.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'metallic':
@@ -4551,7 +4551,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-a-metallic-text-effect-free-online-1041.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'steel':
@@ -4561,7 +4561,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/steel-text-effect-online-921.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'harrpotter':
@@ -4571,7 +4571,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-harry-potter-text-effect-online-1025.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'underwater':
@@ -4581,7 +4581,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/3d-underwater-text-effect-generator-online-1013.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'luxury':
@@ -4591,7 +4591,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/3d-luxury-gold-text-effect-online-1003.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'glue2':
@@ -4601,7 +4601,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-3d-glue-text-effect-with-realistic-style-986.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'fabric':
@@ -4611,7 +4611,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/fabric-text-effect-online-964.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'neonlight':
@@ -4621,7 +4621,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/neon-light-glitch-text-generator-online-1063.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'lava':
@@ -4631,7 +4631,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/lava-text-effect-online-914.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'toxic':
@@ -4641,7 +4641,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/toxic-text-effect-online-901.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'ancient':
@@ -4651,7 +4651,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/3d-golden-ancient-text-effect-online-free-1060.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'christmas2':
@@ -4661,7 +4661,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/sparkles-merry-christmas-text-effect-1054.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'sci_fi':
@@ -4671,7 +4671,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-3d-sci-fi-text-effect-online-1050.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'rainbow':
@@ -4681,7 +4681,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/3d-rainbow-color-calligraphy-text-effect-1049.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'classic':
@@ -4691,7 +4691,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/video-game-classic-8-bit-text-effect-1037.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'watercolor2':
@@ -4701,7 +4701,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-a-free-online-watercolor-text-effect-1017.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'halloweem2':
@@ -4711,7 +4711,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-a-spooky-halloween-text-effect-online-1046.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'halloweenfire':
@@ -4721,7 +4721,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/halloween-fire-text-effect-940.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'writing':
@@ -4731,7 +4731,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/sand-writing-text-effect-online-990.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'foggy':
@@ -4741,7 +4741,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/write-text-on-foggy-window-online-free-1015.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'marvel':
@@ -4751,7 +4751,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-logo-style-marvel-studios-ver-metal-972.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'skeleton2':
@@ -4761,7 +4761,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-halloween-skeleton-text-effect-online-1047.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'sketch':
@@ -4771,7 +4771,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-a-sketch-text-effect-online-1044.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'wonderful':
@@ -4781,7 +4781,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-wonderful-graffiti-art-text-effect-1011.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'cool':
@@ -4791,7 +4791,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-a-cool-graffiti-text-on-the-wall-1010.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'collwall':
@@ -4801,7 +4801,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/create-cool-wall-graffiti-text-effect-online-1009.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'multicolor2':
@@ -4811,7 +4811,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/online-multicolor-3d-paper-cut-text-effect-1016.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'batman':
@@ -4821,7 +4821,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/make-a-batman-logo-online-free-1066.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'juice':
@@ -4831,7 +4831,7 @@ if(!q) return reply(`Use ${prefix + command} text`)
 reply(mess.wait)
 maker.textpro("https://textpro.me/fruit-juice-text-effect-861.html", [
     `${q}`,])
-  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+  .then((data) => NepBotzInc.sendMessage(m.chat, { image: { url: data }, caption: `${global.footer}` }, { quoted: m }))
   .catch((err) => console.log(err));
    break
 case 'retro':{
@@ -4845,7 +4845,7 @@ inilogo9 = args.join(" ")
 var logo9 = inilogo9.split('|')[1]
     let anu = await textpro("https://textpro.me/create-3d-retro-text-effect-online-free-1065.html", [`${logo4}`,`${logo9}`])
 console.log(anu)
-NepBotzInc.sendMessage(from,{image:{url:anu}, caption:"Here you go!"},{quoted:m})
+NepBotzInc.sendMessage(from,{image:{url:anu}, caption:"${global.footer}"},{quoted:m})
 }
 break
 case 'horror':{
@@ -4859,7 +4859,7 @@ inilogo9 = args.join(" ")
 var logo9 = inilogo9.split('|')[1]
     let anu = await textpro("https://textpro.me/create-a-cinematic-horror-text-effect-1045.html", [`${logo4}`,`${logo9}`])
 console.log(anu)
-NepBotzInc.sendMessage(from,{image:{url:anu}, caption:"Here you go!"},{quoted:m})
+NepBotzInc.sendMessage(from,{image:{url:anu}, caption:"${global.footer}"},{quoted:m})
 }
 break
 case '8bit':{
@@ -4873,7 +4873,7 @@ inilogo9 = args.join(" ")
 var logo9 = inilogo9.split('|')[1]
     let anu = await textpro("https://textpro.me/video-game-classic-8-bit-text-effect-1037.html", [`${logo4}`,`${logo9}`])
 console.log(anu)
-NepBotzInc.sendMessage(from,{image:{url:anu}, caption:"Here you go!"},{quoted:m})
+NepBotzInc.sendMessage(from,{image:{url:anu}, caption:"${global.footer}"},{quoted:m})
 }
 break
 case 'emoji1': {
@@ -4881,8 +4881,8 @@ case 'emoji1': {
 if (isBanChat) return reply(mess.banChat)
 if (!args.join(" ")) return reply('Where is the emoji?')
 emoji.get(args.join(" ")).then(async(emoji) => {
-let mese = await NepBotzInc.sendMessage(m.chat, {image:{url:emoji.images[4].url}, caption: `Made by ${global.botname}`}, {quoted:m})
-await NepBotzInc.sendMessage(from, {text:"reply #s to this image to make sticker"}, {quoted:mese})
+let mese = await NepBotzInc.sendMessage(m.chat, {image:{url:emoji.images[4].url}, caption: `${global.footer}`}, {quoted:m})
+
 })
 }
 break
@@ -5162,7 +5162,7 @@ reply(util.format(anu))
 await fs.unlinkSync(media)
 }
 break
-            case 'imagenobgxxx': case 'removebg': case 'remove-bgxxx': {
+            case 'imagenobg': case 'removebg': case 'remove-bg': {
 	    if (!quoted) return replay(`Send/Reply Image With Caption ${prefix + command}`)
 	    if (!/image/.test(mime)) return replay(`Send/Reply Image With Caption ${prefix + command}`)
 	    if (/webp/.test(mime)) return replay(`Send/Reply Image With Caption ${prefix + command}`)
@@ -5181,7 +5181,7 @@ break
 	      scale: "100%",
 	      outputFile 
 	    }).then(async result => {
-	    NepBotzInc.sendMessage(m.chat, {image: fs.readFileSync(outputFile), caption: mess.success}, { quoted : m })
+	    NepBotzInc.sendMessage(m.chat, {image: fs.readFileSync(outputFile), caption: global.footer}, { quoted : m })
 	    await fs.unlinkSync(localFile)
 	    await fs.unlinkSync(outputFile)
 	    })
@@ -5836,7 +5836,7 @@ if (isBanChat) return reply(mess.banChat)
              if (/1917/.test(command)) link = 'https://textpro.me/1917-style-text-effect-online-980.html'
                 if (/leaves/.test(command)) link = 'https://textpro.me/natural-leaves-text-effect-931.html'
              let anu = await maker.textpro(link, q)
-                NepBotzInc.sendMessage(m.chat, { image: { url: anu }, caption: `Made by ${global.botname},For my Darling ` }, { quoted: m })
+                NepBotzInc.sendMessage(m.chat, { image: { url: anu }, caption: `${global.footer},For my Darling ` }, { quoted: m })
              }
              break
             case 'drakorxxx':
@@ -7085,7 +7085,7 @@ break
 } )
    console.log(musim_rambutan)
    const xeonytiktoknowm = musim_rambutan.result.nowatermark
-    NepBotzInc.sendMessage(from, { video: { url: xeonytiktoknowm }, caption: "Here you go!" }, { quoted: m })
+    NepBotzInc.sendMessage(from, { video: { url: xeonytiktoknowm }, caption: "${global.footer}" }, { quoted: m })
    }
   break
   case 'tiktokaudioxx':
@@ -8188,7 +8188,7 @@ case 'tiktok': case 'ttmp4': case 'ttvideo': case 'tiktokmp4': case 'tiktokvideo
 if (!q) return reply("Enter the link")
 reply(mess.wait)
 var tt = await tiktokdlv3(q).catch(e => { reply("MAKE SURE THE LINK IS VALID (Tiktok LINK)")})
-NepBotzInc.sendMessage(from, {video:{url:tt.video.no_watermark}, caption:"Here you go!"},{quoted: m})
+NepBotzInc.sendMessage(from, {video:{url:tt.video.no_watermark}, caption:"${global.footer}"},{quoted: m})
 break
 case 'ttmp3': case 'ttaudio': case 'tiktokmp3': case 'tiktokaudio':
 if (!q) return reply("Enter the link")
@@ -8200,98 +8200,98 @@ case 'asuna':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
-teks = `Here you go!`
+teks = `${global.footer}`
 buffer = `https://revita.herokuapp.com/api/wallpaper/asuna?apikey=ApiRevita`
-NepBotzInc.sendMessage(from, {image:{url:buffer}, caption:"Here you go!"}, {quoted:m})
+NepBotzInc.sendMessage(from, {image:{url:buffer}, caption:"${global.footer}"}, {quoted:m})
 break
 case 'anna':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
-teks = `Here you go!`
+teks = `${global.footer}`
 buffer = `https://api.zeeoneofc.xyz/api/anime/anna?apikey=5Cd8U3tG`
-NepBotzInc.sendMessage(from, {image:{url:buffer}, caption:"Here you go!"}, {quoted:m})
+NepBotzInc.sendMessage(from, {image:{url:buffer}, caption:"${global.footer}"}, {quoted:m})
 break
 case 'chitoge':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
-teks = `Here you go!`
+teks = `${global.footer}`
 buffer = `https://revita.herokuapp.com/api/wallpaper/chitoge?apikey=ApiRevita`
-NepBotzInc.sendMessage(from, {image:{url:buffer}, caption:"Here you go!"}, {quoted:m})
+NepBotzInc.sendMessage(from, {image:{url:buffer}, caption:"${global.footer}"}, {quoted:m})
 break
 case 'cosplay':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
-teks = `Here you go!`
+teks = `${global.footer}`
 buffer = `https://kannxapi.herokuapp.com/api/randomimage/cosplay`
-NepBotzInc.sendMessage(from, {image:{url:buffer}, caption:"Here you go!"}, {quoted:m})
+NepBotzInc.sendMessage(from, {image:{url:buffer}, caption:"${global.footer}"}, {quoted:m})
 break
 case 'elaina':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
-teks = `Here you go!`
+teks = `${global.footer}`
 buffer = `https://revita.herokuapp.com/api/wallpaper/elaina?apikey=ApiRevita`
-NepBotzInc.sendMessage(from, {image:{url:buffer}, caption:"Here you go!"}, {quoted:m})
+NepBotzInc.sendMessage(from, {image:{url:buffer}, caption:"${global.footer}"}, {quoted:m})
 break
 case 'emilia':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
-teks = `Here you go!`
+teks = `${global.footer}`
 buffer = `https://revita.herokuapp.com/api/wallpaper/emilia?apikey=ApiRevita`
-NepBotzInc.sendMessage(from, {image:{url:buffer}, caption:"Here you go!"}, {quoted:m})
+NepBotzInc.sendMessage(from, {image:{url:buffer}, caption:"${global.footer}"}, {quoted:m})
 break
 case 'gremory':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
-teks = `Here you go!`
+teks = `${global.footer}`
 buffer = `https://revita.herokuapp.com/api/wallpaper/gremory?apikey=ApiRevita`
-NepBotzInc.sendMessage(from, {image:{url:buffer}, caption:"Here you go!"}, {quoted:m})
+NepBotzInc.sendMessage(from, {image:{url:buffer}, caption:"${global.footer}"}, {quoted:m})
 break
 case 'kaguya':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
-teks = `Here you go!`
+teks = `${global.footer}`
 buffer = `https://revita.herokuapp.com/api/wallpaper/shinomiya?apikey=ApiRevita`
-NepBotzInc.sendMessage(from, {image:{url:buffer}, caption:"Here you go!"}, {quoted:m})
+NepBotzInc.sendMessage(from, {image:{url:buffer}, caption:"${global.footer}"}, {quoted:m})
 break
 case 'kotori':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
-teks = `Here you go!`
+teks = `${global.footer}`
 buffer = `https://revita.herokuapp.com/api/wallpaper/kotori?apikey=ApiRevita`
-NepBotzInc.sendMessage(from, {image:{url:buffer}, caption:"Here you go!"}, {quoted:m})
+NepBotzInc.sendMessage(from, {image:{url:buffer}, caption:"${global.footer}"}, {quoted:m})
 break
 case 'kurumi':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
-teks = `Here you go!`
+teks = `${global.footer}`
 buffer = `https://revita.herokuapp.com/api/wallpaper/kurumi?apikey=ApiRevita`
-NepBotzInc.sendMessage(from, {image:{url:buffer}, caption:"Here you go!"}, {quoted:m})
+NepBotzInc.sendMessage(from, {image:{url:buffer}, caption:"${global.footer}"}, {quoted:m})
 break
 case 'mikasa':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
-teks = `Here you go!`
+teks = `${global.footer}`
 buffer = `https://revita.herokuapp.com/api/wallpaper/mikasa?apikey=ApiRevita`
-NepBotzInc.sendMessage(from, {image:{url:buffer}, caption:"Here you go!"}, {quoted:m})
+NepBotzInc.sendMessage(from, {image:{url:buffer}, caption:"${global.footer}"}, {quoted:m})
 break
 
 case 'rize':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
-teks = `Here you go!`
+teks = `${global.footer}`
 buffer = `https://revita.herokuapp.com/api/wallpaper/rize?apikey=ApiRevita`
-NepBotzInc.sendMessage(from, {image:{url:buffer}, caption:"Here you go!"}, {quoted:m})
+NepBotzInc.sendMessage(from, {image:{url:buffer}, caption:"${global.footer}"}, {quoted:m})
 break
 
 
