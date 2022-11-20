@@ -17,11 +17,10 @@ neo.reply = {
     nsfw: 'The nsfw feature has not been activated, please contact the admin to activate',
     banChat: 'The bot was banned in this group, please contact the owner to unban',
     attack: 'Type the number u want to attack'
-    kick: 'User has been successfully removed from this group'
-    add: 'User has been successfully added to this group'
-    promote: 'User successfully promoted'
-    demote: 'User successfully demoted'
-    block: 'Blocked'
-    unblock: 'Unblocked'
-    
+    kick: 'User has been successfully removed from this group',
+    add: 'User has been successfully added to this group',
+    promote: 'User successfully promoted',
+    demote: 'User successfully demoted',
+    block: 'Blocked',
+    unblock: 'Unblocked' 
 }
