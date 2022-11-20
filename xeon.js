@@ -13,6 +13,7 @@ const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/
 const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep } = require('./lib/myfunc')
 const moment = require('moment-timezone')
 const { toAudio, toPTT, toVideo } = require('./lib/converter')
+const rep = require('./Language/EN')
 
 var low
 try {
