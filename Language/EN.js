@@ -1,7 +1,7 @@
 const fs = require('fs')
 const chalk = require('chalk')
 
-neo.reply = {
+"reply" = {
     success: 'Done ✓',
     admin: 'This Feature Is Only For Admin!',
     botAdmin: 'Bot Must Be Admin First!',
@@ -25,10 +25,3 @@ neo.reply = {
     unblock: 'Unblocked ✔️',
     sticker: 'Creating the sticker 🧰'
 }
-let file = require.resolve(__filename)
-fs.watchFile(file, () => {
-	fs.unwatchFile(file)
-	console.log(chalk.redBright(`Update'${__filename}'`))
-	delete require.cache[file]
-	require(file)
-})
