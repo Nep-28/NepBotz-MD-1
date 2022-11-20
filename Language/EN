@@ -1,7 +1,7 @@
 const fs = require('fs')
 const chalk = require('chalk')
 
-global.mess = {
+neo.reply = {
     success: 'Done ✓',
     admin: 'This Feature Is Only For Admin!',
     botAdmin: 'Bot Must Be Admin First!',
@@ -17,4 +17,11 @@ global.mess = {
     nsfw: 'The nsfw feature has not been activated, please contact the admin to activate',
     banChat: 'The bot was banned in this group, please contact the owner to unban',
     attack: 'Type the number u want to attack'
+    kick: 'User has been successfully removed from this group'
+    add: 'User has been successfully added to this group'
+    promote: 'User successfully promoted'
+    demote: 'User successfully demoted'
+    block: 'Blocked'
+    unblock: 'Unblocked'
+    
 }
