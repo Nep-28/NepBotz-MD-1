@@ -3419,7 +3419,7 @@ break
 		   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
            if (!text) return reply(`Example : ${prefix + command} text`)
-           m.reply(`${reply.sticker}`)
+           m.reply(`${rep.sticker}`)
            await NepBotzInc.sendMedia(m.chat, `https://xteam.xyz/attp?file&text=${text}`, 'hisoka', 'morou', m, {asSticker: true})
 
          }

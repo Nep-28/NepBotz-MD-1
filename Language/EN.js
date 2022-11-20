@@ -1,7 +1,7 @@
 const fs = require('fs')
 const chalk = require('chalk')
 
-"reply" = {
+NepBotzInc.repmg = {
     success: 'Done ✓',
     admin: 'This Feature Is Only For Admin!',
     botAdmin: 'Bot Must Be Admin First!',
