@@ -1,5 +1,5 @@
-
 require('./settings')
+require('./Language/EN')
 const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = require('@adiwajshing/baileys')
 const fs = require('fs')
 const util = require('util')
@@ -2317,7 +2317,7 @@ if (isBanChat) return reply(mess.banChat)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await NepBotzInc.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(`User has been kicked successfully`)).catch((err) => reply(jsonformat(err)))
+		await NepBotzInc.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(`User has been successfully removed from this group`)).catch((err) => reply(jsonformat(err)))
     }
 	break
 	case 'add': {
@@ -2327,7 +2327,7 @@ if (isBanChat) return reply(mess.banChat)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
 		let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await NepBotzInc.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+		await NepBotzInc.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(`User has been successfully added to this group`)).catch((err) => reply(jsonformat(err)))
 	}
 	break
 	case 'promote': {
