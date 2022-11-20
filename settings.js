@@ -120,9 +120,15 @@ global.mess = {
     error: 'Error!!',
     endLimit: 'Your Daily Limit Has Expired, The Limit Will Be Reset Every 12 Hours',
     ban: 'You have been banned by the owner, if you want to be unbanned, chat owner.',
-    nsfw: 'The nsfw feature has not been activated, please contact the admin to activate',
     banChat: 'The bot was banned in this group, please contact the owner to unban',
-    attack: 'Type the number u want to attack'
+    attack: 'Type the number u want to attack',
+    kick: '⚙️ User has been successfully removed from this group ✔️',
+    add: '⚙️ User has been successfully added to this group ✔️',
+    promote: '⚙️ User successfully promoted ✔️',
+    demote: '⚙️ User successfully demoted ✔️',
+    block: 'Blocked ✔️',
+    unblock: 'Unblocked ✔️',
+    sticker: 'Creating the sticker 🧰'
 }
     global.limitawal = {
     premium: "Infinity",
