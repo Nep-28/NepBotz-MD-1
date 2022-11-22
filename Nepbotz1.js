@@ -19,13 +19,13 @@ const primbon = new Primbon()
 const { smsg, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom } = require('./lib/myfunc')
 const xeonkey = require('xfarr-api')
 const cheerio = require ("cheerio")
-const { NepBotzIncTiktok } = require('./lib/tiktokbyxeon')
+const { NepBotzIncTiktok } = require('./lib/tiktoknew.js')
 let { msgFilter } = require('./lib/antispam')
 let { covid } = require('./lib/covid.js') 
 const { EmojiAPI } = require("emoji-api")
 const emoji = new EmojiAPI()
 const thiccysapi = require('textmaker-thiccy')
-const { NepBotzIncWiki } = require('./lib/xeonywiki.js')
+const { NepBotzIncWiki } = require('./lib/neowiki.js')
 const textpro = require('./lib/textpro')
 const { mediafireDl } = require('./lib/mediafire.js')
 const { Gempa } = require("./lib/gempa.js")
@@ -35,7 +35,7 @@ const { pinterest } = require("./lib/pinterest")
 const toHur = require('@develoka/angka-terbilang-js')
 const { hentai } = require('./lib/scraper2.js')
 const yts = require("yt-search")
-const { servers, yta, ytv } = require('./lib/y2matebyxeon')
+const { servers, yta, ytv } = require('./lib/y2matenew.js')
 const gtts = require('node-gtts')
 const { tiktokdl } = require('@bochilteam/scraper')
 const { instagramdl, instagramdlv2, instagramdlv3, instagramdlv4 } = require('@bochilteam/scraper')
@@ -177,10 +177,10 @@ const {
  let _darahOrg = JSON.parse(fs.readFileSync('./storage/user/darah.json'))
 
 //Database omther\\
-let xeonysticker = JSON.parse(fs.readFileSync('./XeonMedia/theme/Media-Store-Karne-Ke-Liye/sticker.json'));
-let xeonyaudio = JSON.parse(fs.readFileSync('./XeonMedia/theme/Media-Store-Karne-Ke-Liye/audio.json'));
-let xeonyimage = JSON.parse(fs.readFileSync('./XeonMedia/theme/Media-Store-Karne-Ke-Liye/image.json'));
-let xeonyvideo = JSON.parse(fs.readFileSync('./XeonMedia/theme/Media-Store-Karne-Ke-Liye/video.json'));
+let xeonysticker = JSON.parse(fs.readFileSync('./NepMedia/theme/Media-Store-Karne-Ke-Liye/sticker.json'));
+let xeonyaudio = JSON.parse(fs.readFileSync('./NepMedia/theme/Media-Store-Karne-Ke-Liye/audio.json'));
+let xeonyimage = JSON.parse(fs.readFileSync('./NepMedia/theme/Media-Store-Karne-Ke-Liye/image.json'));
+let xeonyvideo = JSON.parse(fs.readFileSync('./NepMedia/theme/Media-Store-Karne-Ke-Liye/video.json'));
 let autosticker = JSON.parse(fs.readFileSync('./database/autosticker.json'));
 const _autostick = JSON.parse(fs.readFileSync('./database/autostickpc.json'));
 let banUser = JSON.parse(fs.readFileSync('./database/banUser.json'));
@@ -458,11 +458,11 @@ message: {
 	
 	//group target \\
 const reply = (teks) => {
-           NepBotzInc.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": `${global.footer}`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./XeonMedia/theme/log0.jpg`),"sourceUrl": `${linkz}`}}}, { quoted: m})
+           NepBotzInc.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": `${global.footer}`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./NepMedia/theme/log0.jpg`),"sourceUrl": `${linkz}`}}}, { quoted: m})
         }
         
         const replay = (teks) => {
-            NepBotzInc.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": `${global.footer}`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./XeonMedia/theme/log0.jpg`),"sourceUrl": `${linkz}`}}}, { quoted: m})
+            NepBotzInc.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": `${global.footer}`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./NepMedia/theme/log0.jpg`),"sourceUrl": `${linkz}`}}}, { quoted: m})
         }
 	
         //Public & Private\\
@@ -3282,7 +3282,7 @@ if (isBanChat) return reply(mess.banChat)
 if (!isCreator) return replay(mess.owner)
                 if (!/video/.test(mime) && !/image/.test(mime) && !/audio/.test(mime)) return reply(`*Send/Reply Video/Audio/Image You Want to Broadcast With Caption* ${prefix + command}`)
                 let anu = await store.chats.all().map(v => v.id)
-                let ftroli ={key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "916909137213-1604595598@g.us"}, "message": {orderMessage: {itemCount: 999999999,status: 200, thumbnail: fs.readFileSync('./XeonMedia/theme/log0.jpg'), surface: 200, message: `${ownername}'s Broadcast`, orderTitle: `${botname}`, sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
+                let ftroli ={key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "916909137213-1604595598@g.us"}, "message": {orderMessage: {itemCount: 999999999,status: 200, thumbnail: fs.readFileSync('./NepMedia/theme/log0.jpg'), surface: 200, message: `${ownername}'s Broadcast`, orderTitle: `${botname}`, sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
                 reply(`*Send Broadcast To* ${anu.length} *Group Chat, Time ${anu.length * 1.5} secs*`)
                 for (let i of anu) {
                     await sleep(1500)
@@ -7533,12 +7533,12 @@ try {
 hx.pinterest(args.join(" ")).then(async(res) => {
 imgnyee = res[Math.floor(Math.random() * res.length)]
 let buttons = [
-{buttonId: `pinterest ${args.join(" ")}`, buttonText: {displayText: 'Next Image 👀'}, type: 1}
+{buttonId: `pinterest ${args.join(" ")}`, buttonText: {displayText: 'Next Image'}, type: 1}
 ]
 let buttonMessage = {
 image: { url: imgnyee },
-caption:  `${global.themeemoji} Title : ` + args.join(" ") + `\n${global.themeemoji} Media Url : `+imgnyee,
-footer: `${global.botname}`,
+caption:  `┏━✪ 🧚‍♀️ *Pinterest image* 🧚‍♀️ ✪━\n\n┃➣│🧚‍♀️ Title : ` + args.join(" ") + `\n┃➣│🧚‍♀️ Media Url : `+imgnyee,
+footer: `${global.footer}`,
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
@@ -7564,12 +7564,12 @@ if (!text) return reply(mess.linkm)
 if (!isUrl(args[0]) && !args[0].includes('mediafire.com')) return reply(`The link you provided is invalid`)
 const baby1 = await mediafireDl(text)
 if (baby1[0].size.split('MB')[0] >= 999) return reply('*File Over Limit* '+util.format(baby1))
-const result4 = `*MEDIAFIRE DOWNLOADER*
+const result4 = `┏━✪ 🧚‍♀️ *MEDIAFIRE DOWNLOADER*  🧚‍♀️✪━
 				
-*Name* : ${baby1[0].nama}
-*Size* : ${baby1[0].size}
-*Mime* : ${baby1[0].mime}
-*Link* : ${baby1[0].link}`
+┃➣│🧚‍♀️ *Name* : ${baby1[0].nama}
+┃➣│🧚‍♀️ *Size* : ${baby1[0].size}
+┃➣│🧚‍♀️ *Mime* : ${baby1[0].mime}
+┃➣│🧚‍♀️ *Link* : ${baby1[0].link}`
 reply(`${result4}`)
 NepBotzInc.sendMessage(m.chat, { document : { url : baby1[0].link}, fileName : baby1[0].nama, mimetype: baby1[0].mime }, { quoted : m }).catch ((err) => reply(mess.error))
 }
@@ -8134,9 +8134,9 @@ footer: `${botname}`,
 buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
-title:"I deserve something for my hardwork",
-body: "Click to donate", 
-thumbnail: fs.readFileSync("XeonMedia/theme/log0.jpg"),
+title:"NepBotz Script",
+body: "Subscribe Me", 
+thumbnail: fs.readFileSync("NepMedia/theme/log0.jpg"),
 mediaType:1,
 mediaUrl: 'https://telegra.ph/file/1a07a8bef94def40aa1ff.jpg',
 sourceUrl: "https://telegra.ph/file/1a07a8bef94def40aa1ff.jpg"
@@ -9124,7 +9124,7 @@ const buttons = [
   {buttonId: 'owner', buttonText: {displayText: 'Owner'}, type: 1}
 ]
 const buttonMessage = {
-    image: fs.readFileSync('./XeonMedia/theme/alive.jpg'),
+    image: fs.readFileSync('./NepMedia/theme/alive.jpg'),
     caption: alivems,
     footer: `${global.footer}`,
     buttons: buttons,
@@ -10291,7 +10291,7 @@ break
 ///////if (antitags === false) return
 ////////if (!m.isGroup) return
 /////////if (m.key.fromMe) return
-////////sendNye = fs.readFileSync('./XeonMedia/theme/yourtag.webp')
+////////sendNye = fs.readFileSync('./NepMedia/theme/yourtag.webp')
 //////////NepBotzInc.readMessages(m.chat, [m.key.id])
 ////////////////)NepBotzInc.sendMessage(from, {sticker:sendNye, contextInfo:{forwardingScore: 800, isForwarded: true}}, {quoted:m})
 //}
@@ -10300,7 +10300,7 @@ break
 ////////if (antitags === false) return
 /////)if (!m.isGroup) return
 ////////if (m.key.fromMe) return
-//////////sendNye = fs.readFileSync('./XeonMedia/theme/yourtag.webp')
+//////////sendNye = fs.readFileSync('./NepMedia/theme/yourtag.webp')
 ///////////NepBotzInc.readMessages(m.chat, [m.key.id])
 ////////////////////NepBotzInc.sendMessage(from, {sticker:sendNye, contextInfo:{forwardingScore: 800, isForwarded: true}}, {quoted:m})
 ///}
