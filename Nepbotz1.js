@@ -8166,7 +8166,7 @@ break
 case 'tiktokx':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-    if (!args[0]) return reply(`Use example ${Prefix+command} https://www.tiktok.com/@omagadsus/video/7025456384175017243`)
+    if (!args[0]) return reply(`Use example ${prefix+command} https://www.tiktok.com/@omagadsus/video/7025456384175017243`)
     const { author: { nickname }, video, description } = await tiktokdl(args[0])
     const url = video.no_watermark || video.no_watermark2 || video.no_watermark_raw
     if (!url) throw 'Can\'t download video!'
