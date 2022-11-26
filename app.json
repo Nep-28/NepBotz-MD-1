@@ -1,7 +1,7 @@
 {
   "name": "NepBotz-MD",
   "description": "whatsapp md bot build with nodejs",
-  "repository": "https://github.com/DGXeon/NepBotz-MD-1",
+  "repository": "https://github.com/Nep-28/NepBotz-MD-1",
   "logo": "https://telegra.ph/file/6544c1d25bc0949e47bb6.jpg",
   "keywords": ["nodejs", "bot", "whatsapp bot", "whatsapp automation", "multi device"],
   "buildpacks": [
