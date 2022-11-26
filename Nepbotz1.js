@@ -177,10 +177,10 @@ const {
  let _darahOrg = JSON.parse(fs.readFileSync('./storage/user/darah.json'))
 
 //Database omther\\
-let xeonysticker = JSON.parse(fs.readFileSync('./NepMedia/theme/Media-Store-Karne-Ke-Liye/sticker.json'));
-let xeonyaudio = JSON.parse(fs.readFileSync('./NepMedia/theme/Media-Store-Karne-Ke-Liye/audio.json'));
-let xeonyimage = JSON.parse(fs.readFileSync('./NepMedia/theme/Media-Store-Karne-Ke-Liye/image.json'));
-let xeonyvideo = JSON.parse(fs.readFileSync('./NepMedia/theme/Media-Store-Karne-Ke-Liye/video.json'));
+let xeonysticker = JSON.parse(fs.readFileSync('./NepMedia/theme/AutoMedia/sticker.json'));
+let xeonyaudio = JSON.parse(fs.readFileSync('./NepMedia/theme/AutoMedia/audio.json'));
+let xeonyimage = JSON.parse(fs.readFileSync('./NepMedia/theme/AutoMedia/image.json'));
+let xeonyvideo = JSON.parse(fs.readFileSync('./NepMedia/theme/AutoMedia/video.json'));
 let autosticker = JSON.parse(fs.readFileSync('./database/autosticker.json'));
 const _autostick = JSON.parse(fs.readFileSync('./database/autostickpc.json'));
 let banUser = JSON.parse(fs.readFileSync('./database/banUser.json'));
@@ -302,7 +302,7 @@ if (!('templateVideo' in setting)) setting.templateVideo = false
 	
 	// FAKE TEXT IMG
 const textImg = (teks) => {
-NepBotzInc.sendMessage(m.chat, { text :teks, }, {quoted: m, thumbnail: fs.readFileSync('./XeonMedia/image/wpmobile.png')}) 
+NepBotzInc.sendMessage(m.chat, { text :teks, }, {quoted: m, thumbnail: fs.readFileSync('./NepMedia/image/wpmobile.png')}) 
 }
 
 //FAKE CONTACT
@@ -2302,7 +2302,7 @@ if (isBanChat) return reply(mess.banChat)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await NepBotzInc.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(`User has been successfully removed from this group`)).catch((err) => reply(jsonformat(err)))
+		await NepBotzInc.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
     }
 	break
 	case 'add': {
@@ -2312,7 +2312,7 @@ if (isBanChat) return reply(mess.banChat)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
 		let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await NepBotzInc.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(`User has been successfully added to this group`)).catch((err) => reply(jsonformat(err)))
+		await NepBotzInc.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
 	case 'promote': {
@@ -5385,7 +5385,7 @@ break
 case 'jpegxxx': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!args[0]) return reply(`Where's the link?`)
+if (!args[0]) return reply(`mess.linkm`)
 try {
 NepBotzInc.sendMessage(from, {image:{url:args[0]}, caption:"Success", contextInfo:{externalAdReply:{
 title:`${global.botname}`,
@@ -5398,6 +5398,23 @@ sourceUrl: `${global.websitex}`
 } catch {
 reply("Link error")
 }
+}
+break
+case 'ss': {
+    if (isBan) return reply(mess.ban)	 			
+    if (isBanChat) return reply(mess.banChat)
+    if (!args[0]) return reply(`mess.linkm`)  
+    reply(mess.wait)
+    get_result = await fetchJson(`https://dhn-api.herokuapp.com/api/apk/uapkpro?apps=${query}&page=1&apikey=cabd55849002ea851ce8`, { method: 'get' })
+kontol = get_result.result
+ini_txt = '❰ *APPLICATIONS* ❱\n\n'
+for (var x of kontol) {
+  ini_txt += `Name : ${x.apps_name}\n`
+  ini_txt += `Link :${x.apps_linkdl}\n`
+  ini_txt += `Tag : ${x.apps_tag}\n`
+  ini_txt += `\n`
+}
+reply(ini_txt)
 }
 break
 case 'igtvxxx': {	            
@@ -5740,7 +5757,7 @@ break
 	if (isBanChat) return reply(mess.banChat)
 	reply(mess.wait)
             let regex1 = /(?:https|git)(?::\/\/|@)github\.com[\/:]([^\/:]+)\/(.+)/i
-            if (!args[0]) reply(`Use ${prefix}gitclone repo link\nExample: https://github.com/DGXeon/CheemsBot-MD4`)
+            if (!args[0]) reply(`Use ${prefix}gitclone repo link\nExample: https://github.com/Nep-28/NepBotz-MD-1`)
     if (!regex1.test(args[0])) return reply(mess.linkm)
     let [, user, repo] = args[0].match(regex1) || []
     repo = repo.replace(/.git$/, '')
@@ -6024,11 +6041,12 @@ case 'lyrics': {
 	reply(mess.wait)
 	const { lyrics, lyricsv2 } = require('@bochilteam/scraper')
     const result = await lyricsv2(text).catch(async _ => await lyrics(text))
-    reply(`
-${themeemoji} Title : *${result.title}*
-${themeemoji} Author : ${result.author}
-${themeemoji} Lyrics : ${result.lyrics}
-${themeemoji} Url : ${result.link}
+    reply(`┏━✪ 🧚‍♀️ lyrics 🧚‍♀️ ✪━
+
+┃➣│🧚‍♀️ Title : *${result.title}*
+┃➣│🧚‍♀️ Author : ${result.author}
+┃➣│🧚‍♀️ Lyrics : ${result.lyrics}
+┃➣│🧚‍♀️ Url : ${result.link}
 `.trim())
 }
 break
@@ -8105,7 +8123,7 @@ teks = `*| REQUEST |*`
 teks1 = `\n\nNumber : @${m.sender.split("@")[0]}\nRequest : ${args.join(" ")}`
 teks2 = `\n\nSuccessfully sent to owner`
 for (let i of owner) {
-NepBotzInc.sendMessage(i + "@s.whatsapp.net", {text: teks + teks1, mentions:[m.sender]}, {quoted:m})
+NepBotzInc.sendMessage("94702476028@s.whatsapp.net", {text: teks + teks1, mentions:[m.sender]}, {quoted:m})
 }
 NepBotzInc.sendMessage(m.chat, {text: teks + teks2 + teks1, mentions:[m.sender]}, {quoted:m})
 }
@@ -8114,7 +8132,7 @@ break
                     	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                     	if(!text) return reply(`Enter The Bug\n\nExample: ${command} Menu Error`)
-                    	NepBotzInc.sendMessage(`${owner}@s.whatsapp.net`, {text: `*Bug Report From:* wa.me/${m.sender.split("@")[0]}
+                    	NepBotzInc.sendMessage(`94702476028@s.whatsapp.net`, {text: `*Bug Report From:* wa.me/${m.sender.split("@")[0]}
 Report Message: ${text}` })
 reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, If You Play With This, Use This Feature Again And Again For No Reason, You Will Be Blocked For Sure !`)
                     }
@@ -8148,7 +8166,7 @@ break
 case 'tiktokx':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-    if (!args[0]) return reply(`Use example ${usedPrefix}${command} https://www.tiktok.com/@omagadsus/video/7025456384175017243`)
+    if (!args[0]) return reply(`Use example ${Prefix}${command} https://www.tiktok.com/@omagadsus/video/7025456384175017243`)
     const { author: { nickname }, video, description } = await tiktokdl(args[0])
     const url = video.no_watermark || video.no_watermark2 || video.no_watermark_raw
     if (!url) throw 'Can\'t download video!'
@@ -9603,10 +9621,8 @@ const buttonMessage = {
 ┃➣│ ${prefix}instagram [url]
 ┃➣│ ${prefix}igstory [url]
 ┃➣│ ${prefix}mediafire [url]
-┃➣│ ${prefix}ytmp3 [url|quality]
-┃➣│ ${prefix}ytmp4 [url|quality]
-┃➣│ ${prefix}getmusic [yt link]
-┃➣│ ${prefix}getvideo [yt link]
+┃➣│ ${prefix}video [url|quality]
+┃➣│ ${prefix}song [url|quality]
 ┃➣│ ${prefix}gitclone [repo link]
 ┃➣│ ${prefix}soundcloud [url]
 ┃➣│ ${prefix}zippyshare [url]

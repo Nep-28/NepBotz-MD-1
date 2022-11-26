@@ -143,9 +143,8 @@ let docs = pickRandom(documents)
         let nama = await NepBotzInc.getName(num)
 memb = metadata.participants.length
 ppusr = await getBuffer(`${encodeURIComponent(ppuser)}`)
-ppusrn = await getBuffer(`ppuser`)
                 if (anu.action == 'add') {
-                const xeonbuffer = await getBuffer(ppuser)
+                const ppbuffer = await getBuffer(ppuser)
                 let xeonName = num
                 const xtime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
 	            const xdate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
@@ -166,20 +165,20 @@ ppusrn = await getBuffer(`ppuser`)
 ┃➣|〆 ${xdate} ${xtime}
 ┃么|〆
 ╰┅═┅═┅═┅═┅═┅═┅ ⪨`
-      //if you copy the code value,
-   //dont forget to put my name(Xeon) as credit
-   //you fail to put, i sue you for sure!
+
 let buttons = [
 {buttonId: `rules`, buttonText: {displayText: 'Rules'}, type: 1},
 {buttonId: `command`, buttonText: {displayText: 'Menu'}, type: 1}
 ]
 let buttonMessage = {
-image: fs.readFileSync('./XeonMedia/theme/wc.jpg'),
+image: fs.readFileSync('./NepMedia/theme/wc.jpg'),
+jpegThumbnail:ppusr,
 mentions: [num],
 caption: xeonbody,
 footer: `${global.footer}`,
 buttons: buttons,
 headerType: 4,
+thumbnail:ppusr,
 contextInfo:{externalAdReply:{
 mediaType:2
 }}
@@ -207,15 +206,13 @@ NepBotzInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
 ┃➣|〆 ${xeondate} ${xeontime}
 ┃么|〆
 ╰┅═┅═┅═┅═┅═┅═┅ ⪨`
-      //if you copy the code value,
-   //dont forget to put my name(Xeon) as credit
-   //you fail to put, i sue you for sure!
+      
 let buttons = [
 {buttonId: `wkwwk`, buttonText: {displayText: 'Bye'}, type: 1},
 {buttonId: `command`, buttonText: {displayText: 'Menu'}, type: 1}
 ]
 let buttonMessage = {
-image: fs.readFileSync('./XeonMedia/theme/gb.jpg'),
+image: fs.readFileSync('./NepMedia/theme/gb.jpg'),
 mentions: [num],
 caption: xeonbody,
 footer: `${global.footer}`,
