@@ -1,25 +1,3 @@
- //════════════════════════════//
-//If you want to recode, reupload
-//or copy the codes/script
-//pls give credit
-//no credit? i will take action immediately
-//© 2022 Xeon Bot Inc. Cheems Bot MD
-//Thank you to Lord Buddha, Family and Myself
-//════════════════════════════//
-//recode kar ke youtube pe upload kar rhe hai ya
-//codes copy kar ke apne script me dal rhe
-//hai to, description me xeon ka yt channel
-// ka link paste kr dena as a cradit or github 
-//repo me bhi tag kardena baki jo
-//bhi karna hai apki marzi, thank you!🦄
-//════════════════════════════//
-//If you recode and uploading on your channel
-//or copy pasting the codes in ur script, 
-//i give permission to do as long as you
-//put Xeons youtube channel link in the video
-//description and tag me on githuh repo, 
-//thank you🦄
-//════════════════════════════//
 
 const fs = require('fs')
 const chalk = require('chalk')
@@ -71,16 +49,16 @@ global.botscript = 'Nothing' //script link
 global.reactmoji = "✅" //ur menu react emoji
 global.themeemoji = "🐱" //ur theme emoji
 global.note = "It's Upgrating Time" // ur note
-global.packname = "NepBotz Stickers\n\n\n\n\n\n\n\n\n\n\n🌹⃝⃘̉̉̉̉̉̉🧚ℕ𝕖𝕡𝕥𝕦𝕟𝕖❤️⃝➤⃟̱̱̱̱̄̄̄̄ " //ur sticker watermark packname
+global.packname = "NepBotz Stickers\n\n\n\n\n\n\n\n\n\n\n94702476028" //ur sticker watermark packname
 global.author = "🌹⃝⃘̉̉̉̉̉̉🧚ℕ𝕖𝕡𝕥𝕦𝕟𝕖❤️⃝➤⃟̱̱̱̱̄̄̄̄" //ur sticker watermark author
 global.wm = "🌹⃝⃘̉̉̉̉̉̉🧚𝙽𝚎𝚙𝚋𝚘𝚝𝚣 𝚙𝚞𝚋𝚕𝚒𝚌 𝚎𝚍𝚒𝚝𝚘𝚗"
 global.gc = "https://chat.whatsapp.com/Gi47BN7YM30321sUIa7mtT" //ur group to be displayed
 
 //Bot theme media
-global.thum = fs.readFileSync("./XeonMedia/theme/log0.jpg") //ur thumb pic
-global.log0 = fs.readFileSync("./XeonMedia/theme/log0.jpg") //ur logo pic
-global.err4r = fs.readFileSync("./XeonMedia/theme/ea404.jpg") //ur error pic
-global.thumb = fs.readFileSync("./XeonMedia/theme/log0.jpg") //ur thumb pic
+global.thum = fs.readFileSync("./NepMedia/theme/log0.jpg") //ur thumb pic
+global.log0 = fs.readFileSync("./NepMedia/theme/log0.jpg") //ur logo pic
+global.err4r = fs.readFileSync("./NepMedia/theme/ea404.jpg") //ur error pic
+global.thumb = fs.readFileSync("./NepMedia/theme/log0.jpg") //ur thumb pic
 
 //damtabase
 global.premium = ['94702476028'] //ur premium numbers
@@ -149,7 +127,7 @@ global.mess = {
    potionawal: 1
 }
 
-global.thumb = fs.readFileSync('./XeonMedia/theme/log0.jpg')
+global.thumb = fs.readFileSync('./NepMedia/theme/log0.jpg')
 global.flaming = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text='
 global.fluming = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=fluffy-logo&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text='
 global.flarun = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=runner-logo&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text='
