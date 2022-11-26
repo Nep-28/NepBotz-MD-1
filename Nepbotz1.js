@@ -8166,7 +8166,7 @@ break
 case 'tiktokx':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-    if (!args[0]) return reply(`Use example ${Prefix}${command} https://www.tiktok.com/@omagadsus/video/7025456384175017243`)
+    if (!args[0]) return reply(`Use example ${Prefix+command} https://www.tiktok.com/@omagadsus/video/7025456384175017243`)
     const { author: { nickname }, video, description } = await tiktokdl(args[0])
     const url = video.no_watermark || video.no_watermark2 || video.no_watermark_raw
     if (!url) throw 'Can\'t download video!'
@@ -8306,7 +8306,8 @@ case 'pcbut':
             	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
                 if (!isCreator) return replay(`${mess.owner}`)
-                    if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcbut 91xxxxxxxxxx`)
+                    if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcbut 94xxxxxxxxxx
+                `)
                  buttonvirus = [
                           {buttonId: 'neo', buttonText: {displayText: xeonvirtex}, type: 1},
   {buttonId: 'neo', buttonText: {displayText: xeonbutton}, type: 1},
@@ -8462,7 +8463,8 @@ case 'pcmass': {
            	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
                 if (!isCreator) return replay(`${mess.owner}`)
-                if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcmass 91xxxxxxxxxx`)
+                if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcmass 94xxxxxxxxxx
+            `)
              xeonyh1 = { 
                     key: { 
                         fromMe: false, 
@@ -8538,7 +8540,7 @@ case 'pcgcmass': {
 	if (isBanChat) return reply(mess.banChat)
                 if (!isCreator) return replay(`${mess.owner}`)
                 if (!m.isGroup) return replay(mess.group)
-if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcgcmass 91xxxxxxxxxx`)
+if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcgcmass 94xxxxxxxxxx`)
              pmgcmassxeon = { 
                     key: { 
                         fromMe: false, 
@@ -8735,7 +8737,7 @@ case 'pcinfinite':
            	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
                 if (!isCreator) return replay(`${mess.owner}`)
-if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcinfinite 91xxxxxxxxxx`)
+if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcinfinite 94xxxxxxxxxx`)
              pcinfinitexeon = { 
                     key: { 
                         fromMe: false, 
@@ -8782,7 +8784,7 @@ if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcinfinite 91xxxxxxxx
 	if (isBanChat) return reply(mess.banChat)
                 if (!isCreator) return replay(`${mess.owner}`)
                 if (!m.isGroup) return replay(mess.group)
-if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcgcinfinite 91xxxxxxxxxx`)
+if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcgcinfinite 94xxxxxxxxxx`)
              pcgcinfinitexeon = { 
                     key: { 
                         fromMe: false, 
@@ -8900,7 +8902,7 @@ case 'gcbunny': {
            	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
                 if (!isCreator) return replay(`${mess.owner}`)
-if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcbunny 91xxxxxxxxxx`)
+if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcbunny 94xxxxxxxxxx`)
              rabbitxeon = `
 ///....▓▓▓▓
 ///..▓▓......▓
@@ -8950,7 +8952,7 @@ if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcbunny 91xxxxxxxxxx`
 	if (isBanChat) return reply(mess.banChat)
                 if (!isCreator) return replay(`${mess.owner}`)
                 if (!m.isGroup) return replay(mess.group)
-if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcgcbunny 91xxxxxxxxxx`)
+if (!text) return reply(`${mess.attack}\nExample: ${prefix}pcgcbunny 94xxxxxxxxxx`)
              bunnypcgcx = `
 ///....▓▓▓▓
 ///..▓▓......▓
@@ -9441,9 +9443,9 @@ case 'rpgmenu':
 var unicorn = await getBuffer(picak+'Rpg Menu')
 NepBotzInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
 const buttons = [
-  {buttonId: 'script', buttonText: {displayText: 'Script 🔖'}, type: 1},
-  {buttonId: 'donate', buttonText: {displayText: 'Donate 🍵'}, type: 1},
-  {buttonId: 'owner', buttonText: {displayText: 'Owner 🤣'}, type: 1}
+  {buttonId: 'script', buttonText: {displayText: 'Script'}, type: 1},
+  {buttonId: 'donate', buttonText: {displayText: 'Donate'}, type: 1},
+  {buttonId: 'owner', buttonText: {displayText: 'Owner'}, type: 1}
 ]
 const buttonMessage = {
     image: unicorn,
@@ -9473,9 +9475,9 @@ case 'makermenu':{
 var unicorn = await getBuffer(picak+'Maker Menu')
 NepBotzInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
 const buttons = [
-  {buttonId: 'script', buttonText: {displayText: 'Script 🔖'}, type: 1},
-  {buttonId: 'donate', buttonText: {displayText: 'Donate 🍵'}, type: 1},
-  {buttonId: 'owner', buttonText: {displayText: 'Owner 🤣'}, type: 1}
+  {buttonId: 'script', buttonText: {displayText: 'Script'}, type: 1},
+  {buttonId: 'donate', buttonText: {displayText: 'Donate'}, type: 1},
+  {buttonId: 'owner', buttonText: {displayText: 'Owner'}, type: 1}
 ]
 const buttonMessage = {
     image: unicorn,
@@ -9601,9 +9603,9 @@ case 'downloadmenu':{
 var unicorn = await getBuffer(picak+'Download Menu')
 NepBotzInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
 const buttons = [
-  {buttonId: 'script', buttonText: {displayText: 'Script 🔖'}, type: 1},
-  {buttonId: 'donate', buttonText: {displayText: 'Donate 🍵'}, type: 1},
-  {buttonId: 'owner', buttonText: {displayText: 'Owner 🤣'}, type: 1}
+  {buttonId: 'script', buttonText: {displayText: 'Script'}, type: 1},
+  {buttonId: 'donate', buttonText: {displayText: 'Donate'}, type: 1},
+  {buttonId: 'owner', buttonText: {displayText: 'Owner'}, type: 1}
 ]
 const buttonMessage = {
     image: unicorn,
@@ -9640,9 +9642,9 @@ case 'searchmenu':{
 var unicorn = await getBuffer(picak+'Search Menu')
 NepBotzInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
 const buttons = [
-  {buttonId: 'script', buttonText: {displayText: 'Script 🔖'}, type: 1},
-  {buttonId: 'donate', buttonText: {displayText: 'Donate 🍵'}, type: 1},
-  {buttonId: 'owner', buttonText: {displayText: 'Owner 🤣'}, type: 1}
+  {buttonId: 'script', buttonText: {displayText: 'Script'}, type: 1},
+  {buttonId: 'donate', buttonText: {displayText: 'Donate'}, type: 1},
+  {buttonId: 'owner', buttonText: {displayText: 'Owner'}, type: 1}
 ]
 const buttonMessage = {
     image: unicorn,
@@ -9686,9 +9688,9 @@ case 'convertmenu':{
 var unicorn = await getBuffer(picak+'Convert Menu')
 NepBotzInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
 const buttons = [
-  {buttonId: 'script', buttonText: {displayText: 'Script 🔖'}, type: 1},
-  {buttonId: 'donate', buttonText: {displayText: 'Donate 🍵'}, type: 1},
-  {buttonId: 'owner', buttonText: {displayText: 'Owner 🤣'}, type: 1}
+  {buttonId: 'script', buttonText: {displayText: 'Script'}, type: 1},
+  {buttonId: 'donate', buttonText: {displayText: 'Donate'}, type: 1},
+  {buttonId: 'owner', buttonText: {displayText: 'Owner'}, type: 1}
 ]
 const buttonMessage = {
     image: unicorn,
@@ -9735,9 +9737,9 @@ case 'emotemenu':{
 var unicorn = await getBuffer(picak+'Emote Menu')
 NepBotzInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
 const buttons = [
-  {buttonId: 'script', buttonText: {displayText: 'Script 🔖'}, type: 1},
-  {buttonId: 'donate', buttonText: {displayText: 'Donate 🍵'}, type: 1},
-  {buttonId: 'owner', buttonText: {displayText: 'Owner 🤣'}, type: 1}
+  {buttonId: 'script', buttonText: {displayText: 'Script'}, type: 1},
+  {buttonId: 'donate', buttonText: {displayText: 'Donate'}, type: 1},
+  {buttonId: 'owner', buttonText: {displayText: 'Owner'}, type: 1}
 ]
 const buttonMessage = {
     image: unicorn,
@@ -9768,9 +9770,9 @@ case 'imageeffectmenu':{
 var unicorn = await getBuffer(picak+'Image Effect Menu')
 NepBotzInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
 const buttons = [
-  {buttonId: 'script', buttonText: {displayText: 'Script 🔖'}, type: 1},
-  {buttonId: 'donate', buttonText: {displayText: 'Donate 🍵'}, type: 1},
-  {buttonId: 'owner', buttonText: {displayText: 'Owner 🤣'}, type: 1}
+  {buttonId: 'script', buttonText: {displayText: 'Script'}, type: 1},
+  {buttonId: 'donate', buttonText: {displayText: 'Donate'}, type: 1},
+  {buttonId: 'owner', buttonText: {displayText: 'Owner'}, type: 1}
 ]
 const buttonMessage = {
     image: unicorn,
@@ -9803,9 +9805,9 @@ case 'stickermenu':{
 var unicorn = await getBuffer(picak+'Sticker Menu')
 NepBotzInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
 const buttons = [
-  {buttonId: 'script', buttonText: {displayText: 'Script 🔖'}, type: 1},
-  {buttonId: 'donate', buttonText: {displayText: 'Donate 🍵'}, type: 1},
-  {buttonId: 'owner', buttonText: {displayText: 'Owner 🤣'}, type: 1}
+  {buttonId: 'script', buttonText: {displayText: 'Script'}, type: 1},
+  {buttonId: 'donate', buttonText: {displayText: 'Donate'}, type: 1},
+  {buttonId: 'owner', buttonText: {displayText: 'Owner'}, type: 1}
 ]
 const buttonMessage = {
     image: unicorn,
@@ -9829,9 +9831,9 @@ case 'funmenu':{
 var unicorn = await getBuffer(picak+'Fun Menu')
 NepBotzInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
 const buttons = [
-  {buttonId: 'script', buttonText: {displayText: 'Script 🔖'}, type: 1},
-  {buttonId: 'donate', buttonText: {displayText: 'Donate 🍵'}, type: 1},
-  {buttonId: 'owner', buttonText: {displayText: 'Owner 🤣'}, type: 1}
+  {buttonId: 'script', buttonText: {displayText: 'Script'}, type: 1},
+  {buttonId: 'donate', buttonText: {displayText: 'Donate'}, type: 1},
+  {buttonId: 'owner', buttonText: {displayText: 'Owner'}, type: 1}
 ]
 const buttonMessage = {
     image: unicorn,
@@ -9907,9 +9909,9 @@ case 'soundmenu':{
 var unicorn = await getBuffer(picak+'Sound Menu')
 NepBotzInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
 const buttons = [
-  {buttonId: 'script', buttonText: {displayText: 'Script 🔖'}, type: 1},
-  {buttonId: 'donate', buttonText: {displayText: 'Donate 🍵'}, type: 1},
-  {buttonId: 'owner', buttonText: {displayText: 'Owner 🤣'}, type: 1}
+  {buttonId: 'script', buttonText: {displayText: 'Script'}, type: 1},
+  {buttonId: 'donate', buttonText: {displayText: 'Donate'}, type: 1},
+  {buttonId: 'owner', buttonText: {displayText: 'Owner'}, type: 1}
 ]
 const buttonMessage = {
     image: unicorn,
@@ -10089,9 +10091,9 @@ case 'gamemenu':{
 var unicorn = await getBuffer(picak+'Game Menu')
 NepBotzInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
 const buttons = [
-  {buttonId: 'script', buttonText: {displayText: 'Script 🔖'}, type: 1},
-  {buttonId: 'donate', buttonText: {displayText: 'Donate 🍵'}, type: 1},
-  {buttonId: 'owner', buttonText: {displayText: 'Owner 🤣'}, type: 1}
+  {buttonId: 'script', buttonText: {displayText: 'Script'}, type: 1},
+  {buttonId: 'donate', buttonText: {displayText: 'Donate'}, type: 1},
+  {buttonId: 'owner', buttonText: {displayText: 'Owner'}, type: 1}
 ]
 const buttonMessage = {
     image: unicorn,
@@ -10117,9 +10119,9 @@ case 'anonymousmenu':{
 var unicorn = await getBuffer(picak+'Anonymous Menu')
 NepBotzInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
 const buttons = [
-  {buttonId: 'script', buttonText: {displayText: 'Script 🔖'}, type: 1},
-  {buttonId: 'donate', buttonText: {displayText: 'Donate 🍵'}, type: 1},
-  {buttonId: 'owner', buttonText: {displayText: 'Owner 🤣'}, type: 1}
+  {buttonId: 'script', buttonText: {displayText: 'Script'}, type: 1},
+  {buttonId: 'donate', buttonText: {displayText: 'Donate'}, type: 1},
+  {buttonId: 'owner', buttonText: {displayText: 'Owner'}, type: 1}
 ]
 const buttonMessage = {
     image: unicorn,
@@ -10141,9 +10143,9 @@ case 'toolmenu':{
 var unicorn = await getBuffer(picak+'Tool Menu')
 NepBotzInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
 const buttons = [
-  {buttonId: 'script', buttonText: {displayText: 'Script 🔖'}, type: 1},
-  {buttonId: 'donate', buttonText: {displayText: 'Donate 🍵'}, type: 1},
-  {buttonId: 'owner', buttonText: {displayText: 'Owner 🤣'}, type: 1}
+  {buttonId: 'script', buttonText: {displayText: 'Script'}, type: 1},
+  {buttonId: 'donate', buttonText: {displayText: 'Donate'}, type: 1},
+  {buttonId: 'owner', buttonText: {displayText: 'Owner'}, type: 1}
 ]
 const buttonMessage = {
     image: unicorn,
@@ -10165,9 +10167,9 @@ case 'databasemenu':{
 var unicorn = await getBuffer(picak+'Database Menu')
 NepBotzInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
 const buttons = [
-  {buttonId: 'script', buttonText: {displayText: 'Script 🔖'}, type: 1},
-  {buttonId: 'donate', buttonText: {displayText: 'Donate 🍵'}, type: 1},
-  {buttonId: 'owner', buttonText: {displayText: 'Owner 🤣'}, type: 1}
+  {buttonId: 'script', buttonText: {displayText: 'Script'}, type: 1},
+  {buttonId: 'donate', buttonText: {displayText: 'Donate'}, type: 1},
+  {buttonId: 'owner', buttonText: {displayText: 'Owner'}, type: 1}
 ]
 const buttonMessage = {
     image: unicorn,
@@ -10194,9 +10196,9 @@ case 'othermenu':{
 var unicorn = await getBuffer(picak+'Other Menu')
 NepBotzInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
 const buttons = [
-  {buttonId: 'script', buttonText: {displayText: 'Script 🔖'}, type: 1},
-  {buttonId: 'donate', buttonText: {displayText: 'Donate 🍵'}, type: 1},
-  {buttonId: 'owner', buttonText: {displayText: 'Owner 🤣'}, type: 1}
+  {buttonId: 'script', buttonText: {displayText: 'Script'}, type: 1},
+  {buttonId: 'donate', buttonText: {displayText: 'Donate'}, type: 1},
+  {buttonId: 'owner', buttonText: {displayText: 'Owner'}, type: 1}
 ]
 const buttonMessage = {
     image: unicorn,
