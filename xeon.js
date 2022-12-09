@@ -1,3 +1,17 @@
+//
+//   ___      ___                    __________              
+//   | |\ \   | |  ____  ________     | |     \ \    ____    __ | |___  
+//   | | \ \  | |/ ___  \ | | ___  \  | |_____/ /  / /   \ \ |__| |__| _______
+//   | |  \ \ | | _____ / | | |_|   | | |     \ \ | |    | |    | |      / /
+//   | |   \ \| |\ ____ / | |_____ /  | |_____/ /  \ \___/ /    | |    /_/____   
+//                        | | 
+//                        | |           A powerful Bot for whatsapp
+//                        | |                                         ___      ___  ________
+//                                                                    | |\  / /| | | |      \ \
+//                                                                    | | \/ / | | | |       | |
+//                                                                    | |      | | | |       | |
+//                                                                    | |      | | | |______/ /
+//
 require('./settings')
 const { default: NepBotzIncConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys")
 const { state, saveState } = useSingleFileAuthState(`./${sessionName}.json`)
