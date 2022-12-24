@@ -4,9 +4,10 @@
   "description": "Automated whatsapp md bot created using nodejs",
   "main": "xeon.js",
   "type": "commonjs",
-  "scripts": {
-    "start": "node xeon.js"
-  },
+   "scripts": {
+                "start": "pm2 start xeon.js --deep-monitoring --attach --name nepbotz",
+                "stop": "pm2 stop nepbotz"
+                },
   "keywords": [
     "termux",
     "whatsapp",
